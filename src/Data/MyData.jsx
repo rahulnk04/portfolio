@@ -22,6 +22,7 @@ export const myData = {
   name: "Rahul Ranjan Nayak",
   profession: "MERN Stack Developer",
   company: "DXC Technology",
+  companyStartDate: new Date("2020-07-02"),
   address: "Plot 606, Parbati Palace, Bhubaneswar, Odisha, India.",
   dateOfBirth: new Date("1996-04-12"),
   phone: "+91 7205326146",

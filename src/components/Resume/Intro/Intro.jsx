@@ -9,15 +9,15 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 import Rewards from "../Rewards/Rewards";
+import { dateDifference } from "../../../Global/DateDifference";
 
 const Intro = ({ introData, certificate }) => {
-  
   const RemaingDays = () => {
-    let day1 = new Date()
-    let day2 = introData.lastWorkingDay
+    let day1 = new Date();
+    let day2 = introData.lastWorkingDay;
     let difference = day2 - day1;
     let days = difference / (1000 * 3600 * 24);
-    return <Fragment>{Math.abs(parseInt(days, 10))}</Fragment> ;
+    return <Fragment>{Math.abs(parseInt(days, 10))}</Fragment>;
   };
 
   return (
@@ -43,6 +43,11 @@ const Intro = ({ introData, certificate }) => {
           className="text-center profile-designation"
         >
           {introData.company}
+          <br />
+
+          <Typography style={{ fontSize: 13 }} color="text.secondary">
+            {dateDifference(introData.companyStartDate, new Date())}
+          </Typography>
         </Box>
         <br />
         {!introData.servingNotice ? (
@@ -58,8 +63,7 @@ const Intro = ({ introData, certificate }) => {
             className="text-center profile-designation"
           >
             Serving Notice <br />
-            Remaining Days : <RemaingDays/>{" "}
-            <br />
+            Remaining Days : <RemaingDays /> <br />
             From Date : {new Date().toDateString()}
             <br />
             Last Working Day : {introData.lastWorkingDay.toDateString()}

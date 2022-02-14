@@ -43,6 +43,7 @@ const Resume = () => {
     notice: myData.noticePeriod,
     servingNotice: myData.servingNotice,
     lastWorkingDay: myData.lastWorkingDay,
+    companyStartDate: myData.companyStartDate,
   };
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
@@ -84,7 +85,11 @@ const Resume = () => {
                 experience={myData.experience}
               />
               <TechSkills skills={myData.skills} printTech={printTech} />
-              <MyProjects projects={myData.projects} printTech={printTech} className="myProjects" />
+              <MyProjects
+                projects={myData.projects}
+                printTech={printTech}
+                className="myProjects"
+              />
             </Box>
           </Box>
         </Paper>
