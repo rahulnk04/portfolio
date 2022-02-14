@@ -2,6 +2,17 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
+const dateDifference = (start, end) => {
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+  const diffDate = new Date(endDate - startDate);
+  const finalDiff = `${
+    (diffDate.toISOString().slice(0, 4) - 1970)
+  } years ${diffDate.getMonth()} months ${diffDate.getDate() - 1} days`;
+
+  return finalDiff;
+};
+
 const Work = ({ experience }) => {
   return (
     <Box className="col-lg-6">
@@ -37,6 +48,13 @@ const Work = ({ experience }) => {
                         ? "Present"
                         : exp.endDate.toDateString()}
                       {")"}
+                    </span>
+                  )}
+                  <br />
+                  {!exp.upcoming && (
+                    <span>
+                      Service Period :{" "}
+                      {dateDifference(exp.startDate, exp.endDate > new Date() ? new Date() : exp.endDate)}
                     </span>
                   )}
                 </Typography>
