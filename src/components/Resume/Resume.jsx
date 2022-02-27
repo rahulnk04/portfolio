@@ -60,6 +60,7 @@ const Resume = () => {
       <Box sx={{ padding: "3%" }}>
         <Button
           size="small"
+          variant = "contained"
           sx={{ color: "slateblue" }}
           startIcon={<DownloadIcon />}
           onClick={() => {
