@@ -61,7 +61,6 @@ const Resume = () => {
         <Button
           size="small"
           variant = "contained"
-          sx={{ color: "slateblue" }}
           startIcon={<DownloadIcon />}
           onClick={() => {
             setPrintTech(false);
