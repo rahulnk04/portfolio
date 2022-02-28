@@ -1,9 +1,12 @@
 {
   "files": {
     "main.css": "./static/css/main.2e51c6d0.css",
-    "main.js": "./static/js/main.a71fac55.js",
+    "main.js": "./static/js/main.81ed3ebc.js",
+    "static/media/DXC_COL_AWARD.pdf": "./static/media/DXC_COL_AWARD.14ae8379bd3f079c5950.pdf",
+    "static/media/oracle-eCertificate.pdf": "./static/media/oracle-eCertificate.1e0ad5a50d2c0e7ee3d9.pdf",
     "static/media/Me.PNG": "./static/media/Me.0159c5104e65e67bfc21.PNG",
     "static/media/service-8.jpg": "./static/media/service-8.afb0a1974077169965f6.jpg",
+    "static/media/Champ.pdf": "./static/media/Champ.5e9f324663dea229d743.pdf",
     "static/media/tcs.png": "./static/media/tcs.18cdc7e5e723c6ea1421.png",
     "static/media/Award.jpg": "./static/media/Award.20b7e97806b07009dd72.jpg",
     "static/media/RahulLogo.png": "./static/media/RahulLogo.6200de4ee4b9a1b402ac.png",
@@ -13,10 +16,10 @@
     "static/media/slick.woff": "./static/media/slick.295183786cd8a1389865.woff",
     "index.html": "./index.html",
     "main.2e51c6d0.css.map": "./static/css/main.2e51c6d0.css.map",
-    "main.a71fac55.js.map": "./static/js/main.a71fac55.js.map"
+    "main.81ed3ebc.js.map": "./static/js/main.81ed3ebc.js.map"
   },
   "entrypoints": [
     "static/css/main.2e51c6d0.css",
-    "static/js/main.a71fac55.js"
+    "static/js/main.81ed3ebc.js"
   ]
 }

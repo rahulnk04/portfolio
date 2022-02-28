@@ -10,9 +10,9 @@ const Bio = ({ bio }) => {
         variant="h5"
         style={{ color: "#330072" }}
       >
-        Resume
+        Resume<br/>
+        <p style={{textTransform:"none", color:"#000"}}>{bio}</p>
       </Typography>
-      <p>{bio}</p>
     </Grid>
   );
 };

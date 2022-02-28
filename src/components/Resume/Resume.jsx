@@ -23,7 +23,6 @@ const Resume = () => {
     if (reason === "clickaway") {
       return;
     }
-
     setSnackOpen(false);
   };
 
