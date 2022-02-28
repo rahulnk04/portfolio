@@ -16,6 +16,9 @@ import Me from "../images/Me.PNG";
 import silicon from "../images/silicon.png";
 import tcs from "../images/tcs.png";
 import kiit from "../images/kiit.jpeg";
+import champ from "../pdfs/Champ.pdf"
+import COLLABORATING from "../pdfs/DXC_COL_AWARD.pdf"
+import Oracle from "../pdfs/oracle-eCertificate.pdf"
 
 export const myData = {
   avatar: Me,
@@ -126,16 +129,25 @@ export const myData = {
   ],
   certificate: [
     {
-      name: "DXC Champ Awards",
-      link: "",
+      name: "DXC Champ",
+      link: champ,
+      param:"Champ.pdf",
       date: new Date(),
       desc: "Q4 FY2021",
     },
     {
-      name: "DXC Champ Awards",
-      link: "",
+      name: "DXC Collaborating",
+      link: COLLABORATING,
+      param:"Champ.pdf",
       date: new Date(),
-      desc: "Q1 FY2022",
+      desc: "Q4 FY2021",
+    },
+    {
+      name: "Oracle Cloud",
+      link: Oracle,
+      param:"Champ.pdf",
+      date: new Date(),
+      desc: "Certified",
     },
   ],
   skills: [

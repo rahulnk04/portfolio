@@ -2,6 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import { Link } from "react-router-dom";
 
 const Rewards = ({ certificate }) => {
   return (
@@ -14,11 +15,20 @@ const Rewards = ({ certificate }) => {
             style={{ color: "slateblue" }}
             gutterBottom
           >
-            Awards
+            Awards {" &"}
+            <br />
+            Certificates
           </Typography>
           {certificate.map((cer, i) => (
             <Typography key={i}>
-              <EmojiEventsIcon style={{ color: "#daa520" }} /> {cer.name}
+              <Link
+                to={"/reward/" + btoa(cer.link)}
+                rel="noreferrer"
+                target="_blank"
+                style={{ color: "#000" }}
+              >
+                <EmojiEventsIcon style={{ color: "#daa520" }} /> {cer.name}
+              </Link>
               <br /> {cer.desc}
             </Typography>
           ))}
