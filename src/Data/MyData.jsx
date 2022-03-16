@@ -15,6 +15,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Me from "../images/Me.PNG";
 import silicon from "../images/silicon.png";
 import tcs from "../images/tcs.png";
+import sapient from "../images/sapient.jpeg"
 import kiit from "../images/kiit.jpeg";
 import champ from "../pdfs/Champ.pdf";
 import COLLABORATING from "../pdfs/DXC_COL_AWARD.pdf";
@@ -76,12 +77,22 @@ export const myData = {
   Experience in Building Backend Rest API’s with NodeJS (Express Framework) and building the routes for the same along with Postman API Testing.
   Experience in IT industry with Node/Angular/React domain.`,
   experience: [
+    // {
+    //   jobTitle: "MERN Stack Developer",
+    //   logo: tcs,
+    //   upcoming: true,
+    //   present: false,
+    //   company: "Tata Consultancy Services",
+    //   startDate: new Date("2022-05-02"),
+    //   endDate: new Date(),
+    //   jobDescription: ``,
+    // },
     {
-      jobTitle: "MERN Stack Developer",
-      logo: tcs,
+      jobTitle: "Associate Technology L2",
+      logo: sapient,
       upcoming: true,
       present: false,
-      company: "Tata Consultancy Services",
+      company: "Publicis Sapient",
       startDate: new Date("2022-05-02"),
       endDate: new Date(),
       jobDescription: ``,
