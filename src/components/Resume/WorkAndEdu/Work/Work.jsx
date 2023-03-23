@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { dateDifference } from "../../../../Global/DateDifference";
 
-
 const Work = ({ experience }) => {
   return (
     <Box className="col-lg-6">
@@ -35,17 +34,18 @@ const Work = ({ experience }) => {
                     <span style={{ color: "#330072" }}>
                       {"("}
                       {exp.startDate.toDateString()} -{" "}
-                      {exp.endDate >= new Date()
-                        ? "Present"
-                        : exp.endDate.toDateString()}
+                      {exp.present ? "Present" : exp.endDate.toDateString()}
                       {")"}
                     </span>
                   )}
                   <br />
                   {!exp.upcoming && (
-                    <span>
+                    <span style={{ color: "#000" }}>
                       Service Period :{" "}
-                      {dateDifference(exp.startDate, exp.endDate > new Date() ? new Date() : exp.endDate)}
+                      {dateDifference(
+                        exp.startDate,
+                        exp.endDate > new Date() ? new Date() : exp.endDate
+                      )}
                     </span>
                   )}
                 </Typography>

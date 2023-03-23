@@ -32,29 +32,12 @@ const MyProjects = ({ projects, printTech }) => {
                 </Typography>
               </Box>
               <Box className="col-lg-3">
-                <Typography
-                  component="div"
-                  variant="caption"
-                  color="text.secondary"
-                  style={{ fontSize: 12 }}
-                >
-                  Role : {pro.role}
-                </Typography>
-                <Typography
-                  component="div"
-                  variant="caption"
-                  color="text.secondary"
-                  style={{ fontSize: 12 }}
-                >
-                  Team Size : {pro.teamSize}
-                </Typography>
+                <img width={"100"} src={pro.img} />
               </Box>
             </Box>
-
             <Typography className="time-line-item-content">
               {pro.description}
             </Typography>
-
             <Stack
               direction={{
                 xs: !printTech ? "row" : "column",
@@ -166,6 +149,56 @@ const MyProjects = ({ projects, printTech }) => {
                   {db}
                 </Typography>
               ))}
+            </Stack>
+            <Stack
+              direction={{
+                xs: !printTech ? "row" : "column",
+                sm: "row",
+                md: "row",
+              }}
+              spacing={{ xs: 0, sm: 1, md: 1 }}
+            >
+              <Typography
+                component="div"
+                variant="caption"
+                color="text.secondary"
+                style={{ color: "#330072", fontSize: 12 }}
+              >
+                {"Role"} :{" "}
+              </Typography>
+              <Typography
+                component="div"
+                variant="caption"
+                color="text.secondary"
+                style={{ fontSize: 12 }}
+              >
+                {pro.role}
+              </Typography>
+            </Stack>
+            <Stack
+              direction={{
+                xs: !printTech ? "row" : "column",
+                sm: "row",
+                md: "row",
+              }}
+              spacing={{ xs: 0, sm: 1, md: 1 }}
+            >
+              <Typography
+                component="div"
+                variant="caption"
+                color="text.secondary"
+                style={{ color: "#330072", fontSize: 12 }}
+              >
+                {"Team Size"} :{" "}
+              </Typography>
+              <Typography
+                component="div"
+                variant="caption"
+                color="text.secondary"
+                style={{ fontSize: 12 }}
+              >
+                {pro.teamSize}
+              </Typography>
             </Stack>
           </li>
         ))}

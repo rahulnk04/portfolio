@@ -1,26 +1,25 @@
 {
   "files": {
-    "main.css": "./static/css/main.2e51c6d0.css",
-    "main.js": "./static/js/main.b2d530b7.js",
+    "main.css": "./static/css/main.6c085377.css",
+    "main.js": "./static/js/main.dc5296d6.js",
     "static/media/DXC_COL_AWARD.pdf": "./static/media/DXC_COL_AWARD.14ae8379bd3f079c5950.pdf",
     "static/media/oracle-eCertificate.pdf": "./static/media/oracle-eCertificate.1e0ad5a50d2c0e7ee3d9.pdf",
     "static/media/Me.PNG": "./static/media/Me.0159c5104e65e67bfc21.PNG",
     "static/media/service-8.jpg": "./static/media/service-8.afb0a1974077169965f6.jpg",
     "static/media/Champ.pdf": "./static/media/Champ.5e9f324663dea229d743.pdf",
-    "static/media/tcs.png": "./static/media/tcs.18cdc7e5e723c6ea1421.png",
-    "static/media/sapient.jpeg": "./static/media/sapient.685709ce4a0e461809f8.jpeg",
     "static/media/Award.jpg": "./static/media/Award.20b7e97806b07009dd72.jpg",
+    "static/media/sapient.jpeg": "./static/media/sapient.03f48e04df8d5d72ab02.jpeg",
     "static/media/RahulLogo.png": "./static/media/RahulLogo.6200de4ee4b9a1b402ac.png",
     "static/media/slick.svg": "./static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "./static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "./static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "./static/media/slick.295183786cd8a1389865.woff",
     "index.html": "./index.html",
-    "main.2e51c6d0.css.map": "./static/css/main.2e51c6d0.css.map",
-    "main.b2d530b7.js.map": "./static/js/main.b2d530b7.js.map"
+    "main.6c085377.css.map": "./static/css/main.6c085377.css.map",
+    "main.dc5296d6.js.map": "./static/js/main.dc5296d6.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e51c6d0.css",
-    "static/js/main.b2d530b7.js"
+    "static/css/main.6c085377.css",
+    "static/js/main.dc5296d6.js"
   ]
 }

@@ -1,23 +1,23 @@
 export const projectData = [
   {
     id: 1,
-    img: "https://media-exp1.licdn.com/dms/image/C4D22AQH7woI916H6lQ/feedshare-shrink_2048_1536/0/1640924243375?e=1646870400&v=beta&t=vDybWbSlXugS_6NYOnJ4dOZqfeQdyuHH_pluCLoNPy4",
+    img: "https://cdn.shopify.com/s/files/1/0568/7164/9450/files/MT_MyFonts_logo_transparent_RGB.png?height=628&pad_color=fff&v=1658909361&width=1200",
     link: "https://www.google.com/",
-    name: "Daksha Learning",
+    name: "Monotype Imaging Inc. - MyFonts.com",
     description:
-      "Daksha is a Web Application for students to Learn and Prepare for School, University and Job Placement examinations. It holds Practice questions for Aptitude, Reasoning, Verbal ability, Programming, Live Coding, University Notes, School Notes, Job Opportunity and eBooks. This is an own initiative I have taken to help the students & to share my experience with the peoples.",
+      "MyFonts is a complete digital products eCommerce website and management system for customers and the product management team are being designed and built as part of this project. On the home page, customers can examine the product lists, visit the detail pages, add items to their shopping carts, and log in to the customer page. The management staff may update the website with new product information, including images, prices, and brand names.",
   },
   {
     id: 2,
-    img: "https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYiX5tSIGYn8OX6mWPmJ20iWkU0xHAp_Us5GnLxgcZd3U7Rg_MS1x-ykcMPXaDxbUWVw8&usqp=CAU",
     link: "https://www.google.com/",
-    name: "Storage Allocation SARA",
+    name: "Telenor Group - Storage Allocation",
     description:
       "SARA is an end-to-end Automation Software for Storage Allocation and Expansion which can be used for New Storage Request and Expanding Existing Storage (LUN) Size. A LUN could reference an entire RAID set, a single hard disk or partition, or multiple disks or partitions. It provides support for different type of Storage EMC-Unity, 3PAR. Data transfer (Import, export) for data processing with specified formats.",
   },
   {
     id: 3,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn6kjwcz4EM0TdbExLVF_FvoI2Lkv9AZmSLQ&usqp=CAU",
+    img: "https://www.channelfutures.com/files/2021/06/ATT-1.png",
     link: "https://www.google.com/",
     name: "Dispute Management",
     description:
@@ -48,7 +48,7 @@ export const educationData = [
   },
   {
     id: 2,
-    img: "https://cdn.kalingatv.com/wp-content/uploads/2021/09/KIIT-university-NIRF-Rankings-2021.jpg",
+    img: "https://cdn.kiit.ac.in/wp-content/uploads/2018/07/KIIT-Campus-Front-Library.jpg",
     link: "https://www.google.com/",
     name: "Kalinga Institute of Industrial Technology",
     location: "Bhubaneswar",
@@ -57,7 +57,6 @@ export const educationData = [
       "Senior Secondary Education in Electrical Engineering (8.3 CGPA) from Kalinga Institute of Industrial Technology, (KIIT University), Bhubaneswar, Odisha. Batch of (2017)",
     imgs: [
       "https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2016/01/07/448471-kiit.jpg",
-      "https://cdn.kalingatv.com/wp-content/uploads/2021/09/KIIT-university-NIRF-Rankings-2021.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/7/79/Kiit_library_building.jpg",
       "https://www.thehindu.com/brandhub/rsak4l/article32302790.ece/alternates/FREE_615/KIIT-Arial-photo-HD",
       "https://static.kiit.ac.in/news/2021/09/KIIT-building.jpg",

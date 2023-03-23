@@ -59,7 +59,7 @@ const Resume = () => {
       <Box sx={{ padding: "3%" }}>
         <Button
           size="small"
-          variant = "contained"
+          variant="contained"
           startIcon={<DownloadIcon />}
           onClick={() => {
             setPrintTech(false);
@@ -78,7 +78,7 @@ const Resume = () => {
             {/* <Box className="content-wrapper"> */}
             <Intro introData={introData} certificate={myData.certificate} />
             <Box className="mainTag">
-              <Bio bio={myData.bio} />
+              <Bio bio={myData.bio} bioKeyPoints={myData.bioKeyPoints} />
               <WorkEdu
                 education={myData.education}
                 experience={myData.experience}
