@@ -93,6 +93,9 @@ aside {
   background-color: #979797;
 }
 .mainTag .time-line-item::after {
+  background-color: rgb(185, 184, 184);
+}
+.mainTag .time-line-item-active::after {
   background-color: slateblue;
 }
 .mainTag .time-line-item:not(:first-child)::after {

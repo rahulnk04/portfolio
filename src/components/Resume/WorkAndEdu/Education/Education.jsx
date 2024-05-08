@@ -14,7 +14,12 @@ const Education = ({ education }) => {
       </Typography>
       <ul className="time-line">
         {education.map((edu, i) => (
-          <li className="time-line-item" key={i}>
+          <li
+            className={`time-line-item ${
+              edu.highest && "time-line-item-active"
+            }`}
+            key={i}
+          >
             <Box className="row">
               <Box className="col-lg-9">
                 <Typography className="time-line-item-title">

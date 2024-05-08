@@ -19,11 +19,8 @@ const TechSkills = ({ skills, printTech }) => {
           {skills.map((skill, i) => (
             <Box className={`media service-card col-lg-4 col-sm-4`} key={i}>
               <Box className="service-icon">
-                <FontAwesomeIcon
-                  icon={skill.icon}
-                  style={{ color: skill.color }}
-                  size="2x"
-                />
+                <img src={skill.icon} alt={skill.name} width={40} height={40} />
+        
               </Box>
               <Box className="media-body">
                 <Typography className="service-title">{skill.name}</Typography>
@@ -44,11 +41,7 @@ const TechSkills = ({ skills, printTech }) => {
           {skills.map((skill, i) => (
             <Box className={`media service-card col-4`} key={i}>
               <Box className="service-icon">
-                <FontAwesomeIcon
-                  icon={skill.icon}
-                  style={{ color: skill.color }}
-                  size="2x"
-                />
+              <img src={skill.icon} alt={skill.name} width={40} height={40} />
               </Box>
               <Box className="media-body">
                 <Typography className="service-title">{skill.name}</Typography>

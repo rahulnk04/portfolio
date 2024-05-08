@@ -7,8 +7,8 @@ const WorkEdu = ({ education, experience }) => {
   return (
     <Box className="resume-section">
       <Box className="row">
-        <Education education={education}/>
         <Work experience={experience} />
+        <Education education={education} />
       </Box>
     </Box>
   );

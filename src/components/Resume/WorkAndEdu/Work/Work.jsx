@@ -15,7 +15,12 @@ const Work = ({ experience }) => {
       </Typography>
       <ul className="time-line">
         {experience.map((exp, i) => (
-          <li className="time-line-item" key={i}>
+          <li
+            className={`time-line-item ${
+              exp.present && "time-line-item-active"
+            }`}
+            key={i}
+          >
             <Box className="row">
               <Box className="col-lg-9">
                 <Typography className="time-line-item-title">
@@ -41,7 +46,6 @@ const Work = ({ experience }) => {
                   <br />
                   {!exp.upcoming && (
                     <span style={{ color: "#000" }}>
-                      Service Period :{" "}
                       {dateDifference(
                         exp.startDate,
                         exp.endDate > new Date() ? new Date() : exp.endDate

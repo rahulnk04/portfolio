@@ -58,8 +58,11 @@ const Resume = () => {
     <Fragment>
       <Box sx={{ padding: "3%" }}>
         <Button
+          sx={{ position: "sticky", top: 60, zIndex: 10, mb: 2 }}
           size="small"
+          fullWidth
           variant="contained"
+          color="error"
           startIcon={<DownloadIcon />}
           onClick={() => {
             setPrintTech(false);
@@ -71,7 +74,7 @@ const Resume = () => {
             }, 2000);
           }}
         >
-          Print this out!
+          Download Resume!
         </Button>
         <Paper elevation={2}>
           <Box className="content-wrapper" ref={componentRef}>

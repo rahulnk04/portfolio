@@ -25,8 +25,10 @@ const MyProjects = ({ projects, printTech }) => {
                   {pro.status} <br />
                   <span style={{ color: "#330072" }}>
                     {"("}
-                    {pro.startDate.toDateString()} -{" "}
-                    {pro.endDate.toDateString()}
+                    {pro.startDate.toDateString()}
+                    {pro.endDate.toDateString() === new Date().toDateString()
+                      ? " - in progress"
+                      : " - " + pro.endDate.toDateString()}
                     {")"}
                   </span>
                 </Typography>
@@ -108,7 +110,7 @@ const MyProjects = ({ projects, printTech }) => {
                 color="text.secondary"
                 style={{ color: "#330072", fontSize: 12 }}
               >
-                {"Environment"} :{" "}
+                {"Operating System"} :{" "}
               </Typography>
               {pro.environment.map((env, index) => (
                 <Typography

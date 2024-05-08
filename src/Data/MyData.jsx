@@ -1,12 +1,3 @@
-import {
-  faHtml5,
-  faCss3,
-  faReact,
-  faNodeJs,
-  faAngular,
-  faPython,
-} from "@fortawesome/free-brands-svg-icons";
-import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -14,24 +5,39 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Me from "../images/Me.PNG";
 import silicon from "../images/silicon.png";
-// import tcs from "../images/tcs.png";
 import sapient from "../images/sapient.jpeg";
 import kiit from "../images/kiit.jpeg";
 import champ from "../pdfs/Champ.pdf";
 import COLLABORATING from "../pdfs/DXC_COL_AWARD.pdf";
 import Oracle from "../pdfs/oracle-eCertificate.pdf";
+import {
+  AngularIcon,
+  BootStrapIcon,
+  CssIcon,
+  HtmlIcon,
+  JavaScriptIcon,
+  MaterialUiIcon,
+  MongoDbIcon,
+  NextJsIcon,
+  NodeJsIcon,
+  ReactJsIcon,
+  ScssIcon,
+  TypeScriptIcon,
+  pythonIcon,
+  tailwindIcon,
+} from "../images/icons/Icons";
 
 export const myData = {
   avatar: Me,
   name: "Rahul Ranjan Nayak",
-  profession: "MERN Stack Developer",
+  profession: "Senior Experience Engineer 1",
   company: "Publicis Sapient",
   companyStartDate: new Date("2020-07-02"),
   address: "Plot 606, Parbati Palace, Bhubaneswar, Odisha, India.",
   dateOfBirth: new Date("1996-04-12"),
   phone: "+91 7205326146",
   email: "rahulnk04@gmail.com",
-  noticePeriod: "60 days",
+  noticePeriod: "90 days",
   servingNotice: false,
   lastWorkingDay: new Date("2022-04-30"),
   website: {
@@ -72,38 +78,48 @@ export const myData = {
     { name: "Odia", profeciency: "Native", rate: 4.5 },
   ],
   intrests: ["Cricket", "Watching TV", "Collecting Pens"],
-  bio: `My name is Rahul Ranjan Nayak, and I work as an Associate Technology Level 2 in Publicis Sapient's Bangalore office. In April 2022, I began working at Sapient as a ReactJS Developer. I also have a Bachelor of Technology (BTech) in Electrical and Electronics Engineering from Bhubaneswar's Silicon Institute of Technology.
-I'm a Dedicated and efficient full stack developer with 3 year-experience, specialized in developing cutting-edge engineering Technologies such as React.Js, Node.Js, Express.Js, JavaScript, HTML5, CSS3, Angular-10.`,
+  bio: `My name is Rahul Ranjan Nayak, and I work as an Associate Technology Level 2 at Publicis Sapient's Bangalore office. In April 2022, I began working at Sapient as a Next.js Developer. I also hold a Bachelor of Technology (BTech) in Electrical and Electronics Engineering from Bhubaneswar's Silicon Institute of Technology.
+  I'm a dedicated and efficient full-stack developer with 3 years of experience, specializing in cutting-edge engineering technologies such as Next.js, React.js, Node.js, Express.js, JavaScript, HTML5, and CSS3. As a Next.js Developer, I excel in building powerful and efficient React applications with server-side rendering and easy API routes integration.`,
   bioKeyPoints: [
-    `Experience on using HTML5 and CSS3 to define the structure of the web page and to beautify the layout and appearance of the webpage.`,
-    `Designed Responsive Designs using CSS3 to arrange all elements of a web page adapt to the screen size of different devices, such as PC, tablet, and mobile phone.`,
-    `Good knowledge on all the string, array, and object built-in method (eg: forEach, filter, map,) closure and this keyword in JavaScript.`,
-    "Experience on using ES6 standards properties to realize major functions and behavior of the webpage.",
-    `Experience on using TypeScript adding additional syntax to JavaScript, and easy to catch errors in the editor.`,
-    `Designed front-end framework with React.js Using class component and functional component. Very familiar with the properties of component, states, props.`,
-    `Hands on using React Hooks (State Hook, Effect Hook and so on) to use state and lifecycle methods inside functional components.`,
-    `Used React Axios to get Web APIs to transfer data from backend and update the states in the store of Redux.`,
-    `Hands on using React-Router to manage the different React components path location.`,
-    `Hand on experience using React UI libraries such as Material UI, Ant Design and Bootstrap, developing web more efficiently with high-quality and responsive components.`,
-    `Developed Node.js and Express.js to run script in sever-side and to develop the server based applications and divert users to routes.`,
-    `Developed SQL Database (MySQL) management systems to analysis, design and management of the business data and database.`,
-    `Hands-on experience in NoSQL Database (MongoDB), data modeling and schema design.`,
-    `Used GitHub to conduct modern distributed source code management.`,
-    `Experience with common front-end development tools such as Babel, Webpack, NPM.`,
-    `Experience using JavaScript test frameworks such as Jest, Mocha and Chai.`,
-    `Experience with project management tools by using Agile, Scrum and Jira and able to troubleshoot problems on various projects.`,
-    `Hands-on experience to develop on multiple operating systems like Ubuntu, MacOS and Windows.`,
+    `Proficient in Next.js for building powerful and efficient React applications with server-side rendering and easy API routes integration. Capable of creating dynamic web pages with pre-rendering, optimizing performance, and enhancing SEO.`,
+    `Skilled in using HTML5 and CSS3 to define the structure of web pages and enhance the layout and appearance.`,
+    `Strong understanding of JavaScript, including all string, array, and object built-in methods (e.g., forEach, filter, map), closures, and the 'this' keyword.`,
+    "Experienced in using ES6 standard properties to implement major functions and behaviors of web pages.",
+    `Designed front-end frameworks with React.js, utilizing both class and functional components, with expertise in component properties, states, and props.`,
+    `Proficient in using React Hooks (State Hook, Effect Hook, etc.) to manage state and lifecycle methods within functional components.`,
+    `Leveraged React Axios to fetch Web APIs, transferring data from the backend and updating states in the Redux store.`,
+    `Utilized React-Router for managing different paths and locations of React components.`,
+    `Utilized NextJs page routing for managing different paths and locations of NextJs pages.`,
+    `Hands-on experience with React UI libraries such as Material UI, Tailwind Css, and Bootstrap, facilitating efficient development with high-quality, responsive components.`,
+    `Skilled in developing server-side applications using Node.js and Express.js, with the ability to manage routes and redirect users.`,
+    `Skilled in front-end development tools such as Babel, Webpack, and NPM.`,
+    `Experience with JavaScript testing frameworks such as Jest, Mocha, and Chai.`,
+    `Experience with VCS Git.`,
+    `Experience with GraphQl Api's integration.`,
+    `Proficient in project management methodologies like Agile, Scrum, and tools like Jira, adept at troubleshooting various project issues.`,
+    `Hands-on experience in developing on multiple operating systems, including Ubuntu, MacOS, and Windows.`,
   ],
+
   experience: [
     {
-      jobTitle: "Associate Technology Level 2",
+      jobTitle: "Senior Experience Engineer 1",
       logo: sapient,
       upcoming: false,
       present: true,
       company: "Publicis Sapient",
-      startDate: new Date("2022-04-12"),
+      startDate: new Date("2024-04-01"),
       endDate: new Date(),
-      jobDescription: `FullStack Developer, React.JS, Node.JS, MongoDB, MySQL, JavaScript, HTML5, CSS3, SCSS, Bottstrap, Redux, Mocha, Chai and Jest.`,
+      jobDescription: `NextJS, React.JS, Node.JS, JavaScript, HTML5, CSS3, SCSS, Bootstrap, Redux, MongoDB, and Jest.`,
+    },
+    {
+      jobTitle: "Associate Technology Level 2",
+      logo: sapient,
+      upcoming: false,
+      present: false,
+      company: "Publicis Sapient",
+      startDate: new Date("2022-04-12"),
+      endDate: new Date("2024-03-31"),
+      jobDescription: `NextJS, React.JS, Node.JS, JavaScript, HTML5, CSS3, SCSS, Bootstrap, Redux, MongoDB, and Jest.`,
     },
     {
       jobTitle: "Associate Professional 1",
@@ -113,7 +129,7 @@ I'm a Dedicated and efficient full stack developer with 3 year-experience, speci
       company: "DXC Technology",
       startDate: new Date("2020-07-02"),
       endDate: new Date("2022-04-08"),
-      jobDescription: `FullStack Developer, React.JS, Node.JS, MongoDB, MySQL, JavaScript, HTML5, CSS3, SCSS, Bottstrap.`,
+      jobDescription: `React.JS, Node.JS, MongoDB, MySQL, JavaScript, HTML5, CSS3, SCSS, Bootstrap.`,
     },
   ],
   education: [
@@ -123,8 +139,9 @@ I'm a Dedicated and efficient full stack developer with 3 year-experience, speci
       startDate: new Date("2017-05-01"),
       endDate: new Date("2021-06-12"),
       description:
-        "BTech in Electrical & Electronics Engineering (7.8 CGPA) from Silicon Institute of Technology, (Biju Patnaik University of Technology), Bhubaneswar, Odisha. Batch of (2020)",
+        "BTech in Electrical & Electronics Engineering (7.8 CGPA) from Silicon Institute of Technology (Deemed University), (Biju Patnaik University of Technology), Bhubaneswar, Odisha. Batch of (2020)",
       logo: silicon,
+      highest: true,
     },
     {
       degree: "Senior Secondary Education, 12th",
@@ -134,6 +151,7 @@ I'm a Dedicated and efficient full stack developer with 3 year-experience, speci
       description:
         "Senior Secondary Education in Electrical Engineering (8.3 CGPA) from Kalinga Institute of Industrial Technology, (KIIT University), Bhubaneswar, Odisha. Batch of (2017)",
       logo: kiit,
+      highest: false,
     },
     {
       degree: "Higher Secondary Education, 10th",
@@ -143,6 +161,7 @@ I'm a Dedicated and efficient full stack developer with 3 year-experience, speci
       description:
         "Higher Secondary Education in PCMB with (6.3 CGPA) from Venkateswar English Medium School, (CISCE Board affiliated Delhi), Bhubaneswar, Odisha. Batch of (2012)",
       logo: "data:image/jpeg;base64,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",
+      highest: false,
     },
   ],
   certificate: [
@@ -170,110 +189,156 @@ I'm a Dedicated and efficient full stack developer with 3 year-experience, speci
   ],
   skills: [
     {
-      name: "React JS",
+      name: "Next JS",
       percentage: "95%",
-      icon: faReact,
+      icon: NextJsIcon,
       color: "#61DBFB",
       rating: 4,
     },
     {
-      name: "Node JS",
-      percentage: "90%",
-      icon: faNodeJs,
-      color: "#68A063",
+      name: "React JS",
+      percentage: "95%",
+      icon: ReactJsIcon,
+      color: "#61DBFB",
+      rating: 4,
+    },
+    {
+      name: "TypeScript",
+      percentage: "95%",
+      icon: TypeScriptIcon,
+      color: "#61DBFB",
+      rating: 4,
+    },
+    {
+      name: "JavaScript",
+      percentage: "95%",
+      icon: JavaScriptIcon,
+      color: "#61DBFB",
       rating: 4,
     },
     {
       name: "HTML5",
       percentage: "75%",
-      icon: faHtml5,
+      icon: HtmlIcon,
       color: "#E34C26",
       rating: 3.5,
     },
+
     {
       name: "CSS3",
       percentage: "50%",
-      icon: faCss3,
+      icon: CssIcon,
       color: "#264DE4",
       rating: 3,
     },
+
+    {
+      name: "Tailwind Css",
+      percentage: "50%",
+      icon: tailwindIcon,
+      color: "#264DE4",
+      rating: 3.5,
+    },
+    {
+      name: "Material Ui",
+      percentage: "50%",
+      icon: MaterialUiIcon,
+      color: "#264DE4",
+      rating: 3.5,
+    },
+    {
+      name: "Bootstrap",
+      percentage: "50%",
+      icon: BootStrapIcon,
+      color: "#264DE4",
+      rating: 3.5,
+    },
+    {
+      name: "Node JS",
+      percentage: "90%",
+      icon: NodeJsIcon,
+      color: "#68A063",
+      rating: 4,
+    },
+
     {
       name: "Angular",
       percentage: "75%",
-      icon: faAngular,
+      icon: AngularIcon,
       color: "#B52E31",
-      rating: 3.5,
+      rating: 3,
+    },
+    {
+      name: "Scss",
+      percentage: "75%",
+      icon: ScssIcon,
+      color: "#B52E31",
+      rating: 3,
     },
     {
       name: "Python",
       percentage: "50%",
-      icon: faPython,
+      icon: pythonIcon,
       color: "#306998",
       rating: 4,
     },
     {
       name: "MongoDb",
       percentage: "50%",
-      icon: faDatabase,
+      icon: MongoDbIcon,
       color: "#3FA037",
-      rating: 3.5,
-    },
-    {
-      name: "MySQL",
-      percentage: "50%",
-      icon: faDatabase,
-      color: "#00758F",
-      rating: 3.5,
+      rating: 3,
     },
   ],
   projects: [
+    {
+      id: 3,
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Optum_logo_2021.svg/2560px-Optum_logo_2021.svg.png",
+      link: "https://www.google.com/",
+      name: "Case Management System (United Health Group - Optum)",
+      role: "Developer",
+      status: "In Progress",
+      teamSize: 12,
+      startDate: new Date("2023-05-01"),
+      endDate: new Date(),
+      description:
+        "The UWCMS (Underwriters Case Management System) project is a sophisticated platform designed to streamline client onboarding and order fulfillment processes for underwriters. With a focus on efficiency and collaboration, the system accommodates three distinct user roles: Workflow Coordinators, Business Segment Leaders, and Underwriters. Workflow Coordinators initiate new cases, Business Segment Leaders allocate cases to underwriters, and Underwriters handle core tasks such as client assessment, quotation generation, and rate release. Key features include role-based access control, task assignment, and notifications, alongside robust reporting and analytics capabilities. By centralizing operations and providing tailored tools for each user role, UWCMs ensures smooth workflow management, optimized resource allocation, and enhanced client service delivery. ",
+      technologies: [
+        "NextJs 13",
+        "NodeJS",
+        "Java",
+        "Camunda",
+        "Rest API",
+        "MongoDB",
+        "Tailwind Css",
+      ],
+      tools: ["VS-Code", `IntelliJ IDEA`, "Postman"],
+      database: ["MongoDb"],
+      environment: ["MacOS"],
+    },
     {
       id: 1,
       img: "https://cdn.shopify.com/s/files/1/0568/7164/9450/files/MT_MyFonts_logo_transparent_RGB.png?height=628&pad_color=fff&v=1658909361&width=1200",
       link: "https://www.google.com/",
       role: "Developer",
-      status: "In Progress",
-      teamSize: 12,
+      status: "Completed",
+      teamSize: 10,
       startDate: new Date("2022-04-12"),
-      endDate: new Date(),
+      endDate: new Date("2023-04-24"),
       name: "Monotype Imaging Inc. - MyFonts.com",
       description:
         "MyFonts is a complete digital products eCommerce website and management system for customers and the product management team are being designed and built as part of this project. On the home page, customers can examine the product lists, visit the detail pages, add items to their shopping carts, and log in to the customer page. The management staff may update the website with new product information, including images, prices, and brand names.",
       technologies: [
+        "NextJs 12",
         "ReactJS",
         "NodeJS",
         "Mongoose",
         "JWT",
         "JavaScript",
-        "ExpressJS",
       ],
       tools: ["VS-Code", "MongoDB Compass", "Postman"],
       database: ["MongoDB"],
-      environment: ["Windows 10", "MacOS"],
-    },
-    {
-      id: 3,
-      img: "https://www.channelfutures.com/files/2021/06/ATT-1.png",
-      link: "https://www.google.com/",
-      name: "AT&T Inc. - Dispute Management System",
-      role: "Developer",
-      status: "Completed",
-      teamSize: 6,
-      startDate: new Date("2021-06-01"),
-      endDate: new Date("2022-04-12"),
-      description:
-        "AT&T Dispute tool is a Web Application tool for the Dispute Management System which supports the communication and exchange of information in relation to the management of payment initiation and account information service transaction-related enquiries, complaints or disputes between Accounts.",
-      technologies: [
-        "ReactJS",
-        "NodeJS",
-        "Sequelize ORM",
-        "JWT",
-        "JavaScript",
-        "ExpressJS",
-      ],
-      tools: ["VS-Code", "MSSQL Server 2016", "Postman"],
-      database: ["MSSQL Server 2016"],
-      environment: ["Windows 10", "MacOS"],
+      environment: ["MacOS"],
     },
     {
       id: 2,
@@ -297,7 +362,7 @@ I'm a Dedicated and efficient full stack developer with 3 year-experience, speci
       ],
       tools: ["VS-Code", "MySQL Workbench", "Postman"],
       database: ["MySQL Database"],
-      environment: ["Windows 10", "MacOS"],
+      environment: ["Windows 10"],
     },
   ],
 };
