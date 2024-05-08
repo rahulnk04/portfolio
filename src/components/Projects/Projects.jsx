@@ -3,6 +3,7 @@ import "./Projects.css";
 import { projectData } from "../../Data/ProjectData";
 import Project from "../Project/Project";
 import Grid from "@mui/material/Grid";
+import { myData } from "../../Data/MyData";
 
 const Projects = () => {
   return (
@@ -20,7 +21,7 @@ const Projects = () => {
           spacing={{ xs: 2, md: 3 }}
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
-          {projectData.map((item, i) => (
+          {myData.projects.map((item, i) => (
             <Grid item xs={12} sm={12} md={4} key={i}>
               <Project desc={item} />
             </Grid>

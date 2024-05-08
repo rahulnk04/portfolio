@@ -7,31 +7,43 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import Box from "@mui/material/Box";
 
+import Accordion from "@mui/material/Accordion";
+import AccordionActions from "@mui/material/AccordionActions";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Button from "@mui/material/Button";
+
 const Project = ({ desc }) => {
   return (
-    <Card>
-      <CardActionArea
-        onClick={() => {
-          alert("Comming Soon");
-        }}
-      >
-        <CardMedia
-          component="img"
-          height="140"
-          image={desc["img"]}
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div" sx={{fontSize:19}} >
+    <Card sx={{ minHeight: 250 }}>
+      <CardMedia
+        component="img"
+        height="140"
+        image={desc["img"]}
+        alt="green iguana"
+      />
+      <Accordion elevation={0}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{ mt: 2 }}>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{ fontSize: 19 }}
+          >
             {desc["name"]}
           </Typography>
-          <Box sx={{minHeight:"160px"}}>
-            <Typography variant="body2" color="text.secondary" sx={{fontSize:13}}>
-              {desc["description"]}
-            </Typography>
-          </Box>
-        </CardContent>
-      </CardActionArea>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{ fontSize: 13 }}
+          >
+            {desc["description"]}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
     </Card>
   );
 };
