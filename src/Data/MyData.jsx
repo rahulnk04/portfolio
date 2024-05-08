@@ -139,12 +139,12 @@ export const myData = {
       startDate: new Date("2017-05-01"),
       endDate: new Date("2021-06-12"),
       description:
-        "BTech in Electrical & Electronics Engineering (7.8 CGPA) from Silicon Institute of Technology (Deemed University), (Biju Patnaik University of Technology), Bhubaneswar, Odisha. Batch of (2020)",
+        "BTech in Electrical & Electronics Engineering (7.8 CGPA) from Silicon Institute of Technology Bhubaneswar, Odisha. Batch of (2020)",
       logo: silicon,
       highest: true,
     },
     {
-      degree: "Senior Secondary Education, 12th",
+      degree: "Senior Secondary Education",
       institution: "Kalinga Institute of Industrial Technology",
       startDate: new Date("2014-05-01"),
       endDate: new Date("2017-05-01"),
@@ -154,7 +154,7 @@ export const myData = {
       highest: false,
     },
     {
-      degree: "Higher Secondary Education, 10th",
+      degree: "Higher Secondary Education",
       institution: "Venkateswar English Medium School",
       startDate: new Date("2011-04-01"),
       endDate: new Date("2012-05-01"),
