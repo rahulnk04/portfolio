@@ -1,6 +1,5 @@
 import React from "react";
 import "./Projects.css";
-import { projectData } from "../../Data/ProjectData";
 import Project from "../Project/Project";
 import Grid from "@mui/material/Grid";
 import { myData } from "../../Data/MyData";

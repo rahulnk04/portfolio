@@ -1,6 +1,5 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 
@@ -20,7 +19,6 @@ const TechSkills = ({ skills, printTech }) => {
             <Box className={`media service-card col-lg-4 col-sm-4`} key={i}>
               <Box className="service-icon">
                 <img src={skill.icon} alt={skill.name} width={40} height={40} />
-        
               </Box>
               <Box className="media-body">
                 <Typography className="service-title">{skill.name}</Typography>
@@ -41,7 +39,7 @@ const TechSkills = ({ skills, printTech }) => {
           {skills.map((skill, i) => (
             <Box className={`media service-card col-4`} key={i}>
               <Box className="service-icon">
-              <img src={skill.icon} alt={skill.name} width={40} height={40} />
+                <img src={skill.icon} alt={skill.name} width={40} height={40} />
               </Box>
               <Box className="media-body">
                 <Typography className="service-title">{skill.name}</Typography>

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.df68596a.css",
-    "main.js": "./static/js/main.ce545ab8.js",
+    "main.css": "./static/css/main.89e89374.css",
+    "main.js": "./static/js/main.e543a0e9.js",
     "static/media/DXC_COL_AWARD.pdf": "./static/media/DXC_COL_AWARD.14ae8379bd3f079c5950.pdf",
     "static/media/oracle-eCertificate.pdf": "./static/media/oracle-eCertificate.1e0ad5a50d2c0e7ee3d9.pdf",
     "static/media/tailwind.png": "./static/media/tailwind.f0f26047a8933b822dae.png",
@@ -29,11 +29,11 @@
     "static/media/slick.woff": "./static/media/slick.295183786cd8a1389865.woff",
     "index.html": "./index.html",
     "static/media/mongodb.svg": "./static/media/mongodb.bfa6cdd80f4a99232cadb39ebbb976d2.svg",
-    "main.df68596a.css.map": "./static/css/main.df68596a.css.map",
-    "main.ce545ab8.js.map": "./static/js/main.ce545ab8.js.map"
+    "main.89e89374.css.map": "./static/css/main.89e89374.css.map",
+    "main.e543a0e9.js.map": "./static/js/main.e543a0e9.js.map"
   },
   "entrypoints": [
-    "static/css/main.df68596a.css",
-    "static/js/main.ce545ab8.js"
+    "static/css/main.89e89374.css",
+    "static/js/main.e543a0e9.js"
   ]
 }
