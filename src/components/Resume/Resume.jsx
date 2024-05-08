@@ -57,7 +57,7 @@ const Resume = () => {
         month: "2-digit",
         year: "numeric",
       })
-      .replaceAll("/", "_")}_${myData.company.replaceAll(" ", "_")}`,
+      .replaceAll("/", "_")}`,
   });
   return (
     <Fragment>
