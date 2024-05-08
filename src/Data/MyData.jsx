@@ -193,7 +193,7 @@ export const myData = {
       percentage: "95%",
       icon: NextJsIcon,
       color: "#61DBFB",
-      rating: 4,
+      rating: 4.5,
     },
     {
       name: "React JS",
