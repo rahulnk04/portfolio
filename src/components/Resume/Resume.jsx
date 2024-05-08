@@ -46,6 +46,11 @@ const Resume = () => {
   };
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
+    pageStyle: `
+    @page {
+      size: landscape;
+    }
+  `,
     documentTitle: `Rahul_Ranjan_Nayak_Resume_${new Date()
       .toLocaleDateString("en-US", {
         day: "2-digit",

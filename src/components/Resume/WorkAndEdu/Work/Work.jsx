@@ -58,7 +58,7 @@ const Work = ({ experience }) => {
                 <img
                   src={exp.logo}
                   alt={exp.company}
-                  style={{ height: "50px" }}
+                  style={{ height: "50px", width: 80 }}
                 />
               </Box>
             </Box>
