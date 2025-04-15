@@ -37,9 +37,10 @@ const MyProjects = ({ projects, printTech }) => {
                 <img width={"100"} src={pro.img} alt={pro.name} />
               </Box>
             </Box>
-            <Typography className="time-line-item-content">
-              {pro.description}
-            </Typography>
+            <Typography
+              className="time-line-item-content"
+              dangerouslySetInnerHTML={{ __html: pro["description"] }}
+            ></Typography>
             <Stack
               direction={{
                 xs: !printTech ? "row" : "column",

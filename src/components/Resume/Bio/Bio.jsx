@@ -19,8 +19,10 @@ const Bio = ({ bio, bioKeyPoints }) => {
           color: "#000",
           fontSize: "16px",
         }}
+        dangerouslySetInnerHTML={{ __html: bio }}
       >
-        {bio}
+    
+        
       </p>
       <ul style={{}}>
         {bioKeyPoints.map((biokey, i) => (

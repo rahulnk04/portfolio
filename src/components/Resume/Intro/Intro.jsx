@@ -46,7 +46,7 @@ const Intro = ({ introData, certificate }) => {
           <br />
 
           <Typography style={{ fontSize: 13 }} color="text.secondary">
-            {dateDifference(introData.companyStartDate, new Date())}
+            {dateDifference(introData.companyStartDate)}
           </Typography>
         </Box>
         <br />

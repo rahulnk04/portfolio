@@ -27,6 +27,12 @@ import {
   tailwindIcon,
 } from "../images/icons/Icons";
 
+const calculateCurrentExperienceInYears = () => {
+  const st = new Date("2020-07-02");
+  const today = new Date();
+  return today.getFullYear() - st.getFullYear();
+};
+
 export const myData = {
   avatar: Me,
   name: "Rahul Ranjan Nayak",
@@ -37,7 +43,7 @@ export const myData = {
   dateOfBirth: new Date("1996-04-12"),
   phone: "+91 7205326146",
   email: "rahulnk04@gmail.com",
-  noticePeriod: "90 days",
+  noticePeriod: "60 days",
   servingNotice: false,
   lastWorkingDay: new Date("2022-04-30"),
   website: {
@@ -78,26 +84,27 @@ export const myData = {
     { name: "Odia", profeciency: "Native", rate: 4.5 },
   ],
   intrests: ["Cricket", "Watching TV", "Collecting Pens"],
-  bio: `My name is Rahul Ranjan Nayak, and I work as an Associate Technology Level 2 at Publicis Sapient's Bangalore office. In April 2022, I began working at Sapient as a Next.js Developer. I also hold a Bachelor of Technology (BTech) in Electrical and Electronics Engineering from Bhubaneswar's Silicon Institute of Technology.
-  I'm a dedicated and efficient full-stack developer with 3 years of experience, specializing in cutting-edge engineering technologies such as Next.js, React.js, Node.js, Express.js, JavaScript, HTML5, and CSS3. As a Next.js Developer, I excel in building powerful and efficient React applications with server-side rendering and easy API routes integration.`,
+  bio: `Hi, I'm Rahul Ranjan Nayak, a passionate full-stack developer based out of Bangalore, currently thriving as an Associate Technology Level 2 at Publicis Sapient.\n<br/>
+  I kicked off my journey with Sapient in April 2022 as a Next.js Developer, and since then, there's been no looking back.\n<br/>
+  With ${calculateCurrentExperienceInYears()} years of experience, I specialize in modern stacks like Next.js, React.js, Node.js, Express.js, JavaScript, HTML5, and CSS3.\n<br/>
+  I love crafting performant, scalable applications with elegant code and clean API integrations.`,
   bioKeyPoints: [
-    `Proficient in Next.js for building powerful and efficient React applications with server-side rendering and easy API routes integration. Capable of creating dynamic web pages with pre-rendering, optimizing performance, and enhancing SEO.`,
-    `Skilled in using HTML5 and CSS3 to define the structure of web pages and enhance the layout and appearance.`,
-    `Strong understanding of JavaScript, including all string, array, and object built-in methods (e.g., forEach, filter, map), closures, and the 'this' keyword.`,
-    "Experienced in using ES6 standard properties to implement major functions and behaviors of web pages.",
-    `Designed front-end frameworks with React.js, utilizing both class and functional components, with expertise in component properties, states, and props.`,
-    `Proficient in using React Hooks (State Hook, Effect Hook, etc.) to manage state and lifecycle methods within functional components.`,
-    `Leveraged React Axios to fetch Web APIs, transferring data from the backend and updating states in the Redux store.`,
-    `Utilized React-Router for managing different paths and locations of React components.`,
-    `Utilized NextJs page routing for managing different paths and locations of NextJs pages.`,
-    `Hands-on experience with React UI libraries such as Material UI, Tailwind Css, and Bootstrap, facilitating efficient development with high-quality, responsive components.`,
-    `Skilled in developing server-side applications using Node.js and Express.js, with the ability to manage routes and redirect users.`,
-    `Skilled in front-end development tools such as Babel, Webpack, and NPM.`,
-    `Experience with JavaScript testing frameworks such as Jest, Mocha, and Chai.`,
-    `Experience with VCS Git.`,
-    `Experience with GraphQl Api's integration.`,
-    `Proficient in project management methodologies like Agile, Scrum, and tools like Jira, adept at troubleshooting various project issues.`,
-    `Hands-on experience in developing on multiple operating systems, including Ubuntu, MacOS, and Windows.`,
+    "🚀 Next.js expert with SSR, dynamic routing, and API integration",
+    "🎨 Clean, responsive UI development with HTML5 & CSS3",
+    "🧠 Strong in JavaScript — closures, 'this', and array methods",
+    "🛠️ Proficient in ES6+ features for modern, scalable code",
+    "⚛️ Built apps with React.js (class & functional components)",
+    "🪝 Used React Hooks like useState & useEffect, useContext effectively",
+    "🔗 Data fetching and state management with Axios, Fetch, Context API, GraphQl, Apollo Client & Redux",
+    "🧭 Routing with React Router & Next.js page navigation",
+    "💅 UI libraries: Material UI, Tailwind CSS, Bootstrap",
+    "🧩 Developed RESTful APIs using Node.js and Express.js",
+    "🛠️ Tools: Webpack, Babel, and NPM for build optimization",
+    "✅ Tested with Jest, Mocha, and Chai",
+    "🔄 Git for version control and team collaboration",
+    "🧬 Integrated GraphQL APIs for efficient data handling",
+    "📈 Agile & Scrum experience using Jira",
+    "💻 Cross-platform dev: Ubuntu, macOS, and Windows",
   ],
 
   experience: [
@@ -302,7 +309,7 @@ export const myData = {
       startDate: new Date("2023-05-01"),
       endDate: new Date(),
       description:
-        "The UWCMS (Underwriters Case Management System) project is a sophisticated platform designed to streamline client onboarding and order fulfillment processes for underwriters. With a focus on efficiency and collaboration, the system accommodates three distinct user roles: Workflow Coordinators, Business Segment Leaders, and Underwriters. Workflow Coordinators initiate new cases, Business Segment Leaders allocate cases to underwriters, and Underwriters handle core tasks such as client assessment, quotation generation, and rate release. Key features include role-based access control, task assignment, and notifications, alongside robust reporting and analytics capabilities. By centralizing operations and providing tailored tools for each user role, UWCMs ensures smooth workflow management, optimized resource allocation, and enhanced client service delivery. ",
+        "The <b> **Underwriters Case Management System (UWCMS)** </b>is an advanced platform designed to simplify and optimize the client onboarding and order fulfillment processes for underwriters. It brings together Workflow Coordinators, Business Segment Leaders, and Underwriters in a collaborative ecosystem. Coordinators kick-start the process by initiating new cases, segment leaders assign cases, and underwriters manage critical tasks such as client evaluations, generating quotes, and rate releases. Key features include tailored dashboards, role-based access controls, real-time task notifications, and advanced reporting capabilities. UWCMS ensures a seamless workflow, efficient resource allocation, and enhanced client service by centralizing operations and offering the right tools to each role.",
       technologies: [
         "NextJs 13",
         "NodeJS",
@@ -327,7 +334,7 @@ export const myData = {
       endDate: new Date("2023-04-24"),
       name: "Monotype Imaging Inc. - MyFonts.com",
       description:
-        "MyFonts is a complete digital products eCommerce website and management system for customers and the product management team are being designed and built as part of this project. On the home page, customers can examine the product lists, visit the detail pages, add items to their shopping carts, and log in to the customer page. The management staff may update the website with new product information, including images, prices, and brand names.",
+        "**MyFonts.com** is a dynamic, user-friendly e-commerce platform designed for digital fonts, offering both a consumer-facing marketplace and a robust management system for administrators. Customers browse a rich catalog of fonts, exploring detailed product pages, adding selections to their shopping cart, and managing their accounts. On the admin side, the team efficiently manages product details, including images, prices, and brand names. The platform’s intuitive interface provides a smooth shopping experience, while the back-end ensures the effortless integration of new products and up-to-date information. A seamless fusion of design and functionality, **MyFonts** offers an impeccable digital font shopping experience.",
       technologies: [
         "NextJs 12",
         "ReactJS",
@@ -342,7 +349,7 @@ export const myData = {
     },
     {
       id: 2,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYiX5tSIGYn8OX6mWPmJ20iWkU0xHAp_Us5GnLxgcZd3U7Rg_MS1x-ykcMPXaDxbUWVw8&usqp=CAU",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmRcOYkIkHjN2nmnIaxPMhAixMdkOFg1RaYw&s",
       link: "https://www.google.com/",
       name: "Telenor Group - Storage Allocation",
       role: "Developer",
@@ -351,7 +358,7 @@ export const myData = {
       startDate: new Date("2020-11-01"),
       endDate: new Date("2021-05-01"),
       description:
-        "SARA is an end-to-end Automation Software for Storage Allocation and Expansion which can be used for New Storage Request and Expanding Existing Storage (LUN) Size. A LUN could reference an entire RAID set, a single hard disk or partition, or multiple disks or partitions. It provides support for different type of Storage EMC-Unity, 3PAR. Data transfer (Import, export) for data processing with specified formats.",
+        "**SARA** (Storage Allocation and Expansion) is an all-in-one automation tool designed to manage and expand storage seamlessly. Whether it’s for a new storage request or expanding existing storage (LUN), SARA handles it all, simplifying complex operations. Supporting various storage types like **EMC-Unity** and **3PAR**, SARA automates the process of data transfer, import/export, and format processing, offering a hassle-free experience for IT administrators. With SARA’s end-to-end solution, users can request new storage, manage storage expansion, and transfer data with minimal effort, ensuring smooth operations across all storage systems.",
       technologies: [
         "ReactJS",
         "NodeJS",

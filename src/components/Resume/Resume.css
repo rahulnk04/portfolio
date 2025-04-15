@@ -126,10 +126,11 @@ aside {
   margin-bottom: 3px;
 }
 .mainTag .time-line-item-content {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 300;
   line-height: 1.6;
   margin-bottom: 0;
+  color:#000000 !important;
 }
 .mainTag .services-section {
   margin-bottom: 34px;

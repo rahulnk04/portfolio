@@ -32,8 +32,8 @@ const Project = ({ desc }) => {
             variant="body2"
             color="text.secondary"
             sx={{ fontSize: 13 }}
+            dangerouslySetInnerHTML={{ __html: desc["description"] }}
           >
-            {desc["description"]}
           </Typography>
         </AccordionDetails>
       </Accordion>
