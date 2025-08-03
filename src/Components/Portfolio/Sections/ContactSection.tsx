@@ -48,7 +48,7 @@ const hoverVariants = {
 };
 
 const ContactSection = () => {
-  const { address, phone, email, social } = Data;
+  const { address, phone, email, social, name } = Data;
 
   const navigate = useNavigate(); // Use useNavigate for programmatic navigation
 
@@ -461,7 +461,7 @@ const ContactSection = () => {
                       fullWidth
                       variant="outlined"
                       size="small"
-                      placeholder="Rahul Ranjan Nayak"
+                      placeholder={name}
                       InputProps={{
                         sx: {
                           borderRadius: 1.5,
@@ -522,7 +522,9 @@ const ContactSection = () => {
                       fullWidth
                       variant="outlined"
                       size="small"
-                      placeholder="Hi Rahul, let’s create something amazing..."
+                      placeholder={`Hi ${
+                        name.split(" ")[0]
+                      }, let’s create something amazing...`}
                       multiline
                       rows={6}
                       InputProps={{

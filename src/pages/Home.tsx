@@ -1,10 +1,11 @@
 import React from "react";
 import { Box } from "@mui/material";
 import PortfolioWrapper from "src/components/portfolio/PortfolioWrapper";
-
-
+import BrowserTitle from "src/components/browserTitle/BrowserTitle";
+import Data from "src/data/Data";
 
 const Home = () => {
+  const { name } = Data;
   return (
     <Box
       sx={{
@@ -13,6 +14,7 @@ const Home = () => {
         fontFamily: "'Poppins', sans-serif",
       }}
     >
+      <BrowserTitle title={name + " Portfolio"} />
       <PortfolioWrapper />
     </Box>
   );

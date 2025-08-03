@@ -15,6 +15,7 @@ import HeaderSection from "src/components/portfolio/sections/HeaderSection";
 import Data from "src/data/Data";
 import FooterSection from "src/components/portfolio/sections/FooterSection";
 import Chip from "@mui/material/Chip";
+import BrowserTitle from "src/components/browserTitle/BrowserTitle";
 
 const {
   name,
@@ -88,7 +89,11 @@ const Resume = () => {
         heightLeft -= pageHeight;
       }
 
-      pdf.save("Rahul_Ranjan_Nayak_Resume.pdf");
+      const today = new Date();
+      const fileName = `${name}_${today.getDate()}_${
+        today.getMonth() + 1
+      }_${today.getFullYear()}_Resume.pdf`;
+      pdf.save(fileName);
     } catch (error) {
       console.error("PDF generation failed:", error);
       alert("Failed to generate PDF. Please try again.");
@@ -107,6 +112,7 @@ const Resume = () => {
         py: { xs: 4, md: 8 },
       }}
     >
+      <BrowserTitle title={name + " Resume"} />
       <HeaderSection />
       <Container>
         <Button

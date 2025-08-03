@@ -385,7 +385,7 @@ const Data: ResumeData = {
       },
       {
         name: "Material UI",
-        percentage: "50%",
+        percentage: "80%",
         icon: MaterialUiIcon,
         color: "#0081CB",
         rating: 3,
