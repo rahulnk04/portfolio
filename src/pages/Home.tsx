@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import PortfolioWrapper from "@/Components/Portfolio/PortfolioWrapper";
 
-const Portfolio: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <Box
       sx={{
@@ -16,4 +16,4 @@ const Portfolio: React.FC = () => {
   );
 };
 
-export default Portfolio;
+export default Home;

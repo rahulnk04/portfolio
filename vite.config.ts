@@ -1,16 +1,18 @@
 import react from "@vitejs/plugin-react";
-
 import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
+
 export default defineConfig({
-  base: "./",
+  base: "./", // correct, not "."
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       "@": "/src",
     },
   },
-   build: {
+  build: {
+     sourcemap: "inline", // embeds source map into JS// enable source maps to trace minified errors
+    minify: false,            // temporarily disable minification to surface the real symbol and stack
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -22,10 +24,6 @@ export default defineConfig({
         },
       },
     },
-    chunkSizeWarningLimit: 1000, // optional: raise warning threshold to 1MB if you’ve audited size
+    chunkSizeWarningLimit: 1000,
   },
 });
-
-
-
-

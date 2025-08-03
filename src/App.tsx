@@ -1,8 +1,9 @@
 import { Fragment } from "react";
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
-import Home from "@/pages/Home";
-import Resume from "@/pages/Resume";
+
 import "@/App.css";
+import Resume from "./pages/Resume";
+import Home from "./pages/Home";
 
 function App() {
   return (
