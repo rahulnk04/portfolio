@@ -46,8 +46,6 @@ const HeaderSection = () => {
     const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
-
-  console.log("Current location:", location.pathname);
   const { social, name } = Data;
   const [open, setOpen] = React.useState(false);
   const isMd = useMediaQuery("(min-width:900px)");
@@ -65,7 +63,6 @@ const HeaderSection = () => {
         }
       });
       setActive(current || "hero");
-      console.log("Active section:", current);
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
