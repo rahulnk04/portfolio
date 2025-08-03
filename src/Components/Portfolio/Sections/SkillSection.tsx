@@ -8,9 +8,9 @@ import {
   Stack,
   Divider,
 } from "@mui/material";
-import Data, { type Skill } from "@/Data/Data";
 import { styled } from "@mui/system";
-import TextHeader from "@/Components/TextHeader";
+import Data, { Skill } from "src/data/Data";
+import TextHeader from "src/components/TextHeader";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 30 },

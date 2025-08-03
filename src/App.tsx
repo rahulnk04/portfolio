@@ -1,11 +1,11 @@
 import { Fragment } from "react";
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import "@/App.css";
-import Resume from "./pages/Resume";
+import "src/App.css";
 import Home from "./pages/Home";
+import Resume from "./pages/Resume";
 
-function App() {
+const App = () => {
   return (
     <Fragment>
       <HashRouter>
@@ -17,6 +17,6 @@ function App() {
       </HashRouter>
     </Fragment>
   );
-}
+};
 
 export default App;

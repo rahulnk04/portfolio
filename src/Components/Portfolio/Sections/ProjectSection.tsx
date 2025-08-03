@@ -1,3 +1,5 @@
+import TextHeader from "src/components/TextHeader";
+import Data, { portfolioConfig, Project } from "src/data/Data";
 import {
   Box,
   Typography,
@@ -10,14 +12,9 @@ import {
   Stack,
 } from "@mui/material";
 import { motion } from "motion/react";
-import resumeData from "@/Data/Data";
-import type { Project } from "@/Data/Data";
-import { portfolioConfig } from "@/Data/Data";
-import TextHeader from "@/Components/TextHeader";
 
 const ProjectSection = () => {
-  const { keyProjects } = resumeData;
-  console.log("Key Projects:", keyProjects);
+  const { keyProjects } = Data;
   const enhancedProjects = keyProjects;
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -55,13 +52,17 @@ const ProjectSection = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="py-24 px-4 relative"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1920&q=80')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
+          paddingTop: "6rem", // py-24 = 96px
+          paddingBottom: "6rem",
+          paddingLeft: "1rem", // px-4 = 16px
+          paddingRight: "1rem",
+          position: "relative", // relative
         }}
       >
         <TextHeader title="Projects" />

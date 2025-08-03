@@ -16,10 +16,10 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import Data, { portfolioConfig } from "@/Data/Data";
 import { createElement } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
+import Data, { portfolioConfig } from "src/data/Data";
 
 const NAV_SECTIONS = [
   { label: "Home", target: "hero" },

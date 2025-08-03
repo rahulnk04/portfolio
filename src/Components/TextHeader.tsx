@@ -1,5 +1,6 @@
-import { portfolioConfig } from "@/Data/Data";
+
 import { Typography } from "@mui/material";
+import { portfolioConfig } from "src/data/Data";
 
 type Props = {
   title?: string;

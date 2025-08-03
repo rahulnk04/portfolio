@@ -1,8 +1,10 @@
 import React from "react";
 import { Box } from "@mui/material";
-import PortfolioWrapper from "@/Components/Portfolio/PortfolioWrapper";
+import PortfolioWrapper from "src/components/portfolio/PortfolioWrapper";
 
-const Home: React.FC = () => {
+
+
+const Home = () => {
   return (
     <Box
       sx={{

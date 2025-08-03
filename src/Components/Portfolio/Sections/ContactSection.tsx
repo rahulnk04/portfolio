@@ -16,10 +16,9 @@ import { motion } from "framer-motion";
 import LocationOn from "@mui/icons-material/LocationOnOutlined";
 import Phone from "@mui/icons-material/Phone";
 import Email from "@mui/icons-material/Email";
-import resumeData from "@/Data/Data";
-import { portfolioConfig } from "@/Data/Data";
 import { createElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Data, { portfolioConfig } from "src/data/Data";
 
 const sectionVariants = {
   hidden: { opacity: 0 },
@@ -49,7 +48,7 @@ const hoverVariants = {
 };
 
 const ContactSection = () => {
-  const { address, phone, email, social } = resumeData;
+  const { address, phone, email, social } = Data;
 
   const navigate = useNavigate(); // Use useNavigate for programmatic navigation
 
@@ -196,7 +195,7 @@ const ContactSection = () => {
           alignItems="stretch"
         >
           {/* Info + Social + Resume */}
-          <Grid size={{ xs: 12, md: 12, lg:5 }}>
+          <Grid size={{ xs: 12, md: 12, lg: 5 }}>
             <motion.div variants={cardVariants}>
               <Card
                 elevation={0}
@@ -410,7 +409,7 @@ const ContactSection = () => {
           </Grid>
 
           {/* Contact form */}
-          <Grid size={{ xs: 12, md: 12, lg:5 }}>
+          <Grid size={{ xs: 12, md: 12, lg: 5 }}>
             <motion.div variants={cardVariants}>
               <Card
                 elevation={0}

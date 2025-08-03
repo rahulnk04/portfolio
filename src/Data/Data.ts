@@ -1,23 +1,23 @@
-import Me from "@/images/Me.png";
-import silicon from "@/images/silicon.png";
-import sapient from "@/images/sapient.jpeg";
-import kiit from "@/images/kiit.jpeg";
-import Optum from "@/images/Optum.svg";
-import MyFonts from "@/images/MyFonts.svg";
-import Telenor from "@/images/Telenor.png";
+import Me from "src/images/Me.png";
+import silicon from "src/images/silicon.png";
+import sapient from "src/images/sapient.jpeg";
+import kiit from "src/images/kiit.jpeg";
+import Optum from "src/images/Optum.svg";
+import MyFonts from "src/images/MyFonts.svg";
+import Telenor from "src/images/Telenor.png";
 // import champ from "../../pdfs/Champ.pdf";
 // import COLLABORATING from "../../pdfs/DXC_COL_AWARD.pdf";
 // import Oracle from "../../pdfs/oracle-eCertificate.pdf";
 
-import CssIcon from "@/images/icons/css.png";
-import HtmlIcon from "@/images/icons/html.webp";
-import JavaScriptIcon from "@/images/icons/javascript.png";
-import MaterialUiIcon from "@/images/icons/mui.png";
-import TypeScriptIcon from "@/images/icons/typescript.png";
-import ReactJsIcon from "@/images/icons/reactjs.png";
-import NodeJsIcon from "@/images/icons/nodejs.png";
-import tailwindIcon from "@/images/icons/tailwind.png";
-import NextJsIcon from "@/images/icons/nextjs.png";
+import CssIcon from "src/images/icons/css.png";
+import HtmlIcon from "src/images/icons/html.webp";
+import JavaScriptIcon from "src/images/icons/javascript.png";
+import MaterialUiIcon from "src/images/icons/mui.png";
+import TypeScriptIcon from "src/images/icons/typescript.png";
+import ReactJsIcon from "src/images/icons/reactjs.png";
+import NodeJsIcon from "src/images/icons/nodejs.png";
+import tailwindIcon from "src/images/icons/tailwind.png";
+import NextJsIcon from "src/images/icons/nextjs.png";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -432,35 +432,35 @@ const Data: ResumeData = {
       {
         name: "Git",
         percentage: "80%",
-        icon: GitHubIcon,
+        icon: ReactJsIcon,
         color: "#211F1F",
         rating: 3.5,
       },
       {
         name: "VS Code",
         percentage: "85%",
-        icon: GitHubIcon,
+        icon: ReactJsIcon,
         color: "#007ACC",
         rating: 3.5,
       },
       {
         name: "Eclipse",
         percentage: "70%",
-        icon: GitHubIcon,
+        icon: ReactJsIcon,
         color: "#2C2255",
         rating: 3,
       },
       {
         name: "Jest",
         percentage: "70%",
-        icon: GitHubIcon,
+        icon: ReactJsIcon,
         color: "#C21325",
         rating: 3,
       },
       {
         name: "Postman",
         percentage: "75%",
-        icon: GitHubIcon,
+        icon: ReactJsIcon,
         color: "#FF6C37",
         rating: 3,
       },
@@ -469,21 +469,21 @@ const Data: ResumeData = {
       {
         name: "Agile",
         percentage: "80%",
-        icon: GitHubIcon,
+        icon: ReactJsIcon,
         color: "#000000",
         rating: 3.5,
       },
       {
         name: "Scrum",
         percentage: "80%",
-        icon: GitHubIcon,
+        icon: ReactJsIcon,
         color: "#000000",
         rating: 3.5,
       },
       {
         name: "CI/CD",
         percentage: "75%",
-        icon: GitHubIcon,
+        icon: ReactJsIcon,
         color: "#000000",
         rating: 3,
       },
@@ -492,21 +492,21 @@ const Data: ResumeData = {
       {
         name: "Mentorship",
         percentage: "85%",
-        icon: GitHubIcon,
+        icon: ReactJsIcon,
         color: "#000000",
         rating: 3.5,
       },
       {
         name: "Teamwork",
         percentage: "80%",
-        icon: GitHubIcon,
+        icon: ReactJsIcon,
         color: "#000000",
         rating: 3.5,
       },
       {
         name: "Problem-Solving",
         percentage: "85%",
-        icon: GitHubIcon,
+        icon: ReactJsIcon,
         color: "#000000",
         rating: 3.5,
       },

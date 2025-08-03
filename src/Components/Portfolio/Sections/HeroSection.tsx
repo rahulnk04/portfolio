@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Box, Typography, Button, Avatar, Link } from "@mui/material";
 import { motion, useTransform, useScroll } from "motion/react";
 import Lenis from "@studio-freight/lenis";
-import resumeData from "@/Data/Data";
-import type { SocialLink } from "@/Data/Data";
+import Data, { SocialLink } from "src/data/Data";
 
 const HeroSection = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -32,7 +31,7 @@ const HeroSection = () => {
     };
   }, []);
 
-  const { name, jobTitle, social, profilePicture } = resumeData;
+  const { name, jobTitle, social, profilePicture } = Data;
 
   const childVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -54,29 +53,56 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
-        className="min-h-screen relative overflow-hidden flex items-center justify-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1920&q=80')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
+          minHeight: "100vh", // min-h-screen
+          position: "relative", // relative
+          overflow: "hidden", // overflow-hidden
+          display: "flex", // flex
+          alignItems: "center", // items-center
+          justifyContent: "center", // justify-center
         }}
         id="hero"
       >
         <motion.div
-          style={{ y: heroParallax }}
-          className="absolute inset-0 z-0"
+          style={{
+            y: heroParallax,
+            position: "absolute", // absolute
+            top: 0, // inset-0
+            right: 0,
+            bottom: 0,
+            left: 0,
+            zIndex: 0, // z-0
+          }}
         />
         <motion.div
-          className="absolute w-40 h-40 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-20 pointer-events-none"
+          style={{
+            position: "absolute", // absolute
+            width: "10rem", // w-40 = 160px
+            height: "10rem", // h-40 = 160px
+            background: "linear-gradient(to right, #60a5fa, #a855f7)", // from-blue-400 to-purple-500
+            borderRadius: "9999px", // rounded-full
+            opacity: 0.2, // opacity-20
+            pointerEvents: "none", // pointer-events-none
+          }}
           animate={{
             x: cursorPosition.x - 80,
             y: cursorPosition.y - 80,
             transition: { type: "spring", stiffness: 100, damping: 20 },
           }}
         />
-        <Box className="text-center px-4 z-10">
+        <Box
+          sx={{
+            textAlign: "center", // text-center
+            paddingLeft: "1rem", // px-4 = 16px
+            paddingRight: "1rem",
+            zIndex: 10, // z-10
+          }}
+        >
           <motion.div variants={childVariants}>
             <Avatar
               src={profilePicture}
@@ -114,7 +140,12 @@ const HeroSection = () => {
           </motion.div>
           <motion.div
             variants={childVariants}
-            className="flex justify-center gap-4 mt-6"
+            style={{
+              display: "flex", // flex
+              justifyContent: "center", // justify-center
+              gap: "1rem", // gap-4 = 16px
+              marginTop: "1.5rem", // mt-6 = 24px
+            }}
           >
             {social.map((link: SocialLink, index: number) => (
               <Link

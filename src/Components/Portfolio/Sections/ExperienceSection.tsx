@@ -1,9 +1,8 @@
 import React from "react";
 import { Box, Typography, Card, CardContent, Grid } from "@mui/material";
 import { motion, useScroll, useTransform } from "framer-motion";
-import resumeData from "@/Data/Data";
-import type { Experience } from "@/Data/Data";
-import TextHeader from "@/Components/TextHeader";
+import Data, { Experience } from "src/data/Data";
+import TextHeader from "src/components/TextHeader";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -15,7 +14,7 @@ const sectionVariants = {
 };
 
 const ExperienceSection: React.FC = () => {
-  const { professionalJourney } = resumeData;
+  const { professionalJourney } = Data;
   const { scrollY } = useScroll();
   const backgroundParallax = useTransform(scrollY, [0, 500], [0, 30]);
 
@@ -53,19 +52,29 @@ const ExperienceSection: React.FC = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="py-24 px-4 relative overflow-hidden"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1620121478247-ec786b9be2fa?auto=format&fit=crop&w=1920&q=80')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundPositionY: backgroundParallax,
+        paddingTop: "6rem", // py-24 = 96px
+        paddingBottom: "6rem",
+        paddingLeft: "1rem", // px-4 = 16px
+        paddingRight: "1rem",
+        position: "relative", // relative
+        overflow: "hidden", // overflow-hidden
       }}
     >
       {/* Animated Gradient Overlay */}
       <Box
-        className="absolute inset-0 z-0"
         sx={{
+          position: "absolute", // absolute
+          top: 0, // inset-0
+          right: 0,
+          bottom: 0,
+          left: 0,
+          zIndex: 0, // z-0
           background:
             "linear-gradient(45deg, rgba(33, 150, 243, 0.3), rgba(156, 39, 176, 0.3), rgba(255, 87, 34, 0.3))",
           backgroundSize: "200% 200%",
@@ -80,6 +89,7 @@ const ExperienceSection: React.FC = () => {
           },
         }}
       />
+
       <TextHeader title="Experience" />
 
       <Grid container justifyContent="center" sx={{ mt: 6 }}>
@@ -118,7 +128,13 @@ const ExperienceSection: React.FC = () => {
                 }}
               >
                 <CardContent sx={{ width: "100%", p: 3 }}>
-                  <Box className="flex items-center gap-4">
+                  <Box
+                    sx={{
+                      display: "flex", // flex
+                      alignItems: "center", // items-center
+                      gap: "1rem", // gap-4 = 16px
+                    }}
+                  >
                     <Box
                       component="img"
                       src={job.logo}
@@ -156,8 +172,11 @@ const ExperienceSection: React.FC = () => {
                     </Box>
                   </Box>
                   <ul
-                    className="pl-6 mt-4 space-y-3"
-                    style={{ listStyle: "none" }}
+                    style={{
+                      listStyle: "none", // from your style prop
+                      paddingLeft: "1.5rem", // pl-6 = 24px
+                      marginTop: "1rem", // mt-4 = 16px
+                    }}
                   >
                     {job.responsibilities.map((resp: string, idx: number) => (
                       <Box

@@ -59,8 +59,6 @@ const MotionWaveWrapper: React.FC<Props> = (props: Props) => {
         sx={{
           position: "relative",
           zIndex: 1,
-          //   fontSize: { xs: "2rem", md: "4rem" },
-          //   letterSpacing: 2,
           color: "#fff",
           textAlign: "center",
         }}
@@ -68,7 +66,6 @@ const MotionWaveWrapper: React.FC<Props> = (props: Props) => {
         {children}
       </Box>
 
-      {/* Animation Keyframes */}
       <style>
         {`
           @keyframes rotateAnim {

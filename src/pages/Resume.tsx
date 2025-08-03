@@ -1,4 +1,3 @@
-import Data from "@/Data/Data";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { useRef } from "react";
@@ -12,8 +11,10 @@ import {
   Container,
   Button,
 } from "@mui/material";
-import HeaderSection from "@/Components/Portfolio/Sections/HeaderSection";
-import FooterSection from "@/Components/Portfolio/Sections/FooterSection";
+import HeaderSection from "src/components/portfolio/sections/HeaderSection";
+import Data from "src/data/Data";
+import FooterSection from "src/components/portfolio/sections/FooterSection";
+import Chip from "@mui/material/Chip";
 
 const {
   name,
@@ -161,8 +162,8 @@ const Resume = () => {
                 src={profilePicture}
                 alt={name}
                 sx={{
-                  width: 100,
-                  height: 100,
+                  width: 80,
+                  height: 80,
                   mx: "auto",
                   mb: 2,
                   border: "2px solid #cccccc",
@@ -171,7 +172,7 @@ const Resume = () => {
               />
             )}
             <Typography
-              variant="h4"
+              variant="h5"
               sx={{ fontWeight: "bold", fontFamily: "Arial", color: "#000000" }}
             >
               {name}
@@ -182,7 +183,7 @@ const Resume = () => {
             >
               {jobTitle}
             </Typography>
-            <Box sx={{fontWeight:'bold', }}>{company}</Box>
+            <Box sx={{ fontWeight: "bold" }}>{company}</Box>
 
             <Box
               sx={{
@@ -263,7 +264,7 @@ const Resume = () => {
                     gap: 1,
                     bgcolor: "rgba(0,0,0,0.03)",
                     px: 1.5,
-                    py: 0.75,
+                    // py: 0.75,
                     borderRadius: 1.5,
                     border: "1px solid rgba(0,0,0,0.08)",
                   }}
@@ -298,21 +299,13 @@ const Resume = () => {
               sx={{ backgroundColor: "#ffffff", p: 3 }}
             >
               <Box sx={{ mb: 3 }}>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    color: "#000000",
-                    fontWeight: "bold",
-                    fontFamily: "Arial",
-                  }}
-                >
-                  Work Experience
-                </Typography>
-
-                <Typography variant="body2">
-                  {new Date().getFullYear() - companyStartDate.getFullYear()}{" "}
-                  years +
-                </Typography>
+                <Chip
+                  label={`Work Experience ${
+                    new Date().getFullYear() - companyStartDate.getFullYear()
+                  } years +`}
+                  variant="outlined"
+                  sx={{ m: 0.5, width: "100%" }}
+                />
               </Box>
               <Box sx={{ mb: 3 }}>
                 <Typography
@@ -333,8 +326,16 @@ const Resume = () => {
                     >
                       {category}
                     </Typography>
+
                     {skillList.map((skill, index) => (
-                      <span key={index}>{skill.name}, </span>
+                      <Chip
+                        // avatar={<Avatar alt={skill.name} src={skill.icon} />}
+                        size="small"
+                        label={skill.name}
+                        key={index}
+                        variant="outlined"
+                        sx={{ m: 0.5 }}
+                      />
                     ))}
                   </Box>
                 ))}
@@ -391,7 +392,7 @@ const Resume = () => {
                     </Typography>
                     <Typography variant="body2">{edu.institution}</Typography>
                     <Typography variant="body2" sx={{ color: "#333333" }}>
-                     Batch of {edu.endDate.getFullYear()}
+                      Batch of {edu.endDate.getFullYear()}
                     </Typography>
                     <Typography variant="body2" sx={{ color: "#333333" }}>
                       CGPA: {edu.cgpa}
@@ -423,7 +424,7 @@ const Resume = () => {
               size={{ xs: 12, md: 9 }}
               sx={{ p: 3, backgroundColor: "#ffffff" }}
             >
-              <Box sx={{ mb: 3 }}>
+              <Box sx={{ mb: 1 }}>
                 <Typography
                   variant="h6"
                   sx={{
@@ -437,7 +438,7 @@ const Resume = () => {
                 <Typography variant="body2">{careerSnapshot}</Typography>
               </Box>
 
-              <Box sx={{ mb: 3 }}>
+              <Box sx={{ mb: 2 }}>
                 <Typography
                   variant="h6"
                   sx={{
@@ -455,7 +456,7 @@ const Resume = () => {
                 ))}
               </Box>
 
-              <Box sx={{ mb: 3 }}>
+              <Box sx={{ mb: 2 }}>
                 <Typography
                   variant="h6"
                   sx={{
@@ -471,7 +472,9 @@ const Resume = () => {
                     <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
                       {job.title}
                     </Typography>
-                    <Typography variant="body2">{job.company}</Typography>
+                    <Typography variant="subtitle2" sx={{ fontWeight: 550 }}>
+                      {job.company}
+                    </Typography>
                     <Typography variant="body2" sx={{ color: "#333333" }}>
                       {job.dates}
                     </Typography>
@@ -504,7 +507,16 @@ const Resume = () => {
                       {project.description}
                     </Typography>
                     <Typography variant="body2" sx={{ color: "#333333" }}>
-                      Technologies: {project.technologies.join(", ")}
+                      <span style={{ fontWeight: "bold" }}>Technologies:</span>{" "}
+                      {project.technologies.join(", ")}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: "#333333" }}>
+                      <span style={{ fontWeight: "bold" }}>Tools:</span>{" "}
+                      {project.tools.join(", ")}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: "#333333" }}>
+                      <span style={{ fontWeight: "bold" }}>Team Size:</span>{" "}
+                      {project.teamSize}
                     </Typography>
                   </Box>
                 ))}

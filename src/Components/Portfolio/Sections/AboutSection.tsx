@@ -1,12 +1,12 @@
 import React from "react";
 import { Typography, Card, CardContent, Grid } from "@mui/material";
 import { motion } from "framer-motion";
-import resumeData from "@/Data/Data";
-import MotionWaveWrapper from "@/Components/MotionWave/MotionWaveWrapper";
-import TextHeader from "@/Components/TextHeader";
+import TextHeader from "src/components/TextHeader";
+import MotionWaveWrapper from "src/components/motionwave/MotionWaveWrapper";
+import Data from "src/data/Data";
 
 const AboutSection: React.FC = () => {
-  const { careerSnapshot, bioKeyPoints } = resumeData;
+  const { careerSnapshot, bioKeyPoints } = Data;
   // Animation for individual words in careerSnapshot
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -77,20 +77,35 @@ const AboutSection: React.FC = () => {
         </motion.div>
 
         {/* Content */}
-        <Grid container justifyContent="center" className="z-10 relative">
+        <Grid
+          container
+          justifyContent="center"
+          sx={{
+            zIndex: 10,
+            position: "relative",
+          }}
+        >
           <Grid size={{ xs: 12, md: 8 }}>
             <motion.div variants={cardVariants}>
               <Card
                 sx={{
-                  bgcolor: "rgba(255, 255, 255, 0.1)",
-                  backdropFilter: "blur(8px)",
-                  border: "1px solid rgba(255, 255, 255, 0.2)",
+                  bgcolor: "rgba(255, 255, 255, 0.1)", // glassmorphism background
                   color: "white",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.15)",
+                  borderRadius: "1rem", // rounded-2xl
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", // shadow-2xl
+                  transition: "all 0.3s ease", // transition-all duration-300
+                  backdropFilter: "blur(16px)", // backdrop-blur-lg overrides old blur(8px)
+                  border: "1px solid rgba(255, 255, 255, 0.1)", // border border-white/10
+                  "&:hover": {
+                    transform: "scale(1.015) translateY(-0.5rem)", // hover effects
+                  },
                 }}
-                className="bg-black rounded-2xl shadow-2xl transition-all duration-300 hover:scale-[1.015] hover:-translate-y-2 backdrop-blur-lg border border-white/10 "
               >
-                <CardContent className="p-6 md:p-10">
+                <CardContent
+                  sx={{
+                    p: { xs: 6, md: 10 }, // Tailwind spacing scale: p-6 → theme.spacing(6), p-10 → theme.spacing(10)
+                  }}
+                >
                   <motion.div
                     variants={{
                       hidden: { opacity: 0 },
@@ -104,7 +119,11 @@ const AboutSection: React.FC = () => {
                   >
                     <Typography
                       variant="body1"
-                      className="text-white/90 leading-relaxed text-lg"
+                      sx={{
+                        color: "rgba(255, 255, 255, 0.9)", // text-white/90
+                        lineHeight: 1.625, // leading-relaxed in Tailwind = ~1.625
+                        fontSize: "1.125rem", // text-lg = 18px
+                      }}
                     >
                       {words}
                     </Typography>
@@ -121,13 +140,25 @@ const AboutSection: React.FC = () => {
                   >
                     <Typography
                       variant="h6"
-                      className="text-white font-bold mt-8 text-xl pt-3.5"
+                      sx={{
+                        color: "white", // text-white
+                        fontWeight: "bold", // font-bold
+                        mt: "2rem", // mt-8 = 32px = 2rem
+                        fontSize: "1.25rem", // text-xl = 20px
+                        pt: "0.875rem", // pt-3.5 = 14px
+                      }}
                     >
                       Key Strengths
                     </Typography>
                   </motion.div>
 
-                  <ul className="list-disc pl-6 mt-3 space-y-2">
+                  <ul
+                    style={{
+                      listStyleType: "disc", // list-disc
+                      paddingLeft: "1.5rem", // pl-6 = 24px
+                      marginTop: "0.75rem", // mt-3 = 12px
+                    }}
+                  >
                     {bioKeyPoints.slice(0, 5).map((point, index) => (
                       <motion.div
                         key={index}
@@ -136,7 +167,12 @@ const AboutSection: React.FC = () => {
                         whileInView="visible"
                         viewport={{ once: true }}
                       >
-                        <Typography variant="body2" className="text-white/80">
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: "rgba(255, 255, 255, 0.8)",
+                          }}
+                        >
                           {point}
                         </Typography>
                       </motion.div>
