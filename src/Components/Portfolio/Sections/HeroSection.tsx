@@ -1,0 +1,165 @@
+import { useEffect, useState } from "react";
+import { Box, Typography, Button, Avatar, Link } from "@mui/material";
+import { motion, useTransform, useScroll } from "motion/react";
+import Lenis from "@studio-freight/lenis";
+import resumeData from "@/Data/Data";
+import type { SocialLink } from "@/Data/Data";
+
+const HeroSection = () => {
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const { scrollY } = useScroll();
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+
+    const handleMouseMove = (e: MouseEvent) => {
+      setCursorPosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      lenis.destroy();
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  const { name, jobTitle, social, profilePicture } = resumeData;
+
+  const childVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  const heroParallax = useTransform(scrollY, [0, 500], [0, 100]);
+
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const el = document.getElementById("contact");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+  return (
+    <div>
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        className="min-h-screen relative overflow-hidden flex items-center justify-center"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1920&q=80')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+        id="hero"
+      >
+        <motion.div
+          style={{ y: heroParallax }}
+          className="absolute inset-0 z-0"
+        />
+        <motion.div
+          className="absolute w-40 h-40 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-20 pointer-events-none"
+          animate={{
+            x: cursorPosition.x - 80,
+            y: cursorPosition.y - 80,
+            transition: { type: "spring", stiffness: 100, damping: 20 },
+          }}
+        />
+        <Box className="text-center px-4 z-10">
+          <motion.div variants={childVariants}>
+            <Avatar
+              src={profilePicture}
+              alt={name}
+              sx={{
+                width: 180,
+                height: 180,
+                mx: "auto",
+                mb: 3,
+                border: "3px solid rgba(255,255,255,0.1)",
+                boxShadow: "0 0 10px rgba(74,144,226,0.3)",
+              }}
+            />
+          </motion.div>
+          <motion.div variants={childVariants}>
+            <Typography
+              variant="h2"
+              fontWeight="bold"
+              color="white"
+              gutterBottom
+              sx={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}
+            >
+              {name}
+            </Typography>
+          </motion.div>
+          <motion.div variants={childVariants}>
+            <Typography
+              variant="h5"
+              color="white"
+              gutterBottom
+              sx={{ opacity: 0.9 }}
+            >
+              {jobTitle}
+            </Typography>
+          </motion.div>
+          <motion.div
+            variants={childVariants}
+            className="flex justify-center gap-4 mt-6"
+          >
+            {social.map((link: SocialLink, index: number) => (
+              <Link
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener"
+                aria-label={link.name}
+              >
+                {/* {link.icon} */}
+              </Link>
+            ))}
+          </motion.div>
+          <motion.div variants={childVariants}>
+            <Button
+              variant="contained"
+              href="#projects"
+              sx={{
+                mt: 6,
+                px: 4,
+                py: 1.5,
+                // bgcolor: portfolioConfig.theme.accent,
+                // background: `linear-gradient(45deg, ${portfolioConfig.theme.accent}, #357ABD)`,
+                "&:hover": {
+                  transform: "scale(1.2)",
+                  boxShadow: "0 0 10px rgba(74,144,226,0.3)",
+                },
+                fontWeight: 600,
+                borderRadius: 8,
+                // boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+                border: "3px solid rgba(255,255,255,0.1)",
+                boxShadow: "0 0 10px rgba(74,144,226,0.3)",
+                background: "transparent",
+                transition: "transform 0.3s, boxShadow 0.3s",
+              }}
+              aria-label="View my projects"
+              onClick={scrollToContact}
+            >
+              Lets Connect
+            </Button>
+          </motion.div>
+        </Box>
+      </motion.section>
+    </div>
+  );
+};
+
+export default HeroSection;
