@@ -127,8 +127,49 @@ const ExperienceSection: React.FC = () => {
                   fontFamily: "'Poppins', sans-serif",
                 }}
               >
-                <CardContent sx={{ width: "100%", p: 3 }}>
-                  <Box
+                <CardContent sx={{  p: 3 }}>
+                  <Grid container columns={12} sx={{width:"100%"}} spacing={3}>
+                    <Grid size={{ xs: 12, md: 12, lg: 2 }}>
+                      <Box
+                        component="img"
+                        src={job.logo}
+                        alt={job.title}
+                        sx={{
+                          width: "100%",
+                          height: {md:120,lg:80},
+                          borderRadius: 2, // Square with slight rounding for a modern look
+                          border: "2px solid rgba(255, 255, 255, 0.3)",
+                          objectFit: "fill",
+                          "&:hover": {
+                            transform: "scale(1.1)",
+                            boxShadow: "0 0 15px rgba(33, 150, 243, 0.5)",
+                            transition: "transform 0.3s, boxShadow 0.3s",
+                          },
+                        }}
+                      />
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 12, lg: 10 }}>
+                      <Box>
+                        <Typography
+                          variant="h6"
+                          fontWeight="bold"
+                          sx={{
+                            color: "white",
+                            textShadow: "0 1px 2px rgba(0,0,0,0.3)",
+                          }}
+                        >
+                          {job.title}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          sx={{ opacity: 0.8, fontStyle: "italic" }}
+                        >
+                          {job.company} | {job.dates}
+                        </Typography>
+                      </Box>
+                    </Grid>
+                  </Grid>
+                  {/* <Box
                     sx={{
                       display: "flex", // flex
                       alignItems: "center", // items-center
@@ -170,7 +211,7 @@ const ExperienceSection: React.FC = () => {
                         {job.company} | {job.dates}
                       </Typography>
                     </Box>
-                  </Box>
+                  </Box> */}
                   <ul
                     style={{
                       listStyle: "none", // from your style prop

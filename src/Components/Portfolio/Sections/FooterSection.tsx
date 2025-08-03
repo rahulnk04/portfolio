@@ -14,6 +14,7 @@ const FooterSection = () => {
         textAlign: "center", // text-center
         background: "linear-gradient(to top, #111827, #1f2937)", // bg-gradient-to-t from-gray-900 to-gray-800
         color: "white", // text-white
+        zIndex:3
       }}
     >
       <Typography variant="body2" sx={{ opacity: 0.9 }}>
