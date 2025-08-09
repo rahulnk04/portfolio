@@ -1,8 +1,8 @@
-import React from 'react';
 import { Box, Typography, Card, CardContent, Grid } from '@mui/material';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Data, { Experience } from 'src/data/Data';
+import React from 'react';
 import TextHeader from 'src/components/TextHeader';
+import Data, { Experience } from 'src/data/Data';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },

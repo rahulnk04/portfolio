@@ -1,5 +1,5 @@
-import Data from 'src/data/Data';
 import { Box, Typography } from '@mui/material';
+import Data from 'src/data/Data';
 
 const { name } = Data;
 const FooterSection = () => {

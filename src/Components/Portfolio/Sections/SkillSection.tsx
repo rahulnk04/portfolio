@@ -1,8 +1,8 @@
-import { motion } from 'motion/react';
 import { Box, Grid, Typography, Avatar, LinearProgress, Stack, Divider } from '@mui/material';
 import { styled } from '@mui/system';
-import Data, { Skill } from 'src/data/Data';
+import { motion } from 'motion/react';
 import TextHeader from 'src/components/TextHeader';
+import Data, { Skill } from 'src/data/Data';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 30 },

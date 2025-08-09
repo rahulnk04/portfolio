@@ -1,5 +1,3 @@
-import TextHeader from 'src/components/TextHeader';
-import Data, { portfolioConfig, Project } from 'src/data/Data';
 import {
   Box,
   Typography,
@@ -12,6 +10,8 @@ import {
   Stack,
 } from '@mui/material';
 import { motion } from 'motion/react';
+import TextHeader from 'src/components/TextHeader';
+import Data, { portfolioConfig, Project } from 'src/data/Data';
 
 const ProjectSection = () => {
   const { keyProjects } = Data;

@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
 import { Box, Typography, Button, Avatar, Link } from '@mui/material';
-import { motion, useTransform, useScroll } from 'motion/react';
 import Lenis from '@studio-freight/lenis';
+import { motion, useTransform, useScroll } from 'motion/react';
+import React, { useEffect, useState } from 'react';
 import Data, { SocialLink } from 'src/data/Data';
 
 const HeroSection = () => {

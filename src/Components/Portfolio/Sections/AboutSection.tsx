@@ -1,8 +1,8 @@
-import React from 'react';
 import { Typography, Card, CardContent, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
-import TextHeader from 'src/components/TextHeader';
+import React from 'react';
 import MotionWaveWrapper from 'src/components/motionwave/MotionWaveWrapper';
+import TextHeader from 'src/components/TextHeader';
 import Data from 'src/data/Data';
 
 const AboutSection: React.FC = () => {
