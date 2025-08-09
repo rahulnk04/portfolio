@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { Box, Typography, Button, Avatar, Link } from "@mui/material";
-import { motion, useTransform, useScroll } from "motion/react";
-import Lenis from "@studio-freight/lenis";
-import Data, { SocialLink } from "src/data/Data";
+import { useEffect, useState } from 'react';
+import { Box, Typography, Button, Avatar, Link } from '@mui/material';
+import { motion, useTransform, useScroll } from 'motion/react';
+import Lenis from '@studio-freight/lenis';
+import Data, { SocialLink } from 'src/data/Data';
 
 const HeroSection = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -23,11 +23,11 @@ const HeroSection = () => {
     const handleMouseMove = (e: MouseEvent) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
     };
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       lenis.destroy();
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
@@ -42,9 +42,9 @@ const HeroSection = () => {
 
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
-    const el = document.getElementById("contact");
+    const el = document.getElementById('contact');
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
   return (
@@ -56,22 +56,22 @@ const HeroSection = () => {
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1920&q=80')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          minHeight: "100vh", // min-h-screen
-          position: "relative", // relative
-          overflow: "hidden", // overflow-hidden
-          display: "flex", // flex
-          alignItems: "center", // items-center
-          justifyContent: "center", // justify-center
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          minHeight: '100vh', // min-h-screen
+          position: 'relative', // relative
+          overflow: 'hidden', // overflow-hidden
+          display: 'flex', // flex
+          alignItems: 'center', // items-center
+          justifyContent: 'center', // justify-center
         }}
         id="hero"
       >
         <motion.div
           style={{
             y: heroParallax,
-            position: "absolute", // absolute
+            position: 'absolute', // absolute
             top: 0, // inset-0
             right: 0,
             bottom: 0,
@@ -81,25 +81,25 @@ const HeroSection = () => {
         />
         <motion.div
           style={{
-            position: "absolute", // absolute
-            width: "10rem", // w-40 = 160px
-            height: "10rem", // h-40 = 160px
-            background: "linear-gradient(to right, #60a5fa, #a855f7)", // from-blue-400 to-purple-500
-            borderRadius: "9999px", // rounded-full
+            position: 'absolute', // absolute
+            width: '10rem', // w-40 = 160px
+            height: '10rem', // h-40 = 160px
+            background: 'linear-gradient(to right, #60a5fa, #a855f7)', // from-blue-400 to-purple-500
+            borderRadius: '9999px', // rounded-full
             opacity: 0.2, // opacity-20
-            pointerEvents: "none", // pointer-events-none
+            pointerEvents: 'none', // pointer-events-none
           }}
           animate={{
             x: cursorPosition.x - 80,
             y: cursorPosition.y - 80,
-            transition: { type: "spring", stiffness: 100, damping: 20 },
+            transition: { type: 'spring', stiffness: 100, damping: 20 },
           }}
         />
         <Box
           sx={{
-            textAlign: "center", // text-center
-            paddingLeft: "1rem", // px-4 = 16px
-            paddingRight: "1rem",
+            textAlign: 'center', // text-center
+            paddingLeft: '1rem', // px-4 = 16px
+            paddingRight: '1rem',
             zIndex: 10, // z-10
           }}
         >
@@ -110,10 +110,10 @@ const HeroSection = () => {
               sx={{
                 width: 180,
                 height: 180,
-                mx: "auto",
+                mx: 'auto',
                 mb: 3,
-                border: "3px solid rgba(255,255,255,0.1)",
-                boxShadow: "0 0 10px rgba(74,144,226,0.3)",
+                border: '3px solid rgba(255,255,255,0.1)',
+                boxShadow: '0 0 10px rgba(74,144,226,0.3)',
               }}
             />
           </motion.div>
@@ -123,28 +123,23 @@ const HeroSection = () => {
               fontWeight="bold"
               color="white"
               gutterBottom
-              sx={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}
+              sx={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
             >
               {name}
             </Typography>
           </motion.div>
           <motion.div variants={childVariants}>
-            <Typography
-              variant="h5"
-              color="white"
-              gutterBottom
-              sx={{ opacity: 0.9 }}
-            >
+            <Typography variant="h5" color="white" gutterBottom sx={{ opacity: 0.9 }}>
               {jobTitle}
             </Typography>
           </motion.div>
           <motion.div
             variants={childVariants}
             style={{
-              display: "flex", // flex
-              justifyContent: "center", // justify-center
-              gap: "1rem", // gap-4 = 16px
-              marginTop: "1.5rem", // mt-6 = 24px
+              display: 'flex', // flex
+              justifyContent: 'center', // justify-center
+              gap: '1rem', // gap-4 = 16px
+              marginTop: '1.5rem', // mt-6 = 24px
             }}
           >
             {social.map((link: SocialLink, index: number) => (
@@ -169,17 +164,17 @@ const HeroSection = () => {
                 py: 1.5,
                 // bgcolor: portfolioConfig.theme.accent,
                 // background: `linear-gradient(45deg, ${portfolioConfig.theme.accent}, #357ABD)`,
-                "&:hover": {
-                  transform: "scale(1.2)",
-                  boxShadow: "0 0 10px rgba(74,144,226,0.3)",
+                '&:hover': {
+                  transform: 'scale(1.2)',
+                  boxShadow: '0 0 10px rgba(74,144,226,0.3)',
                 },
                 fontWeight: 600,
                 borderRadius: 8,
                 // boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-                border: "3px solid rgba(255,255,255,0.1)",
-                boxShadow: "0 0 10px rgba(74,144,226,0.3)",
-                background: "transparent",
-                transition: "transform 0.3s, boxShadow 0.3s",
+                border: '3px solid rgba(255,255,255,0.1)',
+                boxShadow: '0 0 10px rgba(74,144,226,0.3)',
+                background: 'transparent',
+                transition: 'transform 0.3s, boxShadow 0.3s',
               }}
               aria-label="View my projects"
               onClick={scrollToContact}

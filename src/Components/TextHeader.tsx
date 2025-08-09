@@ -1,6 +1,5 @@
-
-import { Typography } from "@mui/material";
-import { portfolioConfig } from "src/data/Data";
+import { Typography } from '@mui/material';
+import { portfolioConfig } from 'src/data/Data';
 
 type Props = {
   title?: string;
@@ -19,15 +18,15 @@ const TextHeader = (props: Props) => {
           mb: 2,
           fontFamily: "'Playfair Display', serif",
           letterSpacing: 1.5,
-          color: "#fff",
-          position: "relative",
-          fontSize: { xs: "2.5rem", md: "3rem" },
-          "&::after": {
+          color: '#fff',
+          position: 'relative',
+          fontSize: { xs: '2.5rem', md: '3rem' },
+          '&::after': {
             content: '""',
-            position: "absolute",
+            position: 'absolute',
             bottom: -6,
-            left: "50%",
-            transform: "translateX(-50%)",
+            left: '50%',
+            transform: 'translateX(-50%)',
             width: 120,
             height: 4,
             borderRadius: 2,

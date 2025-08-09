@@ -1,12 +1,12 @@
-import { Fragment } from "react";
-import HeaderSection from "src/components/portfolio/sections/HeaderSection";
-import HeroSection from "src/components/portfolio/sections/HeroSection";
-import AboutSection from "src/components/portfolio/sections/AboutSection";
-import ProjectSection from "src/components/portfolio/sections/ProjectSection";
-import SkillSection from "src/components/portfolio/sections/SkillSection";
-import ExperienceSection from "src/components/portfolio/sections/ExperienceSection";
-import ContactSection from "src/components/portfolio/sections/ContactSection";
-import FooterSection from "src/components/portfolio/sections/FooterSection";
+import { Fragment } from 'react';
+import HeaderSection from 'src/components/portfolio/sections/HeaderSection';
+import HeroSection from 'src/components/portfolio/sections/HeroSection';
+import AboutSection from 'src/components/portfolio/sections/AboutSection';
+import ProjectSection from 'src/components/portfolio/sections/ProjectSection';
+import SkillSection from 'src/components/portfolio/sections/SkillSection';
+import ExperienceSection from 'src/components/portfolio/sections/ExperienceSection';
+import ContactSection from 'src/components/portfolio/sections/ContactSection';
+import FooterSection from 'src/components/portfolio/sections/FooterSection';
 
 const PortfolioWrapper = () => {
   return (

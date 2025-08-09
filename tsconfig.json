@@ -19,8 +19,8 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"],
-      "@/data/*":["data/*"],
-      "@/images/*":["images/*"]
+      "@/data/*": ["data/*"],
+      "@/images/*": ["images/*"]
     }
   },
   "include": ["src"]

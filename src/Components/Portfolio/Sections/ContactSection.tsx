@@ -11,14 +11,14 @@ import {
   Link,
   Snackbar,
   Alert,
-} from "@mui/material";
-import { motion } from "framer-motion";
-import LocationOn from "@mui/icons-material/LocationOnOutlined";
-import Phone from "@mui/icons-material/Phone";
-import Email from "@mui/icons-material/Email";
-import { createElement, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Data, { portfolioConfig } from "src/data/Data";
+} from '@mui/material';
+import { motion } from 'framer-motion';
+import LocationOn from '@mui/icons-material/LocationOnOutlined';
+import Phone from '@mui/icons-material/Phone';
+import Email from '@mui/icons-material/Email';
+import { createElement, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Data, { portfolioConfig } from 'src/data/Data';
 
 const sectionVariants = {
   hidden: { opacity: 0 },
@@ -35,15 +35,15 @@ const cardVariants = {
     y: 0,
     rotate: 0,
     scale: 1,
-    transition: { type: "spring" as const, stiffness: 70, damping: 15 },
+    transition: { type: 'spring' as const, stiffness: 70, damping: 15 },
   },
 };
 
 const hoverVariants = {
   hover: {
     scale: 1.15,
-    boxShadow: "0 0 20px rgba(74,144,226,0.5)",
-    transition: { duration: 0.4, yoyo: Infinity, ease: "easeInOut" as const },
+    boxShadow: '0 0 20px rgba(74,144,226,0.5)',
+    transition: { duration: 0.4, yoyo: Infinity, ease: 'easeInOut' as const },
   },
 };
 
@@ -53,9 +53,9 @@ const ContactSection = () => {
   const navigate = useNavigate(); // Use useNavigate for programmatic navigation
 
   const [sendMessage, setSendMessage] = useState({
-    fullName: "",
-    subject: "",
-    message: "",
+    fullName: '',
+    subject: '',
+    message: '',
   });
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -65,33 +65,33 @@ const ContactSection = () => {
     const { fullName, subject, message } = sendMessage;
     if (!fullName || !subject || !message) {
       setMessage({
-        message: "Please fill in all fields.",
-        severity: "error",
+        message: 'Please fill in all fields.',
+        severity: 'error',
       });
       setOpen(true);
       return;
     }
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-      subject
+      subject,
     )}&body=${encodeURIComponent(`From: ${fullName}\n\n${message}`)}`;
     window.location.href = mailtoLink;
     setMessage({
       message: "Message sent successfully! I'll get back to you soon.",
-      severity: "success",
+      severity: 'success',
     });
     setOpen(true); // Reset form
   };
   const [message, setMessage] = useState<{
     message: string;
-    severity: "success" | "error" | "info" | "warning";
+    severity: 'success' | 'error' | 'info' | 'warning';
   }>({
     message: "Message sent successfully! I'll get back to you soon.",
-    severity: "success",
+    severity: 'success',
   });
   const [open, setOpen] = useState(false);
   const handleClose = () => {
     setOpen(false);
-    setSendMessage({ fullName: "", subject: "", message: "" });
+    setSendMessage({ fullName: '', subject: '', message: '' });
   };
 
   return (
@@ -99,38 +99,38 @@ const ContactSection = () => {
       component="section"
       id="contact"
       sx={{
-        position: "relative",
+        position: 'relative',
         py: { xs: 8, md: 8 },
         px: { xs: 4, md: 14 },
-        background: "linear-gradient(135deg, #0A0A2A 0%, #1A1A44 70%)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        color: "#E0E0FF",
+        mb: 8,
+        background: 'linear-gradient(135deg, #0A0A2A 0%, #1A1A44 70%)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        color: '#E0E0FF',
         // Removed overflow: "hidden" to allow interaction
-        "&::before": {
+        '&::before': {
           content: '""',
-          position: "absolute",
+          position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          background:
-            "radial-gradient(circle, rgba(74,144,226,0.1) 0%, transparent 60%)",
+          background: 'radial-gradient(circle, rgba(74,144,226,0.1) 0%, transparent 60%)',
           zIndex: 0,
-          pointerEvents: "none", // Prevent blocking clicks
+          pointerEvents: 'none', // Prevent blocking clicks
         },
-        "&::after": {
+        '&::after': {
           content: '""',
-          position: "absolute",
+          position: 'absolute',
           top: 0,
           left: 0,
-          width: "100%",
-          height: "100%",
+          width: '100%',
+          height: '100%',
           background:
-            "repeating-linear-gradient(-45deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 2px, transparent 5px)",
+            'repeating-linear-gradient(-45deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 2px, transparent 5px)',
           zIndex: 1,
           opacity: 0.5,
-          pointerEvents: "none", // Prevent blocking clicks
+          pointerEvents: 'none', // Prevent blocking clicks
         },
       }}
       //  style={{ y: backgroundY }} // Uncommented and applied correctly
@@ -150,18 +150,17 @@ const ContactSection = () => {
             mb: 8,
             fontFamily: "'Playfair Display', serif",
             letterSpacing: 2,
-            textShadow:
-              "0 0 10px rgba(74,144,226,0.4), 0 0 20px rgba(0,0,0,0.3)",
-            color: "#fff",
-            position: "relative",
-            "&::after": {
+            textShadow: '0 0 10px rgba(74,144,226,0.4), 0 0 20px rgba(0,0,0,0.3)',
+            color: '#fff',
+            position: 'relative',
+            '&::after': {
               content: '""',
-              position: "absolute",
+              position: 'absolute',
               bottom: -5,
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "30%",
-              height: "2px",
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '30%',
+              height: '2px',
               background: `linear-gradient(90deg, transparent, ${portfolioConfig.theme.accent}, transparent)`,
             },
           }}
@@ -173,44 +172,38 @@ const ContactSection = () => {
           align="center"
           sx={{
             maxWidth: 900,
-            mx: "auto",
-            mb: 12,
+            mx: 'auto',
+            mb: 8,
             opacity: 0.85,
             fontFamily: "'Poppins', sans-serif",
-            fontSize: "1.2rem",
+            fontSize: '1.2rem',
             lineHeight: 1.75,
-            color: "#C0C0E0",
-            textShadow: "0 1px 3px rgba(0,0,0,0.2)",
+            color: '#C0C0E0',
+            textShadow: '0 1px 3px rgba(0,0,0,0.2)',
           }}
         >
-          Whether you have a bold project idea, seek collaboration, or just want
-          to connect—I'm all ears. Send a message or download my resume to start
-          the journey.
+          Whether you have a bold project idea, seek collaboration, or just want to connect—I'm all
+          ears. Send a message or download my resume to start the journey.
         </Typography>
 
-        <Grid
-          container
-          spacing={7}
-          justifyContent="space-around"
-          alignItems="stretch"
-        >
+        <Grid container spacing={7} justifyContent="space-around" alignItems="stretch">
           {/* Info + Social + Resume */}
           <Grid size={{ xs: 12, md: 12, lg: 5 }}>
             <motion.div variants={cardVariants}>
               <Card
-                elevation={0}
+                elevation={2}
                 sx={{
                   borderRadius: 3,
                   p: { xs: 5, md: 7 },
-                  position: "relative",
-                  bgcolor: "rgba(20,20,40,0.9)",
-                  backdropFilter: "blur(12px)",
-                  border: "1px solid rgba(74,144,226,0.2)",
-                  boxShadow: "0 25px 60px -10px rgba(0,0,0,0.4)",
-                  height: "100%",
-                  "&::before": {
+                  position: 'relative',
+                  bgcolor: 'rgba(20,20,40,0.9)',
+                  backdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(74,144,226,0.2)',
+                  boxShadow: '0 25px 60px -10px rgba(0,0,0,0.4)',
+                  height: '100%',
+                  '&::before': {
                     content: '""',
-                    position: "absolute",
+                    position: 'absolute',
                     top: -3,
                     left: -3,
                     right: -3,
@@ -218,44 +211,33 @@ const ContactSection = () => {
                     background: `linear-gradient(45deg, ${portfolioConfig.theme.accent}22, transparent)`,
                     borderRadius: 5,
                     zIndex: -1,
-                    animation: "pulse 4s infinite",
+                    animation: 'pulse 4s infinite',
                   },
-                  "@keyframes pulse": {
-                    "0%, 100%": { opacity: 0.5 },
-                    "50%": { opacity: 1 },
+                  '@keyframes pulse': {
+                    '0%, 100%': { opacity: 0.5 },
+                    '50%': { opacity: 1 },
                   },
                 }}
               >
                 <Stack spacing={5}>
                   {/* Contact details */}
                   <Box>
-                    <Stack
-                      direction="row"
-                      spacing={3}
-                      alignItems="center"
-                      mb={3}
-                    >
+                    <Stack direction="row" spacing={3} alignItems="center" mb={3}>
                       <motion.div variants={hoverVariants} whileHover="hover">
                         <Avatar
                           sx={{
                             width: 56,
                             height: 56,
-                            border: "3px solid rgba(255,255,255,0.1)",
-                            boxShadow: "0 0 10px rgba(74,144,226,0.3)",
-                            background: "transparent",
+                            border: '3px solid rgba(255,255,255,0.1)',
+                            boxShadow: '0 0 10px rgba(74,144,226,0.3)',
+                            background: 'transparent',
                           }}
                         >
-                          <LocationOn
-                            sx={{ color: "white", fontSize: "2rem" }}
-                          />
+                          <LocationOn sx={{ color: 'white', fontSize: '2rem' }} />
                         </Avatar>
                       </motion.div>
                       <Box>
-                        <Typography
-                          variant="subtitle1"
-                          fontWeight={600}
-                          color="#fff"
-                        >
+                        <Typography variant="subtitle1" fontWeight={600} color="#fff">
                           Location
                         </Typography>
                         <Typography variant="body2" color="#B0B0D0">
@@ -263,31 +245,22 @@ const ContactSection = () => {
                         </Typography>
                       </Box>
                     </Stack>
-                    <Stack
-                      direction="row"
-                      spacing={3}
-                      alignItems="center"
-                      mb={3}
-                    >
+                    <Stack direction="row" spacing={3} alignItems="center" mb={3}>
                       <motion.div variants={hoverVariants} whileHover="hover">
                         <Avatar
                           sx={{
-                            background: "transparent",
+                            background: 'transparent',
                             width: 56,
                             height: 56,
-                            border: "3px solid rgba(255,255,255,0.1)",
-                            boxShadow: "0 0 10px rgba(74,144,226,0.3)",
+                            border: '3px solid rgba(255,255,255,0.1)',
+                            boxShadow: '0 0 10px rgba(74,144,226,0.3)',
                           }}
                         >
-                          <Phone sx={{ color: "white", fontSize: "2rem" }} />
+                          <Phone sx={{ color: 'white', fontSize: '2rem' }} />
                         </Avatar>
                       </motion.div>
                       <Box>
-                        <Typography
-                          variant="subtitle1"
-                          fontWeight={600}
-                          color="#fff"
-                        >
+                        <Typography variant="subtitle1" fontWeight={600} color="#fff">
                           Phone
                         </Typography>
                         <Typography variant="body2" color="#B0B0D0">
@@ -299,29 +272,21 @@ const ContactSection = () => {
                       <motion.div variants={hoverVariants} whileHover="hover">
                         <Avatar
                           sx={{
-                            background: "transparent",
+                            background: 'transparent',
                             width: 56,
                             height: 56,
-                            border: "3px solid rgba(255,255,255,0.1)",
-                            boxShadow: "0 0 10px rgba(74,144,226,0.3)",
+                            border: '3px solid rgba(255,255,255,0.1)',
+                            boxShadow: '0 0 10px rgba(74,144,226,0.3)',
                           }}
                         >
-                          <Email sx={{ color: "white", fontSize: "2rem" }} />
+                          <Email sx={{ color: 'white', fontSize: '2rem' }} />
                         </Avatar>
                       </motion.div>
                       <Box>
-                        <Typography
-                          variant="subtitle1"
-                          fontWeight={600}
-                          color="#fff"
-                        >
+                        <Typography variant="subtitle1" fontWeight={600} color="#fff">
                           Email
                         </Typography>
-                        <Link
-                          href={`mailto:${email}`}
-                          underline="hover"
-                          color="inherit"
-                        >
+                        <Link href={`mailto:${email}`} underline="hover" color="inherit">
                           <Typography variant="body2" color="#B0B0D0">
                             {email}
                           </Typography>
@@ -332,44 +297,35 @@ const ContactSection = () => {
 
                   {/* Social icons */}
                   <Box>
-                    <Typography
-                      variant="subtitle1"
-                      fontWeight={600}
-                      gutterBottom
-                      color="#fff"
-                    >
+                    <Typography variant="subtitle1" fontWeight={600} gutterBottom color="#fff">
                       Connect with me
                     </Typography>
                     <Stack direction="row" spacing={2.5} alignItems="center">
                       {social.map((link: any, idx: number) => (
-                        <motion.div
-                          key={idx}
-                          variants={hoverVariants}
-                          whileHover="hover"
-                        >
+                        <motion.div key={idx} variants={hoverVariants} whileHover="hover">
                           <IconButton
                             component="a"
-                            href={link.url || "#"}
+                            href={link.url || '#'}
                             target="_blank"
                             rel="noopener"
                             aria-label={link.name}
                             sx={{
-                              bgcolor: "rgba(255,255,255,0.05)",
+                              bgcolor: 'rgba(255,255,255,0.05)',
                               border: `2px solid ${portfolioConfig.theme.accent}33`,
-                              borderRadius: "50%",
+                              borderRadius: '50%',
                               width: 52,
                               height: 52,
-                              transition: "all 0.4s ease",
-                              "&:hover": {
+                              transition: 'all 0.4s ease',
+                              '&:hover': {
                                 bgcolor: `${portfolioConfig.theme.accent}22`,
                                 borderColor: portfolioConfig.theme.accent,
-                                transform: "rotate(10deg)",
+                                transform: 'rotate(10deg)',
                               },
                             }}
                           >
                             {createElement(link.icon, {
-                              fontSize: "small",
-                              sx: { color: "#fff" },
+                              fontSize: 'small',
+                              sx: { color: '#fff' },
                             })}
                           </IconButton>
                         </motion.div>
@@ -386,17 +342,16 @@ const ContactSection = () => {
                         sx={{
                           py: 2.5,
                           fontWeight: 700,
-                          textTransform: "none",
+                          textTransform: 'none',
                           borderRadius: 2,
                           background: `transparent`,
-                          boxShadow:
-                            "0 0 15px rgba(74,144,226,0.5), 0 5px 20px rgba(0,0,0,0.3)",
-                          "&:hover": {
-                            transform: "scale(1.1)",
+                          boxShadow: '0 0 15px rgba(74,144,226,0.5), 0 5px 20px rgba(0,0,0,0.3)',
+                          '&:hover': {
+                            transform: 'scale(1.1)',
                           },
                         }}
                         onClick={() => {
-                          navigate("/resume");
+                          navigate('/resume');
                         }}
                       >
                         View Resume
@@ -416,14 +371,14 @@ const ContactSection = () => {
                 sx={{
                   borderRadius: 3,
                   p: { xs: 5, md: 7 },
-                  bgcolor: "rgba(20,20,40,0.9)",
-                  backdropFilter: "blur(12px)",
-                  border: "1px solid rgba(74,144,226,0.2)",
-                  boxShadow: "0 25px 60px -10px rgba(0,0,0,0.4)",
-                  height: "100%",
-                  "&::before": {
+                  bgcolor: 'rgba(20,20,40,0.9)',
+                  backdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(74,144,226,0.2)',
+                  boxShadow: '0 25px 60px -10px rgba(0,0,0,0.4)',
+                  height: '100%',
+                  '&::before': {
                     content: '""',
-                    position: "absolute",
+                    position: 'absolute',
                     top: -3,
                     left: -3,
                     right: -3,
@@ -431,28 +386,19 @@ const ContactSection = () => {
                     background: `linear-gradient(45deg, ${portfolioConfig.theme.accent}22, transparent)`,
                     borderRadius: 5,
                     zIndex: -1,
-                    animation: "pulse 4s infinite",
+                    animation: 'pulse 4s infinite',
                   },
-                  "@keyframes pulse": {
-                    "0%, 100%": { opacity: 0.5 },
-                    "50%": { opacity: 1 },
+                  '@keyframes pulse': {
+                    '0%, 100%': { opacity: 0.5 },
+                    '50%': { opacity: 1 },
                   },
                 }}
               >
-                <Typography
-                  variant="h5"
-                  fontWeight={700}
-                  gutterBottom
-                  color="#fff"
-                >
+                <Typography variant="h5" fontWeight={700} gutterBottom color="#fff">
                   Send a Message
                 </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{ mb: 5, opacity: 0.85, color: "#B0B0D0" }}
-                >
-                  Unleash your ideas or project pitch—fill this out, and I’ll
-                  respond swiftly.
+                <Typography variant="body2" sx={{ mb: 2.5, opacity: 0.85, color: '#B0B0D0' }}>
+                  Unleash your ideas or project pitch—fill this out, and I’ll respond swiftly.
                 </Typography>
                 <Grid container spacing={3}>
                   <Grid size={{ xs: 12 }}>
@@ -465,21 +411,21 @@ const ContactSection = () => {
                       InputProps={{
                         sx: {
                           borderRadius: 1.5,
-                          bgcolor: "rgba(255,255,255,0.05)",
-                          "& .MuiOutlinedInput-notchedOutline": {
-                            borderColor: "rgba(255,255,255,0.1)",
+                          bgcolor: 'rgba(255,255,255,0.05)',
+                          '& .MuiOutlinedInput-notchedOutline': {
+                            borderColor: 'rgba(255,255,255,0.1)',
                           },
-                          "&:hover .MuiOutlinedInput-notchedOutline": {
+                          '&:hover .MuiOutlinedInput-notchedOutline': {
                             borderColor: portfolioConfig.theme.accent,
                           },
-                          "&:focus-within .MuiOutlinedInput-notchedOutline": {
+                          '&:focus-within .MuiOutlinedInput-notchedOutline': {
                             borderColor: portfolioConfig.theme.accent,
                             borderWidth: 2,
                           },
                         },
                       }}
                       InputLabelProps={{
-                        sx: { color: "#B0B0D0" },
+                        sx: { color: '#B0B0D0' },
                       }}
                       onChange={handleInputChange}
                       name="fullName"
@@ -496,21 +442,21 @@ const ContactSection = () => {
                       InputProps={{
                         sx: {
                           borderRadius: 1.5,
-                          bgcolor: "rgba(255,255,255,0.05)",
-                          "& .MuiOutlinedInput-notchedOutline": {
-                            borderColor: "rgba(255,255,255,0.1)",
+                          bgcolor: 'rgba(255,255,255,0.05)',
+                          '& .MuiOutlinedInput-notchedOutline': {
+                            borderColor: 'rgba(255,255,255,0.1)',
                           },
-                          "&:hover .MuiOutlinedInput-notchedOutline": {
+                          '&:hover .MuiOutlinedInput-notchedOutline': {
                             borderColor: portfolioConfig.theme.accent,
                           },
-                          "&:focus-within .MuiOutlinedInput-notchedOutline": {
+                          '&:focus-within .MuiOutlinedInput-notchedOutline': {
                             borderColor: portfolioConfig.theme.accent,
                             borderWidth: 2,
                           },
                         },
                       }}
                       InputLabelProps={{
-                        sx: { color: "#B0B0D0" },
+                        sx: { color: '#B0B0D0' },
                       }}
                       onChange={handleInputChange}
                       name="subject"
@@ -522,29 +468,27 @@ const ContactSection = () => {
                       fullWidth
                       variant="outlined"
                       size="small"
-                      placeholder={`Hi ${
-                        name.split(" ")[0]
-                      }, let’s create something amazing...`}
+                      placeholder={`Hi ${name.split(' ')[0]}, let’s create something amazing...`}
                       multiline
                       rows={6}
                       InputProps={{
                         sx: {
                           borderRadius: 1.5,
-                          bgcolor: "rgba(255,255,255,0.05)",
-                          "& .MuiOutlinedInput-notchedOutline": {
-                            borderColor: "rgba(255,255,255,0.1)",
+                          bgcolor: 'rgba(255,255,255,0.05)',
+                          '& .MuiOutlinedInput-notchedOutline': {
+                            borderColor: 'rgba(255,255,255,0.1)',
                           },
-                          "&:hover .MuiOutlinedInput-notchedOutline": {
+                          '&:hover .MuiOutlinedInput-notchedOutline': {
                             borderColor: portfolioConfig.theme.accent,
                           },
-                          "&:focus-within .MuiOutlinedInput-notchedOutline": {
+                          '&:focus-within .MuiOutlinedInput-notchedOutline': {
                             borderColor: portfolioConfig.theme.accent,
                             borderWidth: 2,
                           },
                         },
                       }}
                       InputLabelProps={{
-                        sx: { color: "#B0B0D0" },
+                        sx: { color: '#B0B0D0' },
                       }}
                       onChange={handleInputChange}
                       name="message"
@@ -558,13 +502,12 @@ const ContactSection = () => {
                         sx={{
                           py: 2.5,
                           fontWeight: 700,
-                          textTransform: "none",
+                          textTransform: 'none',
                           borderRadius: 2,
                           background: `transparent`,
-                          boxShadow:
-                            "0 0 15px rgba(74,144,226,0.5), 0 5px 20px rgba(0,0,0,0.3)",
-                          "&:hover": {
-                            transform: "scale(1.1)",
+                          boxShadow: '0 0 15px rgba(74,144,226,0.5), 0 5px 20px rgba(0,0,0,0.3)',
+                          '&:hover': {
+                            transform: 'scale(1.1)',
                           },
                         }}
                         onClick={handleSendMessageAsEmail}
@@ -580,7 +523,7 @@ const ContactSection = () => {
         </Grid>
       </motion.div>
       <Snackbar
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         open={open}
         autoHideDuration={6000}
         onClose={handleClose}
@@ -589,7 +532,7 @@ const ContactSection = () => {
           onClose={handleClose}
           severity={message.severity}
           variant="filled"
-          sx={{ width: "100%" }}
+          sx={{ width: '100%' }}
         >
           {message.message}
         </Alert>
