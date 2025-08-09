@@ -18,7 +18,7 @@ import {
 import { motion } from 'framer-motion';
 import React, { createElement, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Data, { portfolioConfig } from 'src/data/Data';
+import Data, { portfolioConfig, SocialLink } from 'src/data/Data';
 
 const sectionVariants = {
   hidden: { opacity: 0 },
@@ -182,7 +182,7 @@ const ContactSection = () => {
             textShadow: '0 1px 3px rgba(0,0,0,0.2)',
           }}
         >
-          Whether you have a bold project idea, seek collaboration, or just want to connect—I'm all
+          Whether you have a bold project idea, seek collaboration, or just want to connect-I'm all
           ears. Send a message or download my resume to start the journey.
         </Typography>
 
@@ -301,7 +301,7 @@ const ContactSection = () => {
                       Connect with me
                     </Typography>
                     <Stack direction="row" spacing={2.5} alignItems="center">
-                      {social.map((link: any, idx: number) => (
+                      {social.map((link: SocialLink, idx: number) => (
                         <motion.div key={idx} variants={hoverVariants} whileHover="hover">
                           <IconButton
                             component="a"

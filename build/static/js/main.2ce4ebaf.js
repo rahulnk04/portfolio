@@ -38410,19 +38410,17 @@
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
             },
-            r = e
-              .split(' ')
-              .map((e, t) =>
-                (0, Bi.jsx)(
-                  Jy.span,
-                  {
-                    variants: n,
-                    style: { display: 'inline-block', marginRight: '0.25em' },
-                    children: e,
-                  },
-                  t,
-                ),
+            r = e.split(' ').map((e, t) =>
+              (0, Bi.jsx)(
+                Jy.span,
+                {
+                  variants: n,
+                  style: { display: 'inline-block', marginRight: '0.25em' },
+                  children: e,
+                },
+                t,
               ),
+            ),
             A = {
               hidden: { opacity: 0, x: -30 },
               visible: {
@@ -38524,25 +38522,23 @@
                                 paddingLeft: '1.5rem',
                                 marginTop: '0.75rem',
                               },
-                              children: t
-                                .slice(0, 5)
-                                .map((e, t) =>
-                                  (0, Bi.jsx)(
-                                    Jy.div,
-                                    {
-                                      variants: A,
-                                      initial: 'hidden',
-                                      whileInView: 'visible',
-                                      viewport: { once: !0 },
-                                      children: (0, Bi.jsx)(Ga, {
-                                        variant: 'body2',
-                                        sx: { color: 'rgba(255, 255, 255, 0.8)' },
-                                        children: e,
-                                      }),
-                                    },
-                                    t,
-                                  ),
+                              children: t.slice(0, 5).map((e, t) =>
+                                (0, Bi.jsx)(
+                                  Jy.div,
+                                  {
+                                    variants: A,
+                                    initial: 'hidden',
+                                    whileInView: 'visible',
+                                    viewport: { once: !0 },
+                                    children: (0, Bi.jsx)(Ga, {
+                                      variant: 'body2',
+                                      sx: { color: 'rgba(255, 255, 255, 0.8)' },
+                                      children: e,
+                                    }),
+                                  },
+                                  t,
                                 ),
+                              ),
                             }),
                           ],
                         }),
@@ -65315,37 +65311,35 @@
                                     },
                                     children: 'Education',
                                   }),
-                                  dE
-                                    .slice(0, 1)
-                                    .map((e) =>
-                                      (0, Bi.jsxs)(
-                                        Ko,
-                                        {
-                                          children: [
-                                            (0, Bi.jsx)(Ga, {
-                                              variant: 'body2',
-                                              sx: { fontWeight: 'bold' },
-                                              children: e.degree,
-                                            }),
-                                            (0, Bi.jsx)(Ga, {
-                                              variant: 'body2',
-                                              children: e.institution,
-                                            }),
-                                            (0, Bi.jsxs)(Ga, {
-                                              variant: 'body2',
-                                              sx: { color: '#333333' },
-                                              children: ['Batch of ', e.endDate.getFullYear()],
-                                            }),
-                                            (0, Bi.jsxs)(Ga, {
-                                              variant: 'body2',
-                                              sx: { color: '#333333' },
-                                              children: ['CGPA: ', e.cgpa],
-                                            }),
-                                          ],
-                                        },
-                                        e.degree,
-                                      ),
+                                  dE.slice(0, 1).map((e) =>
+                                    (0, Bi.jsxs)(
+                                      Ko,
+                                      {
+                                        children: [
+                                          (0, Bi.jsx)(Ga, {
+                                            variant: 'body2',
+                                            sx: { fontWeight: 'bold' },
+                                            children: e.degree,
+                                          }),
+                                          (0, Bi.jsx)(Ga, {
+                                            variant: 'body2',
+                                            children: e.institution,
+                                          }),
+                                          (0, Bi.jsxs)(Ga, {
+                                            variant: 'body2',
+                                            sx: { color: '#333333' },
+                                            children: ['Batch of ', e.endDate.getFullYear()],
+                                          }),
+                                          (0, Bi.jsxs)(Ga, {
+                                            variant: 'body2',
+                                            sx: { color: '#333333' },
+                                            children: ['CGPA: ', e.cgpa],
+                                          }),
+                                        ],
+                                      },
+                                      e.degree,
                                     ),
+                                  ),
                                 ],
                               }),
                               (0, Bi.jsxs)(Ko, {
@@ -65479,64 +65473,62 @@
                                     },
                                     children: 'Key Projects',
                                   }),
-                                  cE
-                                    .slice(0, 2)
-                                    .map((e, t) =>
-                                      (0, Bi.jsxs)(
-                                        Ko,
-                                        {
-                                          sx: { mb: 2 },
-                                          children: [
-                                            (0, Bi.jsx)(Ga, {
-                                              variant: 'subtitle1',
-                                              sx: { fontWeight: 'bold' },
-                                              children: e.name,
-                                            }),
-                                            (0, Bi.jsx)(Ga, {
-                                              variant: 'body2',
-                                              children: e.description,
-                                            }),
-                                            (0, Bi.jsxs)(Ga, {
-                                              variant: 'body2',
-                                              sx: { color: '#333333' },
-                                              children: [
-                                                (0, Bi.jsx)('span', {
-                                                  style: { fontWeight: 'bold' },
-                                                  children: 'Technologies:',
-                                                }),
-                                                ' ',
-                                                e.technologies.join(', '),
-                                              ],
-                                            }),
-                                            (0, Bi.jsxs)(Ga, {
-                                              variant: 'body2',
-                                              sx: { color: '#333333' },
-                                              children: [
-                                                (0, Bi.jsx)('span', {
-                                                  style: { fontWeight: 'bold' },
-                                                  children: 'Tools:',
-                                                }),
-                                                ' ',
-                                                e.tools.join(', '),
-                                              ],
-                                            }),
-                                            (0, Bi.jsxs)(Ga, {
-                                              variant: 'body2',
-                                              sx: { color: '#333333' },
-                                              children: [
-                                                (0, Bi.jsx)('span', {
-                                                  style: { fontWeight: 'bold' },
-                                                  children: 'Team Size:',
-                                                }),
-                                                ' ',
-                                                e.teamSize,
-                                              ],
-                                            }),
-                                          ],
-                                        },
-                                        t,
-                                      ),
+                                  cE.slice(0, 2).map((e, t) =>
+                                    (0, Bi.jsxs)(
+                                      Ko,
+                                      {
+                                        sx: { mb: 2 },
+                                        children: [
+                                          (0, Bi.jsx)(Ga, {
+                                            variant: 'subtitle1',
+                                            sx: { fontWeight: 'bold' },
+                                            children: e.name,
+                                          }),
+                                          (0, Bi.jsx)(Ga, {
+                                            variant: 'body2',
+                                            children: e.description,
+                                          }),
+                                          (0, Bi.jsxs)(Ga, {
+                                            variant: 'body2',
+                                            sx: { color: '#333333' },
+                                            children: [
+                                              (0, Bi.jsx)('span', {
+                                                style: { fontWeight: 'bold' },
+                                                children: 'Technologies:',
+                                              }),
+                                              ' ',
+                                              e.technologies.join(', '),
+                                            ],
+                                          }),
+                                          (0, Bi.jsxs)(Ga, {
+                                            variant: 'body2',
+                                            sx: { color: '#333333' },
+                                            children: [
+                                              (0, Bi.jsx)('span', {
+                                                style: { fontWeight: 'bold' },
+                                                children: 'Tools:',
+                                              }),
+                                              ' ',
+                                              e.tools.join(', '),
+                                            ],
+                                          }),
+                                          (0, Bi.jsxs)(Ga, {
+                                            variant: 'body2',
+                                            sx: { color: '#333333' },
+                                            children: [
+                                              (0, Bi.jsx)('span', {
+                                                style: { fontWeight: 'bold' },
+                                                children: 'Team Size:',
+                                              }),
+                                              ' ',
+                                              e.teamSize,
+                                            ],
+                                          }),
+                                        ],
+                                      },
+                                      t,
                                     ),
+                                  ),
                                 ],
                               }),
                             ],

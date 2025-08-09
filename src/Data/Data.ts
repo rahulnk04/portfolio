@@ -26,6 +26,7 @@ import Telenor from 'src/images/Telenor.png';
 export interface SocialLink {
   name: string;
   url: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
 }
 
@@ -57,6 +58,7 @@ export interface Certificate {
 export interface Skill {
   name: string;
   percentage: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
   color: string;
   rating: number;

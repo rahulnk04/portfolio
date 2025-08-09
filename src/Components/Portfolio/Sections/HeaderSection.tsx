@@ -16,9 +16,9 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import React, { createElement } from 'react';
+import React, { createElement, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Data, { portfolioConfig } from 'src/data/Data';
+import Data, { portfolioConfig, SocialLink } from 'src/data/Data';
 
 const NAV_SECTIONS = [
   { label: 'Home', target: 'hero' },
@@ -46,11 +46,11 @@ const HeaderSection = () => {
     window.scrollTo({ top: y, behavior: 'smooth' });
   };
   const { social, name } = Data;
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const isMd = useMediaQuery('(min-width:900px)');
-  const [active, setActive] = React.useState<string>('');
+  const [active, setActive] = useState<string>('');
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       // naive intersection fallback: determine closest section in viewport center
       let current = '';
@@ -196,7 +196,7 @@ const HeaderSection = () => {
               >
                 {isMd && (
                   <Stack direction="row" spacing={1}>
-                    {social.map((link: any, i: number) => (
+                    {social.map((link: SocialLink, i: number) => (
                       <motion.div key={i} whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.95 }}>
                         <IconButton
                           component="a"
@@ -309,7 +309,7 @@ const HeaderSection = () => {
               Connect
             </Typography>
             <Stack direction="row" spacing={1}>
-              {social.map((link: any, i: number) => (
+              {social.map((link: SocialLink, i: number) => (
                 <motion.div key={i} whileHover={{ scale: 1.1 }}>
                   <IconButton
                     component="a"
