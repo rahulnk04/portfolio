@@ -1,7 +1,7 @@
-import React from 'react';
 import { Box } from '@mui/material';
-import PortfolioWrapper from 'src/components/portfolio/PortfolioWrapper';
+import React from 'react';
 import BrowserTitle from 'src/components/browserTitle/BrowserTitle';
+import PortfolioWrapper from 'src/components/portfolio/PortfolioWrapper';
 import Data from 'src/data/Data';
 
 const Home = () => {

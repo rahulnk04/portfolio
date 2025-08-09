@@ -1,29 +1,27 @@
-import Me from 'src/images/Me.png';
-import silicon from 'src/images/silicon.png';
-import sapient from 'src/images/sapient.jpeg';
-import kiit from 'src/images/kiit.jpeg';
-import Optum from 'src/images/Optum.svg';
-import MyFonts from 'src/images/MyFonts.svg';
-import Telenor from 'src/images/Telenor.png';
-// import champ from "../../pdfs/Champ.pdf";
-// import COLLABORATING from "../../pdfs/DXC_COL_AWARD.pdf";
-// import Oracle from "../../pdfs/oracle-eCertificate.pdf";
-
+import FacebookIcon from '@mui/icons-material/Facebook';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import CssIcon from 'src/images/icons/css.png';
 import HtmlIcon from 'src/images/icons/html.webp';
 import JavaScriptIcon from 'src/images/icons/javascript.png';
 import MaterialUiIcon from 'src/images/icons/mui.png';
-import TypeScriptIcon from 'src/images/icons/typescript.png';
-import ReactJsIcon from 'src/images/icons/reactjs.png';
-import NodeJsIcon from 'src/images/icons/nodejs.png';
-import tailwindIcon from 'src/images/icons/tailwind.png';
 import NextJsIcon from 'src/images/icons/nextjs.png';
-
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import NodeJsIcon from 'src/images/icons/nodejs.png';
+import ReactJsIcon from 'src/images/icons/reactjs.png';
+import tailwindIcon from 'src/images/icons/tailwind.png';
+import TypeScriptIcon from 'src/images/icons/typescript.png';
+import kiit from 'src/images/kiit.jpeg';
+import Me from 'src/images/Me.png';
+import MyFonts from 'src/images/MyFonts.svg';
+import Optum from 'src/images/Optum.svg';
+import sapient from 'src/images/sapient.jpeg';
+import silicon from 'src/images/silicon.png';
+import Telenor from 'src/images/Telenor.png';
+// import champ from "../../pdfs/Champ.pdf";
+// import COLLABORATING from "../../pdfs/DXC_COL_AWARD.pdf";
+// import Oracle from "../../pdfs/oracle-eCertificate.pdf";
 
 export interface SocialLink {
   name: string;

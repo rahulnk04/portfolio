@@ -1,3 +1,6 @@
+import Email from '@mui/icons-material/Email';
+import LocationOn from '@mui/icons-material/LocationOnOutlined';
+import Phone from '@mui/icons-material/Phone';
 import {
   Box,
   Typography,
@@ -13,10 +16,7 @@ import {
   Alert,
 } from '@mui/material';
 import { motion } from 'framer-motion';
-import LocationOn from '@mui/icons-material/LocationOnOutlined';
-import Phone from '@mui/icons-material/Phone';
-import Email from '@mui/icons-material/Email';
-import { createElement, useState } from 'react';
+import React, { createElement, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Data, { portfolioConfig } from 'src/data/Data';
 

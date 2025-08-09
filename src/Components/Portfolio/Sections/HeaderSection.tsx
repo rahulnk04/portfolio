@@ -1,4 +1,5 @@
-import React from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
   Toolbar,
@@ -14,10 +15,8 @@ import {
   Divider,
   useMediaQuery,
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import { createElement } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import React, { createElement } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Data, { portfolioConfig } from 'src/data/Data';
 

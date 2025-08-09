@@ -1,12 +1,12 @@
+import { Grid, Box, Typography, Card, Avatar, Link, Container, Button } from '@mui/material';
+import Chip from '@mui/material/Chip';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { useRef } from 'react';
-import { Grid, Box, Typography, Card, Avatar, Link, Container, Button } from '@mui/material';
+import BrowserTitle from 'src/components/browserTitle/BrowserTitle';
+import FooterSection from 'src/components/portfolio/sections/FooterSection';
 import HeaderSection from 'src/components/portfolio/sections/HeaderSection';
 import Data from 'src/data/Data';
-import FooterSection from 'src/components/portfolio/sections/FooterSection';
-import Chip from '@mui/material/Chip';
-import BrowserTitle from 'src/components/browserTitle/BrowserTitle';
 
 const {
   name,
