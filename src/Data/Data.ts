@@ -176,7 +176,7 @@ const Data: ResumeData = {
   noticePeriod: "60 Days",
   servingNotice: false,
   lastWorkingDay: new Date("2022-04-30"), // Note: Outdated; confirm if needed
-  careerSnapshot: `Results-driven Senior Frontend Engineer with ${calculateCurrentExperienceInYears()} years of experience crafting scalable, performance-optimized web applications using React.js and Next.js. Expert in SSR, API integration, and responsive UI, delivering high-quality solutions that enhance user experience. Passionate about mentoring teams and driving innovation in fast-paced tech environments.`,
+  careerSnapshot: `Senior Engineer with ${calculateCurrentExperienceInYears()} years of experience designing and building scalable, high-performance web apps. Uses React.js and the Next.js full-stack framework to create strong front-end experiences and reliable APIs.  Good at server-side rendering (SSR), integrating APIs without problems, and making user interfaces that are responsive and easy to use.  Dedicated to providing high-quality, maintainable solutions that improve the user experience.  Loves mentoring teams, encouraging new ideas, and making things work in fast-paced, changing tech settings.`,
   bioKeyPoints: [
     "🚀 Next.js expert with SSR, dynamic routing, and API integration",
     "🎨 Clean, responsive UI development with HTML5 & CSS3",
@@ -200,14 +200,14 @@ const Data: ResumeData = {
     "Mentored 10+ junior developers, improving team productivity by 15 percent in 2023-2024.",
     "Integrated GraphQL APIs, enhancing data retrieval efficiency by 25 percent in 2023.",
     "Developed secure e-commerce platform for MyFonts.com, increasing user engagement by 10 percent in 2022.",
-    "Automated storage allocation for Telenor’s SARA tool, saving 50+ hours monthly in 2021.",
+    "Automated storage allocation for Telenor's SARA tool, saving 50+ hours monthly in 2021.",
   ],
   interests: ["Cricket", "Watching TV", "Collecting Pens"],
   professionalJourney: [
     {
       title: "Senior Experience Engineer",
       company: "Publicis Sapient, Bangalore, India",
-      dates: "Apr 2024 – Present",
+      dates: "Apr 2024 - Present",
       responsibilities: [
         "Led frontend development for enterprise applications using Next.js 13 and React.js, ensuring scalability and performance.",
         "Architected reusable components and SSR solutions, improving page load speed by 20 percent.",
@@ -222,7 +222,7 @@ const Data: ResumeData = {
     {
       title: "Associate Technology Level 2",
       company: "Publicis Sapient, Bangalore, India",
-      dates: "Apr 2022 – Mar 2024",
+      dates: "Apr 2022 - Mar 2024",
       responsibilities: [
         "Built scalable web platforms with Next.js and Node.js, supporting 100K+ users.",
         "Integrated RESTful and GraphQL APIs, enhancing data retrieval by 25 percent.",
@@ -237,7 +237,7 @@ const Data: ResumeData = {
     {
       title: "Associate Professional",
       company: "DXC Technology, Bangalore, India",
-      dates: "Jul 2020 – Apr 2022",
+      dates: "Jul 2020 - Apr 2022",
       responsibilities: [
         "Developed modular React.js components for enterprise applications, improving maintainability.",
         "Collaborated with product owners to translate requirements into technical solutions.",
