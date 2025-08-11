@@ -298,7 +298,7 @@ const ContactSection = () => {
                   {/* Social icons */}
                   <Box>
                     <Typography variant="subtitle1" fontWeight={600} gutterBottom color="#fff">
-                      Connect with me
+                      Lets Connect
                     </Typography>
                     <Stack direction="row" spacing={2.5} alignItems="center">
                       {social.map((link: SocialLink, idx: number) => (
