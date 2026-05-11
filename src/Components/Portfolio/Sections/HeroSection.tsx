@@ -169,6 +169,7 @@ const HeroSection = () => {
                 mt: 6,
                 px: 4,
                 py: 1.5,
+                textTransform: 'none',
                 // bgcolor: portfolioConfig.theme.accent,
                 // background: `linear-gradient(45deg, ${portfolioConfig.theme.accent}, #357ABD)`,
                 '&:hover': {
@@ -186,7 +187,43 @@ const HeroSection = () => {
               aria-label="View my projects"
               onClick={scrollToContact}
             >
-              Lets Connect
+              {(() => {
+                const istTimeString = new Date().toLocaleString('en-US', {
+                  timeZone: 'Asia/Kolkata',
+                });
+                const istTime = new Date(istTimeString);
+                const hours = istTime.getHours();
+                return hours < 12 ? 'Good Morning' : hours < 18 ? 'Good Afternoon' : 'Good Evening';
+              })()}
+              {' ! Thanks for visiting! Lets Connect to discuss how I can contribute to your team.'}
+            </Button>
+            <br />
+            <Button
+              variant="contained"
+              href="#projects"
+              sx={{
+                mt: 6,
+                px: 4,
+                py: 1.5,
+                textTransform: 'none',
+                // bgcolor: portfolioConfig.theme.accent,
+                // background: `linear-gradient(45deg, ${portfolioConfig.theme.accent}, #357ABD)`,
+                '&:hover': {
+                  transform: 'scale(1.2)',
+                  boxShadow: '0 0 10px rgba(74,144,226,0.3)',
+                },
+                fontWeight: 600,
+                borderRadius: 8,
+                // boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+                border: '3px solid rgba(255,255,255,0.1)',
+                boxShadow: '0 0 10px rgba(74,144,226,0.3)',
+                background: 'transparent',
+                transition: 'transform 0.3s, boxShadow 0.3s',
+              }}
+              aria-label="View my projects"
+              onClick={scrollToContact}
+            >
+              {'Click to Connect!'}
             </Button>
           </motion.div>
         </Box>

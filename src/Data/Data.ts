@@ -3,6 +3,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import dxcLogo from 'src/images/DXC-Full-Color.png';
 import CssIcon from 'src/images/icons/css.png';
 import HtmlIcon from 'src/images/icons/html.webp';
 import JavaScriptIcon from 'src/images/icons/javascript.png';
@@ -13,13 +14,12 @@ import ReactJsIcon from 'src/images/icons/reactjs.png';
 import tailwindIcon from 'src/images/icons/tailwind.png';
 import TypeScriptIcon from 'src/images/icons/typescript.png';
 import kiit from 'src/images/kiit.jpeg';
-import Me from 'src/images/Me.png';
+import Me from 'src/images/MeNew.png';
 import MyFonts from 'src/images/MyFonts.svg';
 import Optum from 'src/images/Optum.svg';
 import sapient from 'src/images/sapientNew.png';
-import tcsLogo from 'src/images/tcs.png';
 import silicon from 'src/images/silicon.png';
-import dxcLogo from 'src/images/DXC-Full-Color.png';
+import tcsLogo from 'src/images/tcs.png';
 import Telenor from 'src/images/Telenor.png';
 // import champ from "../../pdfs/Champ.pdf";
 // import COLLABORATING from "../../pdfs/DXC_COL_AWARD.pdf";
@@ -81,6 +81,7 @@ export interface Project {
   tools: string[];
   database: string[];
   environment: string[];
+  currentOrg: string;
 }
 
 export interface Experience {
@@ -275,14 +276,44 @@ const Data: ResumeData = {
   keyProjects: [
     {
       id: 1,
-      img: Optum,
+      img: Optum, // Reusing the Optum logo constant
+      currentOrg: 'Tata Consultancy Services (TCS)',
       link: 'https://www.optum.com/en/',
-      name: 'Underwriters Case Management System (Optum)',
-      role: 'Developer',
+      name: 'Rebate Projection Tool (RPT)',
+      role: 'Lead Consultant',
       status: 'In Progress',
+      teamSize: 20,
+      startDate: new Date('2025-07-01'), // Adjust based on your actual start date
+      endDate: new Date(),
+      description:
+        'The Rebate Projection Tool (RPT) is a sophisticated automation engine developed for the Actuarial Hub within UnitedHealth Group (Optum). It streamlines the complex rebate calculation process for underwriters by integrating multi-dimensional variables including drug classifications, formulary tiers, specialty definitions, and BG (Benefit Group) definitions. The tool provides a comprehensive solution for weight-loss and diabetic medication projections, notably handling Wegovy adjustments and custom rate overrides. RPT generates mission-critical actuarial outputs such as RA (Risk Adjustment) output rates per quantity, ensuring precision in financial forecasting and competitive pricing strategies.',
+      technologies: [
+        'NextJs 14',
+        'TypeScript',
+        'NodeJS',
+        'ReactJS',
+        'Java Spring Boot',
+        'Databricks',
+        'Python',
+        'Material UI',
+        'Azure',
+        'Github Actions',
+      ],
+      tools: ['VS-Code', 'IntelliJ IDEA', 'Postman', 'GitLab'],
+      database: ['MongoDB'],
+      environment: ['MacOS'],
+    },
+    {
+      id: 2,
+      img: Optum,
+      currentOrg: 'Publicis Sapient',
+      link: 'https://www.optum.com/en/',
+      name: 'Underwriters Case Management System (UWCMS)',
+      role: 'Developer',
+      status: 'Completed',
       teamSize: 12,
       startDate: new Date('2023-05-01'),
-      endDate: new Date(),
+      endDate: new Date(2025, 6, 30), // Adjust based on your actual end date
       description:
         'The Underwriters Case Management System (UWCMS) is an advanced platform designed to simplify and optimize the client onboarding and order fulfillment processes for underwriters. It brings together Workflow Coordinators, Business Segment Leaders, and Underwriters in a collaborative ecosystem. Coordinators kick-start the process by initiating new cases, segment leaders assign cases, and underwriters manage critical tasks such as client evaluations, generating quotes, and rate releases. Key features include tailored dashboards, role-based access controls, real-time task notifications, and advanced reporting capabilities. UWCMS ensures a seamless workflow, efficient resource allocation, and enhanced client service by centralizing operations and offering the right tools to each role.',
       technologies: [
@@ -292,17 +323,21 @@ const Data: ResumeData = {
         'Camunda',
         'Rest API',
         'MongoDB',
-        'Tailwind CSS',
+        'Kafka',
+        'Azure',
+        'Github Actions',
+        'Jenkins',
       ],
       tools: ['VS-Code', 'IntelliJ IDEA', 'Postman'],
       database: ['MongoDB'],
       environment: ['MacOS'],
     },
     {
-      id: 2,
+      id: 3,
       img: MyFonts,
+      currentOrg: 'Publicis Sapient',
       link: 'https://www.myfonts.com/',
-      name: 'MyFonts.com E-commerce Web Application (Monotype Imaging)',
+      name: 'MyFonts.com E-commerce (Monotype Imaging)',
       role: 'Developer',
       status: 'Completed',
       teamSize: 10,
@@ -316,8 +351,9 @@ const Data: ResumeData = {
       environment: ['MacOS'],
     },
     {
-      id: 3,
+      id: 4,
       img: Telenor,
+      currentOrg: 'DXC Technology',
       link: 'https://iot.telenor.com/',
       name: 'Storage Allocation & Reallocation APP (Telenor Group)',
       role: 'Developer',

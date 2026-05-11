@@ -8,6 +8,7 @@ import {
   Grid,
   Chip,
   Stack,
+  Tooltip,
 } from '@mui/material';
 import { motion } from 'motion/react';
 import TextHeader from 'src/components/TextHeader';
@@ -84,19 +85,20 @@ const ProjectSection = () => {
                     boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
                   }}
                 >
-                  <CardMedia
-                    component="img"
-                    height="100"
-                    image={project.img}
-                    alt={project.name}
-                    sx={{
-                      objectFit: 'fill',
-                      width: '100%',
-                      height: 200,
-                      filter: 'brightness(0.9)',
-                    }}
-                    loading="lazy"
-                  />
+                  <Box sx={{ padding: 2 }}>
+                    <CardMedia
+                      component="img"
+                      height="100"
+                      image={project.img}
+                      alt={project.name}
+                      sx={{
+                        objectFit: 'fill',
+                        height: 200,
+                        filter: 'brightness(0.9)',
+                      }}
+                      loading="lazy"
+                    />
+                  </Box>
 
                   <CardContent
                     sx={{
@@ -109,15 +111,61 @@ const ProjectSection = () => {
                       <Typography variant="h6" fontWeight={700} component="h3" gutterBottom>
                         {project.name}
                       </Typography>
-                      <Typography
-                        variant="body2"
-                        paragraph
-                        sx={{ opacity: 0.9, flexGrow: 1, minHeight: 64 }}
-                      >
-                        {project.description.length > 110
-                          ? project.description.slice(0, 107) + '...'
-                          : project.description}
-                      </Typography>
+                      {project.description.length > 107 ? (
+                        <Tooltip
+                          title={
+                            <Typography
+                              sx={{
+                                fontSize: '1rem',
+                                fontWeight: 500,
+                                color: '#fff',
+                                p: 0.5,
+                                letterSpacing: 0.1,
+                              }}
+                            >
+                              {project.description}
+                            </Typography>
+                          }
+                          placement="top"
+                          arrow
+                          componentsProps={{
+                            tooltip: {
+                              sx: {
+                                bgcolor: 'rgba(30,41,59,0.95)',
+                                color: '#fff',
+                                boxShadow: 4,
+                                borderRadius: 2,
+                                px: 2,
+                                py: 1,
+                                maxWidth: 320,
+                              },
+                              className: 'custom-tooltip',
+                            },
+                            arrow: {
+                              sx: {
+                                color: 'rgba(30,41,59,0.95)',
+                              },
+                            },
+                          }}
+                        >
+                          <Typography
+                            variant="body2"
+                            paragraph
+                            sx={{ opacity: 0.9, flexGrow: 1, minHeight: 64 }}
+                          >
+                            {project.description.slice(0, 107) + '...'}
+                          </Typography>
+                        </Tooltip>
+                      ) : (
+                        <Typography
+                          variant="body2"
+                          paragraph
+                          sx={{ opacity: 0.9, flexGrow: 1, minHeight: 64 }}
+                        >
+                          {project.description}
+                        </Typography>
+                      )}
+
                       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                         {project.technologies.map((tech: string, i: number) => (
                           <Chip
@@ -215,6 +263,18 @@ const ProjectSection = () => {
                           color: '#0f172a',
                           py: 0.5,
                           px: 1.25,
+                        }}
+                      />
+                      <Chip
+                        label={`${project.currentOrg}`}
+                        size="medium"
+                        variant="outlined"
+                        sx={{
+                          borderColor: 'rgba(255,255,255,0.4)',
+                          color: 'white',
+                          py: 0.5,
+                          px: 1.25,
+                          width: '100%',
                         }}
                       />
                     </Box>
