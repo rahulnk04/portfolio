@@ -64,6 +64,7 @@ export interface Skill {
   icon: any;
   color: string;
   rating: number;
+  hide?: boolean;
 }
 
 export interface Project {
@@ -72,6 +73,7 @@ export interface Project {
   link: string;
   name: string;
   role: string;
+  account: string;
   status: string;
   teamSize: number;
   startDate: Date;
@@ -130,16 +132,57 @@ export interface ResumeData {
   languages: Language[];
 }
 
+const labels = {
+  rahul: 'Rahul Ranjan Nayak',
+
+  optum: 'United Health Group, Optum',
+  publicisSapient: 'Publicis Sapient',
+  tcs: 'Tata Consultancy Services (TCS)',
+  dxc: 'DXC Technology',
+  monotypeImaging: 'Monotype Imaging',
+  developer: 'Developer',
+  telenorGroup: 'Telenor Group',
+
+  seniorExperienceEngineer: 'Senior Experience Engineer',
+  seniorLeadConsultant: 'Senior Lead Consultant',
+  associateTechnologyLevel2: 'Associate Technology Level 2',
+  associateProfessional: 'Associate Professional',
+  leadDeveloper: 'Lead Developer',
+
+  reactJs: 'React.js',
+  nextJs: 'Next.js (SSR/SSG)',
+  nodeJs: 'Node.js',
+  javaScript: 'JavaScript',
+  html5: 'HTML5',
+  css3: 'CSS3',
+  tailwindCss: 'Tailwind CSS',
+  mongoDb: 'MongoDB',
+  jest: 'Jest',
+  typescript: 'TypeScript',
+  javaSpringBoot: 'Java Spring Boot',
+  databricks: 'Databricks',
+  python: 'Python',
+  materialUI: 'Material UI',
+  azure: 'Azure',
+  githubActions: 'Github Actions',
+  github: 'GitHub',
+  vsCode: 'VS Code',
+  intelliJIDEA: 'IntelliJ IDEA',
+  postman: 'Postman',
+  gitLab: 'GitLab',
+  eclipse: 'Eclipse',
+};
+
 export const calculateCurrentExperienceInYears = (): number => {
   const start = new Date('2020-07-02');
   const today = new Date();
   return today.getFullYear() - start.getFullYear();
 };
 const Data: ResumeData = {
-  name: 'Rahul Ranjan Nayak',
-  jobTitle: 'Senior Experience Engineer | React.js & Next.js Specialist',
-  company: 'Tata Consultancy Services (TCS)',
-  specialCompany: 'United Health Group, Optum',
+  name: labels.rahul,
+  jobTitle: `${labels.seniorLeadConsultant} | React.js & Next.js Specialist`,
+  company: labels.tcs,
+  specialCompany: labels.optum,
   companyStartDate: new Date('2020-07-02'),
   address: 'Plot 606, Parbati Palace, Bhubaneswar, Odisha, India',
   dateOfBirth: new Date('1996-04-12'),
@@ -209,8 +252,8 @@ const Data: ResumeData = {
   interests: ['Cricket', 'Watching TV', 'Collecting Pens'],
   professionalJourney: [
     {
-      title: 'Senior Lead Consultant',
-      company: 'Tata Consultancy Services',
+      title: labels.seniorLeadConsultant,
+      company: labels.tcs,
       address: 'Bhubaneswar, India',
       dates: 'Nov 2025 - Present',
       responsibilities: [
@@ -226,8 +269,8 @@ const Data: ResumeData = {
         'Next.js, React.js, Node.js, TypeScript, JavaScript, Tailwind CSS, MongoDB, Jest, System Architecture.',
     },
     {
-      title: 'Senior Experience Engineer',
-      company: 'Publicis Sapient',
+      title: labels.seniorExperienceEngineer,
+      company: labels.publicisSapient,
       address: 'Hyderabad, India',
       dates: 'Apr 2024 - Oct 2025',
       responsibilities: [
@@ -242,8 +285,8 @@ const Data: ResumeData = {
         'Next.js, React.js, Node.js, JavaScript, HTML5, CSS3, Tailwind CSS, MongoDB, Jest.',
     },
     {
-      title: 'Associate Technology Level 2',
-      company: 'Publicis Sapient',
+      title: labels.associateTechnologyLevel2,
+      company: labels.publicisSapient,
       address: 'Bangalore, India',
       dates: 'Apr 2022 - Mar 2024',
       responsibilities: [
@@ -258,8 +301,8 @@ const Data: ResumeData = {
         'Next.js, React.js, Node.js, GraphQL, JavaScript, HTML5, CSS3, Tailwind CSS, MongoDB.',
     },
     {
-      title: 'Associate Professional',
-      company: 'DXC Technology',
+      title: labels.associateProfessional,
+      company: labels.dxc,
       address: 'Chennai, India',
       dates: 'Jul 2020 - Apr 2022',
       responsibilities: [
@@ -277,10 +320,11 @@ const Data: ResumeData = {
     {
       id: 1,
       img: Optum, // Reusing the Optum logo constant
-      currentOrg: 'Tata Consultancy Services (TCS)',
+      currentOrg: labels.tcs,
       link: 'https://www.optum.com/en/',
       name: 'Rebate Projection Tool (RPT)',
-      role: 'Lead Consultant',
+      account: labels.optum,
+      role: labels.seniorLeadConsultant,
       status: 'In Progress',
       teamSize: 20,
       startDate: new Date('2025-07-01'), // Adjust based on your actual start date
@@ -306,10 +350,11 @@ const Data: ResumeData = {
     {
       id: 2,
       img: Optum,
-      currentOrg: 'Publicis Sapient',
+      currentOrg: labels.publicisSapient,
+      account: labels.optum,
       link: 'https://www.optum.com/en/',
       name: 'Underwriters Case Management System (UWCMS)',
-      role: 'Developer',
+      role: labels.leadDeveloper,
       status: 'Completed',
       teamSize: 12,
       startDate: new Date('2023-05-01'),
@@ -335,10 +380,11 @@ const Data: ResumeData = {
     {
       id: 3,
       img: MyFonts,
-      currentOrg: 'Publicis Sapient',
+      currentOrg: labels.publicisSapient,
+      account: labels.monotypeImaging,
       link: 'https://www.myfonts.com/',
       name: 'MyFonts.com E-commerce (Monotype Imaging)',
-      role: 'Developer',
+      role: labels.developer,
       status: 'Completed',
       teamSize: 10,
       startDate: new Date('2022-04-12'),
@@ -353,10 +399,11 @@ const Data: ResumeData = {
     {
       id: 4,
       img: Telenor,
-      currentOrg: 'DXC Technology',
+      currentOrg: labels.dxc,
+      account: labels.telenorGroup,
       link: 'https://iot.telenor.com/',
       name: 'Storage Allocation & Reallocation APP (Telenor Group)',
-      role: 'Developer',
+      role: labels.developer,
       status: 'Completed',
       teamSize: 4,
       startDate: new Date('2020-11-01'),
@@ -384,6 +431,13 @@ const Data: ResumeData = {
         icon: NextJsIcon,
         color: '#61DBFB',
         rating: 4,
+      },
+      {
+        name: 'Micro Frontend Architecture',
+        percentage: '80%',
+        icon: MaterialUiIcon,
+        color: '#0081CB',
+        rating: 3,
       },
       {
         name: 'Redux.js',
@@ -444,6 +498,14 @@ const Data: ResumeData = {
         rating: 3,
       },
       {
+        name: 'Nest.js',
+        percentage: '90%',
+        icon: NodeJsIcon,
+        color: '#68A063',
+        rating: 3,
+        hide: true,
+      },
+      {
         name: 'Express.js',
         percentage: '80%',
         icon: NodeJsIcon,
@@ -470,6 +532,22 @@ const Data: ResumeData = {
         icon: NodeJsIcon,
         color: '#4DB33D',
         rating: 3,
+      },
+      {
+        name: 'Java Spring Boot',
+        percentage: '70%',
+        icon: NodeJsIcon,
+        color: '#4DB33D',
+        rating: 3,
+        hide: true,
+      },
+      {
+        name: 'Python 3 (Flask/Django)',
+        percentage: '70%',
+        icon: NodeJsIcon,
+        color: '#4DB33D',
+        rating: 3,
+        hide: true,
       },
     ],
     Tooling: [
@@ -508,6 +586,27 @@ const Data: ResumeData = {
         color: '#FF6C37',
         rating: 3,
       },
+      {
+        name: 'IntelliJ IDEA',
+        percentage: '75%',
+        icon: ReactJsIcon,
+        color: '#FF6C37',
+        rating: 3,
+      },
+      {
+        name: 'Sublime Text',
+        percentage: '75%',
+        icon: ReactJsIcon,
+        color: '#FF6C37',
+        rating: 3,
+      },
+      {
+        name: 'Jupyter Notebook',
+        percentage: '75%',
+        icon: ReactJsIcon,
+        color: '#FF6C37',
+        rating: 3,
+      },
     ],
     Methodologies: [
       {
@@ -526,6 +625,20 @@ const Data: ResumeData = {
       },
       {
         name: 'CI/CD',
+        percentage: '75%',
+        icon: ReactJsIcon,
+        color: '#000000',
+        rating: 3,
+      },
+      {
+        name: 'Rally',
+        percentage: '75%',
+        icon: ReactJsIcon,
+        color: '#000000',
+        rating: 3,
+      },
+      {
+        name: 'Jira',
         percentage: '75%',
         icon: ReactJsIcon,
         color: '#000000',
