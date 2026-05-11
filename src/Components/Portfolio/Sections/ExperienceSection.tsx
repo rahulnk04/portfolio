@@ -137,6 +137,7 @@ const ExperienceSection: React.FC = () => {
                         sx={{
                           width: '100%',
                           height: { md: 120, lg: 80 },
+                          background:"rgba(221, 221, 221, 0.09)",
                           borderRadius: 2, // Square with slight rounding for a modern look
                           border: '2px solid rgba(255, 255, 255, 0.3)',
                           objectFit: 'fill',
@@ -161,7 +162,7 @@ const ExperienceSection: React.FC = () => {
                           {job.title}
                         </Typography>
                         <Typography variant="body2" sx={{ opacity: 0.8, fontStyle: 'italic' }}>
-                          {job.company} | {job.dates}
+                          {job.company}, {job.address} | {job.dates}
                         </Typography>
                       </Box>
                     </Grid>

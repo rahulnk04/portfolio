@@ -31,7 +31,7 @@ const HeroSection = () => {
     };
   }, []);
 
-  const { name, jobTitle, social, profilePicture } = Data;
+  const { name, jobTitle, social, profilePicture, professionalJourney, specialCompany } = Data;
 
   const childVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -131,6 +131,10 @@ const HeroSection = () => {
           <motion.div variants={childVariants}>
             <Typography variant="h5" color="white" gutterBottom sx={{ opacity: 0.9 }}>
               {jobTitle}
+            </Typography>
+            <Typography variant="h6" color="white" gutterBottom sx={{ opacity: 0.9 }}>
+              {specialCompany} <br />
+              {Array.from(new Set(professionalJourney.map((d) => d.company))).join(' || ')}
             </Typography>
           </motion.div>
           <motion.div

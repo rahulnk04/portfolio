@@ -35,8 +35,8 @@ const HeaderSection = () => {
   const navigate = useNavigate();
 
   const scrollToSection = (id: string, path: string) => {
-    if (path !== '/home') {
-      navigate('/home'); // Navigate to the correct path first
+    if (path !== '/') {
+      navigate('/'); // Navigate to the correct path first
     }
 
     const el = document.getElementById(id);

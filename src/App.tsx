@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Data from './data/Data';
 import Home from './pages/Home';
@@ -18,7 +18,7 @@ const App = () => {
       </Helmet>
       <HashRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" replace />} />
+          <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/resume" element={<Resume />} />
         </Routes>

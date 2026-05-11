@@ -132,7 +132,7 @@ const Resume = () => {
             sx={{
               backgroundColor: '#ffffff',
               color: '#000000',
-              p: 3,
+              p: 2,
               textAlign: 'center',
             }}
           >
@@ -144,7 +144,7 @@ const Resume = () => {
                   width: 80,
                   height: 80,
                   mx: 'auto',
-                  mb: 2,
+                  mb: 1,
                   border: '2px solid #cccccc',
                   zIndex: 0,
                 }}
@@ -202,7 +202,7 @@ const Resume = () => {
                     gap: 1,
                     bgcolor: 'rgba(0,0,0,0.03)',
                     px: 1.5,
-                    py: 0.75,
+                    // py: 0.75,
                     borderRadius: 1.5,
                     border: '1px solid rgba(0,0,0,0.08)',
                   }}
@@ -440,7 +440,7 @@ const Resume = () => {
                       {job.title}
                     </Typography>
                     <Typography variant="subtitle2" sx={{ fontWeight: 550 }}>
-                      {job.company}
+                      {job.company}, {job.address}
                     </Typography>
                     <Typography variant="body2" sx={{ color: '#333333' }}>
                       {job.dates}

@@ -16,8 +16,10 @@ import kiit from 'src/images/kiit.jpeg';
 import Me from 'src/images/Me.png';
 import MyFonts from 'src/images/MyFonts.svg';
 import Optum from 'src/images/Optum.svg';
-import sapient from 'src/images/sapient.jpeg';
+import sapient from 'src/images/sapientNew.png';
+import tcsLogo from 'src/images/tcs.png';
 import silicon from 'src/images/silicon.png';
+import dxcLogo from 'src/images/DXC-Full-Color.png';
 import Telenor from 'src/images/Telenor.png';
 // import champ from "../../pdfs/Champ.pdf";
 // import COLLABORATING from "../../pdfs/DXC_COL_AWARD.pdf";
@@ -86,6 +88,7 @@ export interface Experience {
   company: string;
   dates: string;
   responsibilities: string[];
+  address: string;
   logo: string;
   present: boolean;
   upcoming: boolean;
@@ -94,7 +97,7 @@ export interface Experience {
 
 export interface ResumeData {
   name: string;
-
+  specialCompany: string;
   jobTitle: string;
   company: string;
   companyStartDate: Date;
@@ -133,9 +136,9 @@ export const calculateCurrentExperienceInYears = (): number => {
 };
 const Data: ResumeData = {
   name: 'Rahul Ranjan Nayak',
-
   jobTitle: 'Senior Experience Engineer | React.js & Next.js Specialist',
-  company: 'Publicis Sapient',
+  company: 'Tata Consultancy Services (TCS)',
+  specialCompany: 'United Health Group, Optum',
   companyStartDate: new Date('2020-07-02'),
   address: 'Plot 606, Parbati Palace, Bhubaneswar, Odisha, India',
   dateOfBirth: new Date('1996-04-12'),
@@ -173,7 +176,7 @@ const Data: ResumeData = {
     },
   ],
   profilePicture: Me,
-  noticePeriod: '60 Days',
+  noticePeriod: '09 Days',
   servingNotice: false,
   lastWorkingDay: new Date('2022-04-30'), // Note: Outdated; confirm if needed
   careerSnapshot: `Senior Engineer with ${calculateCurrentExperienceInYears()} years of experience designing and building scalable, high-performance web apps. Uses React.js and the Next.js full-stack framework to create strong front-end experiences and reliable APIs.  Good at server-side rendering (SSR), integrating APIs without problems, and making user interfaces that are responsive and easy to use.  Dedicated to providing high-quality, maintainable solutions that improve the user experience.  Loves mentoring teams, encouraging new ideas, and making things work in fast-paced, changing tech settings.`,
@@ -205,48 +208,68 @@ const Data: ResumeData = {
   interests: ['Cricket', 'Watching TV', 'Collecting Pens'],
   professionalJourney: [
     {
-      title: 'Senior Experience Engineer',
-      company: 'Publicis Sapient, Bangalore, India',
-      dates: 'Apr 2024 - Present',
+      title: 'Senior Lead Consultant',
+      company: 'Tata Consultancy Services',
+      address: 'Bhubaneswar, India',
+      dates: 'Nov 2025 - Present',
       responsibilities: [
-        'Led frontend development for enterprise applications using Next.js 13 and React.js, ensuring scalability and performance.',
-        'Architected reusable components and SSR solutions, improving page load speed by 20 percent.',
-        'Mentored junior developers on best practices, boosting team efficiency by 15 percent.',
+        'Spearheading frontend architectural strategy for enterprise-scale platforms, prioritizing high availability and core web vitals.',
+        'Establishing robust CI/CD pipelines and coding standards for Next.js applications to streamline multi-team delivery cycles.',
+        'Driving digital transformation initiatives by aligning technical roadmaps with business objectives and stakeholder requirements.',
+        'Governing complex state management patterns and server-side optimization strategies to handle high-concurrency traffic.',
       ],
-      logo: sapient,
+      logo: tcsLogo, // Updated placeholder for TCS
       present: true,
       upcoming: false,
       jobDescription:
-        'NextJS, React.JS, Node.JS, JavaScript, HTML5, CSS3, Tailwind CSS, MongoDB, Jest.',
+        'Next.js, React.js, Node.js, TypeScript, JavaScript, Tailwind CSS, MongoDB, Jest, System Architecture.',
+    },
+    {
+      title: 'Senior Experience Engineer',
+      company: 'Publicis Sapient',
+      address: 'Hyderabad, India',
+      dates: 'Apr 2024 - Oct 2025',
+      responsibilities: [
+        'Led frontend development for enterprise applications using Next.js 13 and React.js, ensuring scalability and performance.',
+        'Architected reusable component libraries and SSR solutions, improving page load speed by 20 percent.',
+        'Mentored junior developers on industry best practices, boosting team efficiency by 15 percent.',
+      ],
+      logo: sapient,
+      present: false, // Updated to false as current role is TCS
+      upcoming: false,
+      jobDescription:
+        'Next.js, React.js, Node.js, JavaScript, HTML5, CSS3, Tailwind CSS, MongoDB, Jest.',
     },
     {
       title: 'Associate Technology Level 2',
-      company: 'Publicis Sapient, Bangalore, India',
+      company: 'Publicis Sapient',
+      address: 'Bangalore, India',
       dates: 'Apr 2022 - Mar 2024',
       responsibilities: [
-        'Built scalable web platforms with Next.js and Node.js, supporting 100K+ users.',
-        'Integrated RESTful and GraphQL APIs, enhancing data retrieval by 25 percent.',
-        'Optimized user experience, reducing bounce rates by 10 percent through responsive designs.',
+        'Built scalable web platforms with Next.js and Node.js, supporting 100K+ concurrent users.',
+        'Integrated complex RESTful and GraphQL APIs, enhancing data retrieval efficiency by 25 percent.',
+        'Optimized user experience and accessibility, reducing bounce rates by 10 percent through responsive design patterns.',
       ],
       logo: sapient,
       present: false,
       upcoming: false,
       jobDescription:
-        'NextJS, React.JS, Node.JS, JavaScript, HTML5, CSS3, Tailwind CSS, MongoDB, Jest.',
+        'Next.js, React.js, Node.js, GraphQL, JavaScript, HTML5, CSS3, Tailwind CSS, MongoDB.',
     },
     {
       title: 'Associate Professional',
-      company: 'DXC Technology, Bangalore, India',
+      company: 'DXC Technology',
+      address: 'Chennai, India',
       dates: 'Jul 2020 - Apr 2022',
       responsibilities: [
-        'Developed modular React.js components for enterprise applications, improving maintainability.',
-        'Collaborated with product owners to translate requirements into technical solutions.',
-        'Optimized frontend performance, achieving 15 percent faster load times with responsive designs.',
+        'Developed modular React.js components for enterprise applications, significantly improving code maintainability.',
+        'Collaborated closely with product owners to translate functional requirements into high-performance technical solutions.',
+        'Achieved 15 percent faster load times by optimizing frontend assets and implementing responsive layouts.',
       ],
-      logo: 'data:image/png;base64,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',
+      logo: dxcLogo,
       present: false,
       upcoming: false,
-      jobDescription: 'React.JS, Node.JS, MongoDB, MySQL, JavaScript, HTML5, CSS3, Tailwind CSS.',
+      jobDescription: 'React.js, Node.js, MongoDB, MySQL, JavaScript, HTML5, CSS3, Tailwind CSS.',
     },
   ],
   keyProjects: [
