@@ -440,7 +440,7 @@ const Resume = () => {
                       {job.title}
                     </Typography>
                     <Typography variant="subtitle2" sx={{ fontWeight: 550 }}>
-                      {job.company}
+                      {job.company}, {job.address}
                     </Typography>
                     <Typography variant="body2" sx={{ color: '#333333' }}>
                       {job.dates}
