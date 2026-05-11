@@ -101,6 +101,9 @@ const HeroSection = () => {
             paddingLeft: '1rem', // px-4 = 16px
             paddingRight: '1rem',
             zIndex: 10, // z-10
+            padding: {
+              xs: '87px 5px', // p-8 = 32px
+            },
           }}
         >
           <motion.div variants={childVariants}>

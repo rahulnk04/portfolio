@@ -102,7 +102,7 @@ const ContactSection = () => {
         position: 'relative',
         py: { xs: 8, md: 8 },
         px: { xs: 4, md: 14 },
-        mb: 8,
+        // mb: 8,
         background: 'linear-gradient(135deg, #0A0A2A 0%, #1A1A44 70%)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
