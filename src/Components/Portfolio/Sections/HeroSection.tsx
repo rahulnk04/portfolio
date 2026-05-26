@@ -215,6 +215,7 @@ const HeroSection = () => {
                 mt: 6,
                 px: 4,
                 py: 1.5,
+                color: '#fff',
                 textTransform: 'none',
                 fontWeight: 600,
                 borderRadius: 8,

@@ -26,7 +26,7 @@ const HeaderSocial = (props: Props) => {
         alignItems: 'center',
         gap: 1.5,
       }}
-    >
+    >hhh
       <Stack direction="row" spacing={1}>
         {social.map((link: SocialLink, i: number) => (
           <motion.div key={i} whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.95 }}>
