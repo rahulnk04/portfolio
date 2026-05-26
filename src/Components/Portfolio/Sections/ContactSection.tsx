@@ -326,40 +326,48 @@ const ContactSection = () => {
 
                   {/* Social icons */}
                   <Box>
-                    <Typography variant="subtitle1" fontWeight={600} gutterBottom color="#fff">
+                    <Typography
+                      variant="subtitle1"
+                      fontWeight={600}
+                      sx={{ mt: 1, mb: 1.5 }}
+                      gutterBottom
+                      color="#fff"
+                    >
                       Lets Connect
                     </Typography>
-                    <Stack direction="row" spacing={2.5} alignItems="center">
+                    <Grid container spacing={2} columns={7}>
                       {social.map((link: SocialLink, idx: number) => (
-                        <motion.div key={idx} variants={hoverVariants} whileHover="hover">
-                          <IconButton
-                            component="a"
-                            href={link.url || '#'}
-                            target="_blank"
-                            rel="noopener"
-                            aria-label={link.name}
-                            sx={{
-                              bgcolor: 'rgba(255,255,255,0.05)',
-                              border: `2px solid ${portfolioConfig.theme.accent}33`,
-                              borderRadius: '50%',
-                              width: 52,
-                              height: 52,
-                              transition: 'all 0.4s ease',
-                              '&:hover': {
-                                bgcolor: `${portfolioConfig.theme.accent}22`,
-                                borderColor: portfolioConfig.theme.accent,
-                                transform: 'rotate(10deg)',
-                              },
-                            }}
-                          >
-                            {createElement(link.icon, {
-                              fontSize: 'small',
-                              sx: { color: '#fff' },
-                            })}
-                          </IconButton>
-                        </motion.div>
+                        <Grid key={idx} size={{ xs: 1, sm: 1, md: 1 }}>
+                          <motion.div variants={hoverVariants} whileHover="hover">
+                            <IconButton
+                              component="a"
+                              href={link.url || '#'}
+                              target="_blank"
+                              rel="noopener"
+                              aria-label={link.name}
+                              sx={{
+                                bgcolor: 'rgba(255,255,255,0.05)',
+                                border: `2px solid ${portfolioConfig.theme.accent}33`,
+                                borderRadius: '50%',
+                                width: 38,
+                                height: 38,
+                                transition: 'all 0.4s ease',
+                                '&:hover': {
+                                  bgcolor: `${portfolioConfig.theme.accent}22`,
+                                  borderColor: portfolioConfig.theme.accent,
+                                  transform: 'rotate(10deg)',
+                                },
+                              }}
+                            >
+                              {createElement(link.icon, {
+                                fontSize: 'small',
+                                sx: { color: '#fff' },
+                              })}
+                            </IconButton>
+                          </motion.div>
+                        </Grid>
                       ))}
-                    </Stack>
+                    </Grid>
                   </Box>
 
                   {/* Resume download */}

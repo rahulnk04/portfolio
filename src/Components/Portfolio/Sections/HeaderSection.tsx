@@ -14,6 +14,7 @@ import {
   ListItemText,
   Divider,
   useMediaQuery,
+  Grid,
 } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 import { createElement, useEffect, useState } from 'react';
@@ -276,31 +277,39 @@ const HeaderSection = () => {
           </List>
           <Divider sx={{ my: 1, borderColor: 'rgba(255,255,255,0.1)' }} />
           <Box sx={{ px: 3, mt: 1, position: 'fixed', bottom: '30px' }}>
-            <Typography variant="subtitle2" gutterBottom>
-              Connect
-            </Typography>
-            <Stack direction="row" spacing={1}>
-              {social.map((link: SocialLink, i: number) => (
-                <motion.div key={i} whileHover={{ scale: 1.1 }}>
-                  <IconButton
-                    component="a"
-                    href={link.url || '#'}
-                    target="_blank"
-                    rel="noopener"
-                    aria-label={link.name}
-                    sx={{
-                      bgcolor: 'transparent',
-                      color: '#fff',
-                      borderRadius: 2,
-                      width: 40,
-                      height: 40,
-                    }}
-                  >
-                    {createElement(link.icon, { fontSize: 'small' })}
-                  </IconButton>
-                </motion.div>
+            <Grid container spacing={2} columns={4}>
+              {social.map((link: SocialLink, idx: number) => (
+                <Grid key={idx} size={{ xs: 1, sm: 1, md: 1 }}>
+                  <motion.div whileHover={{ scale: 1.1 }}>
+                    <IconButton
+                      component="a"
+                      href={link.url || '#'}
+                      target="_blank"
+                      rel="noopener"
+                      aria-label={link.name}
+                      sx={{
+                        bgcolor: 'rgba(255,255,255,0.05)',
+                        border: `2px solid ${portfolioConfig.theme.accent}33`,
+                        borderRadius: '50%',
+                        width: 38,
+                        height: 38,
+                        transition: 'all 0.4s ease',
+                        '&:hover': {
+                          bgcolor: `${portfolioConfig.theme.accent}22`,
+                          borderColor: portfolioConfig.theme.accent,
+                          transform: 'rotate(10deg)',
+                        },
+                      }}
+                    >
+                      {createElement(link.icon, {
+                        fontSize: 'small',
+                        sx: { color: '#fff' },
+                      })}
+                    </IconButton>
+                  </motion.div>
+                </Grid>
               ))}
-            </Stack>
+            </Grid>
           </Box>
         </Box>
       </Drawer>
