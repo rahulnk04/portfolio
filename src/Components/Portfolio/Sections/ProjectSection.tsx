@@ -243,15 +243,16 @@ const ProjectSection = () => {
                       >
                         <Button
                           variant="outlined"
+                          size="small"
                           aria-label={`View ${project.name}`}
                           sx={{
                             textTransform: 'none',
-                            fontWeight: 600,
-                            borderRadius: 2,
+                            fontWeight: 500,
+                            borderRadius: '40px',
                             borderColor: portfolioConfig.theme.accent,
                             color: portfolioConfig.theme.accent,
+                            p: 0,
                             px: 2,
-                            py: 1,
                             '&:hover': {
                               bgcolor: portfolioConfig.theme.accent,
                               color: '#0f172a',
@@ -264,6 +265,7 @@ const ProjectSection = () => {
                         >
                           View Project
                         </Button>
+
                         <Chip
                           label={project.role}
                           size="small"

@@ -355,7 +355,7 @@ const Data: ResumeData = {
       img: Optum, // Reusing the Optum logo constant
       currentOrg: labels.tcs,
       link: 'https://www.optum.com/en/',
-      name: 'Rebate Projection Tool (RPT)',
+      name: 'Rebate Projection Tool (Health Care - Pricing & Actuarial)',
       account: labels.optum,
       role: labels.seniorLeadConsultant,
       status: 'In Progress',
@@ -366,14 +366,15 @@ const Data: ResumeData = {
         'The Rebate Projection Tool (RPT) is a sophisticated automation engine developed for the Actuarial Hub within UnitedHealth Group (Optum). It streamlines the complex rebate calculation process for underwriters by integrating multi-dimensional variables including drug classifications, formulary tiers, specialty definitions, and BG (Benefit Group) definitions. The tool provides a comprehensive solution for weight-loss and diabetic medication projections, notably handling Wegovy adjustments and custom rate overrides. RPT generates mission-critical actuarial outputs such as RA (Risk Adjustment) output rates per quantity, ensuring precision in financial forecasting and competitive pricing strategies.',
       technologies: [
         'NextJs 14',
-        'TypeScript',
+
+        'Java Spring',
         'NodeJS',
         'ReactJS',
-        'Java Spring Boot',
-        'Databricks',
         'Python',
+        'TypeScript',
+        'Databricks',
         'Material UI',
-        'Azure',
+
         'Github Actions',
       ],
       tools: ['VS-Code', 'IntelliJ IDEA', 'Postman', 'GitLab'],
