@@ -2,6 +2,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import PinterestIcon from '@mui/icons-material/Pinterest';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import dxcLogo from 'src/images/DXC-Full-Color.png';
 import CssIcon from 'src/images/icons/css.png';
@@ -16,7 +17,7 @@ import TypeScriptIcon from 'src/images/icons/typescript.png';
 import kiit from 'src/images/kiit.jpeg';
 import MyFonts from 'src/images/MyFonts.svg';
 import Optum from 'src/images/Optum.svg';
-import Me from 'src/images/RahulNew.png';
+import Me from 'src/images/Rahul Ranjan Nayak.png';
 import sapient from 'src/images/sapientNew.png';
 import silicon from 'src/images/silicon.png';
 import tcsLogo from 'src/images/tcs.png';
@@ -120,6 +121,7 @@ export interface ResumeData {
   interests: string[];
   professionalJourney: Experience[];
   keyProjects: Project[];
+  gitHub: string;
   skills: {
     Frontend: Skill[];
     Backend: Skill[];
@@ -189,6 +191,7 @@ const Data: ResumeData = {
   dateOfBirth: new Date('1996-04-12'),
   phone: '+91 - 7205326146',
   email: 'rahulnk04@gmail.com',
+  gitHub: 'https://github.com/rahulnk04',
   website: {
     name: 'rahulnk04.github.io/portfolio',
     link: 'https://rahulnk04.github.io/portfolio',
@@ -218,6 +221,11 @@ const Data: ResumeData = {
       name: 'Instagram',
       url: 'https://www.instagram.com/rahulnk04/',
       icon: InstagramIcon,
+    },
+    {
+      name: 'Pinterest',
+      url: 'https://in.pinterest.com/rahulnk04/rahul-ranjan-nayak/',
+      icon: PinterestIcon,
     },
   ],
   profilePicture: Me,

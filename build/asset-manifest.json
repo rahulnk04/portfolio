@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "./static/css/main.c5655aec.css",
-    "main.js": "./static/js/main.3a0e3cb8.js",
+    "main.js": "./static/js/main.663f5f7f.js",
     "static/js/977.97141cb1.chunk.js": "./static/js/977.97141cb1.chunk.js",
     "static/js/732.a39b8961.chunk.js": "./static/js/732.a39b8961.chunk.js",
     "static/js/453.b06fd736.chunk.js": "./static/js/453.b06fd736.chunk.js",
-    "static/media/rahul_cover.png": "./static/media/rahul_cover.f8758dd9121f935792da.png",
-    "static/media/RahulNew.png": "./static/media/RahulNew.d18d74991f57b04cf67a.png",
+    "static/media/Rahul_Ranjan_Nayak_cover.png": "./static/media/Rahul_Ranjan_Nayak_cover.f8758dd9121f935792da.png",
+    "static/media/Rahul Ranjan Nayak.png": "./static/media/Rahul Ranjan Nayak.d18d74991f57b04cf67a.png",
     "static/media/tailwind.png": "./static/media/tailwind.f0f26047a8933b822dae.png",
     "static/media/reactjs.png": "./static/media/reactjs.81ed438b18e24116794d.png",
     "static/media/sapientNew.png": "./static/media/sapientNew.4be940d6192fdb1485d0.png",
@@ -24,13 +24,13 @@
     "index.html": "./index.html",
     "static/media/Optum.svg": "./static/media/Optum.fdcb50ff245a2d5505a11e03e942c04b.svg",
     "main.c5655aec.css.map": "./static/css/main.c5655aec.css.map",
-    "main.3a0e3cb8.js.map": "./static/js/main.3a0e3cb8.js.map",
+    "main.663f5f7f.js.map": "./static/js/main.663f5f7f.js.map",
     "977.97141cb1.chunk.js.map": "./static/js/977.97141cb1.chunk.js.map",
     "732.a39b8961.chunk.js.map": "./static/js/732.a39b8961.chunk.js.map",
     "453.b06fd736.chunk.js.map": "./static/js/453.b06fd736.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c5655aec.css",
-    "static/js/main.3a0e3cb8.js"
+    "static/js/main.663f5f7f.js"
   ]
 }
