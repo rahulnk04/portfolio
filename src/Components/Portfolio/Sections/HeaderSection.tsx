@@ -19,6 +19,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import React, { createElement, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Data, { portfolioConfig, SocialLink } from 'src/data/Data';
+import HeaderSocial from './HeaderSocial';
 
 const NAV_SECTIONS = [
   { label: 'Home', target: 'hero' },
@@ -194,37 +195,7 @@ const HeaderSection = () => {
                   gap: 1.5,
                 }}
               >
-                {isMd && (
-                  <Stack direction="row" spacing={1}>
-                    {social.map((link: SocialLink, i: number) => (
-                      <motion.div key={i} whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.95 }}>
-                        <IconButton
-                          component="a"
-                          href={link.url || '#'}
-                          target="_blank"
-                          rel="noopener"
-                          aria-label={link.name}
-                          size="small"
-                          sx={{
-                            bgcolor: 'transparent',
-                            color: '#fff',
-
-                            borderRadius: 2,
-                            width: 44,
-                            height: 44,
-                            transition: 'box-shadow .2s ease',
-                            '&:hover': {
-                              boxShadow: `0 10px 30px -5px ${portfolioConfig.theme.accent}88`,
-                              bgcolor: 'rgba(255,255,255,0.12)',
-                            },
-                          }}
-                        >
-                          {createElement(link.icon, { fontSize: 'small' })}
-                        </IconButton>
-                      </motion.div>
-                    ))}
-                  </Stack>
-                )}
+                {isMd && <HeaderSocial />}
                 {!isMd && (
                   <IconButton
                     aria-label="Open menu"

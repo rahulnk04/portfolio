@@ -4,6 +4,7 @@ import { motion, useTransform, useScroll } from 'motion/react';
 import React, { useEffect, useState } from 'react';
 import Data, { SocialLink } from 'src/data/Data';
 import Me from 'src/images/Rahul_Ranjan_Nayak_cover.png';
+import HeaderSocial from './HeaderSocial';
 
 const HeroSection = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -32,7 +33,15 @@ const HeroSection = () => {
     };
   }, []);
 
-  const { name, jobTitle, social, profilePicture, professionalJourney, specialCompany } = Data;
+  const {
+    name,
+    jobTitle,
+    social,
+    profilePicture,
+    professionalJourney,
+    specialCompany,
+    gitHub: githubLink,
+  } = Data;
 
   const childVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -47,6 +56,10 @@ const HeroSection = () => {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  };
+
+  const profileClickHandler = () => {
+    window.open(githubLink, '_blank', 'noopener');
   };
 
   return (
@@ -175,6 +188,57 @@ const HeroSection = () => {
           <motion.div variants={childVariants}>
             <Button
               variant="contained"
+              sx={{
+                mt: 6,
+                px: 4,
+                py: 1.5,
+                textTransform: 'none',
+                '&:hover': {
+                  transform: 'scale(1.2)',
+                  boxShadow: '0 0 10px rgba(74,144,226,0.3)',
+                },
+                fontWeight: 600,
+                borderRadius: 8,
+                border: '3px solid rgba(255,255,255,0.1)',
+                boxShadow: '0 0 10px rgba(74,144,226,0.3)',
+                background: 'transparent',
+                transition: 'transform 0.3s, boxShadow 0.3s',
+              }}
+              aria-label="View my projects"
+              onClick={profileClickHandler}
+            >
+              {'View Profile'}
+            </Button>
+            <br />
+            <Box
+              sx={{
+                mt: 6,
+                px: 4,
+                py: 1.5,
+                textTransform: 'none',
+                fontWeight: 600,
+                borderRadius: 8,
+                cursor: 'pointer', // Makes it behave like a button on hover
+                display: 'inline-flex', // Ensures it wraps around the content tightly like a button
+                alignItems: 'center',
+                justifyContent: 'center',
+
+                boxShadow: '0 0 10px rgba(74,144,226,0.3)',
+
+                transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s',
+
+                '&:hover': {
+                  // Mimics the regular standard button dimming down
+                  transform: 'scale(1.2)',
+                  boxShadow: '0 0 15px rgba(74,144,226,0.6)', // Slightly boosted glow to match scale
+                },
+              }}
+            >
+              <HeaderSocial width={50} height={50} />
+            </Box>{' '}
+            <br />
+            <Button
+              variant="contained"
               href="#projects"
               sx={{
                 mt: 6,
@@ -204,31 +268,6 @@ const HeroSection = () => {
                 return hours < 12 ? 'Good Morning' : hours < 18 ? 'Good Afternoon' : 'Good Evening';
               })()}
               {' ! Thanks for visiting! Lets Connect to discuss how I can contribute to your team.'}
-            </Button>
-            <br />
-            <Button
-              variant="contained"
-              href="#projects"
-              sx={{
-                mt: 6,
-                px: 4,
-                py: 1.5,
-                textTransform: 'none',
-                '&:hover': {
-                  transform: 'scale(1.2)',
-                  boxShadow: '0 0 10px rgba(74,144,226,0.3)',
-                },
-                fontWeight: 600,
-                borderRadius: 8,
-                border: '3px solid rgba(255,255,255,0.1)',
-                boxShadow: '0 0 10px rgba(74,144,226,0.3)',
-                background: 'transparent',
-                transition: 'transform 0.3s, boxShadow 0.3s',
-              }}
-              aria-label="View my projects"
-              onClick={scrollToContact}
-            >
-              {'Click to Connect!'}
             </Button>
           </motion.div>
         </Box>

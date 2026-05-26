@@ -120,6 +120,7 @@ export interface ResumeData {
   interests: string[];
   professionalJourney: Experience[];
   keyProjects: Project[];
+  gitHub: string;
   skills: {
     Frontend: Skill[];
     Backend: Skill[];
@@ -189,6 +190,7 @@ const Data: ResumeData = {
   dateOfBirth: new Date('1996-04-12'),
   phone: '+91 - 7205326146',
   email: 'rahulnk04@gmail.com',
+  gitHub: 'https://github.com/rahulnk04',
   website: {
     name: 'rahulnk04.github.io/portfolio',
     link: 'https://rahulnk04.github.io/portfolio',
