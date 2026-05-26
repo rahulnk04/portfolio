@@ -3,7 +3,7 @@ import Lenis from '@studio-freight/lenis';
 import { motion, useTransform, useScroll } from 'motion/react';
 import React, { useEffect, useState } from 'react';
 import Data, { SocialLink } from 'src/data/Data';
-import Me from 'src/images/rahul_cover.png';
+import Me from 'src/images/Rahul_Ranjan_Nayak_cover.png';
 
 const HeroSection = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });

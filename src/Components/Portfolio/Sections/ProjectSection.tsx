@@ -14,7 +14,7 @@ import {
 import { motion } from 'motion/react';
 import TextHeader from 'src/components/TextHeader';
 import Data, { portfolioConfig, Project } from 'src/data/Data';
-import Me from 'src/images/rahul_cover.png';
+import Me from 'src/images/Rahul_Ranjan_Nayak_cover.png';
 
 const ProjectSection = () => {
   const { keyProjects } = Data;

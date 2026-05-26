@@ -16,7 +16,7 @@ import TypeScriptIcon from 'src/images/icons/typescript.png';
 import kiit from 'src/images/kiit.jpeg';
 import MyFonts from 'src/images/MyFonts.svg';
 import Optum from 'src/images/Optum.svg';
-import Me from 'src/images/RahulNew.png';
+import Me from 'src/images/Rahul Ranjan Nayak.png';
 import sapient from 'src/images/sapientNew.png';
 import silicon from 'src/images/silicon.png';
 import tcsLogo from 'src/images/tcs.png';
