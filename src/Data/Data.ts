@@ -14,9 +14,9 @@ import ReactJsIcon from 'src/images/icons/reactjs.png';
 import tailwindIcon from 'src/images/icons/tailwind.png';
 import TypeScriptIcon from 'src/images/icons/typescript.png';
 import kiit from 'src/images/kiit.jpeg';
-import Me from 'src/images/MeNew.png';
 import MyFonts from 'src/images/MyFonts.svg';
 import Optum from 'src/images/Optum.svg';
+import Me from 'src/images/RahulNew.png';
 import sapient from 'src/images/sapientNew.png';
 import silicon from 'src/images/silicon.png';
 import tcsLogo from 'src/images/tcs.png';
@@ -143,6 +143,7 @@ const labels = {
   developer: 'Developer',
   telenorGroup: 'Telenor Group',
 
+  seniorLeadEngineer: 'Senior Lead Engineer',
   seniorExperienceEngineer: 'Senior Experience Engineer',
   seniorLeadConsultant: 'Senior Lead Consultant',
   associateTechnologyLevel2: 'Associate Technology Level 2',
@@ -251,6 +252,23 @@ const Data: ResumeData = {
   ],
   interests: ['Cricket', 'Watching TV', 'Collecting Pens'],
   professionalJourney: [
+    {
+      title: labels.seniorLeadEngineer,
+      company: labels.optum,
+      address: 'Hyderabad, India',
+      dates: 'Oct 2022 - Present',
+      responsibilities: [
+        'Architecting high-performance frontend solutions for enterprise-scale platforms, consistently optimizing Core Web Vitals and system scalability.',
+        'Automating multi-team delivery pipelines by implementing robust CI/CD workflows and standardizing Next.js development practices.',
+        'Bridging the gap between engineering and business by translating complex stakeholder requirements into actionable, long-term technical roadmaps.',
+        'Optimizing data orchestration layers through advanced state management and server-side rendering (SSR) to sustain high-concurrency traffic.',
+      ],
+      logo: Optum, // Updated placeholder for TCS
+      present: true,
+      upcoming: false,
+      jobDescription:
+        'Next.js, React.js, Node.js, TypeScript, JavaScript, Tailwind CSS, MongoDB, Jest, System Architecture.',
+    },
     {
       title: labels.seniorLeadConsultant,
       company: labels.tcs,

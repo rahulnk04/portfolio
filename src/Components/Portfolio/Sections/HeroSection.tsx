@@ -3,6 +3,7 @@ import Lenis from '@studio-freight/lenis';
 import { motion, useTransform, useScroll } from 'motion/react';
 import React, { useEffect, useState } from 'react';
 import Data, { SocialLink } from 'src/data/Data';
+import Me from 'src/images/rahul_cover.png';
 
 const HeroSection = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -47,6 +48,7 @@ const HeroSection = () => {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
   return (
     <div>
       <motion.section
@@ -54,40 +56,47 @@ const HeroSection = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1920&q=80')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          minHeight: '100vh', // min-h-screen
-          position: 'relative', // relative
-          overflow: 'hidden', // overflow-hidden
-          display: 'flex', // flex
-          alignItems: 'center', // items-center
-          justifyContent: 'center', // justify-center
+          minHeight: '100vh',
+          position: 'relative',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
         id="hero"
       >
+        {/* --- BLURRED BACKGROUND LAYER --- */}
         <motion.div
           style={{
             y: heroParallax,
-            position: 'absolute', // absolute
-            top: 0, // inset-0
+            position: 'absolute',
+            top: 0,
             right: 0,
             bottom: 0,
             left: 0,
-            zIndex: 0, // z-0
+            //  backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1920&q=80')",
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${Me})`,
+            backgroundSize: 'cover',
+            // backgroundPosition: 'auto',
+            backgroundPosition: 'var(--hero-bg-position, center)',
+            // backgroundAttachment: 'fixed',
+            filter: 'blur(2px)', // Beautiful deep blur
+            transform: 'scale(1.05)', // Hides white edge artifacts from blur
+            zIndex: 0,
           }}
         />
+
+        {/* Custom Interactive Cursor Circle */}
         <motion.div
           style={{
-            position: 'absolute', // absolute
-            width: '10rem', // w-40 = 160px
-            height: '10rem', // h-40 = 160px
-            background: 'linear-gradient(to right, #60a5fa, #a855f7)', // from-blue-400 to-purple-500
-            borderRadius: '9999px', // rounded-full
-            opacity: 0.2, // opacity-20
-            pointerEvents: 'none', // pointer-events-none
+            position: 'absolute',
+            width: '10rem',
+            height: '10rem',
+            background: 'linear-gradient(to right, #60a5fa, #a855f7)',
+            borderRadius: '9999px',
+            opacity: 0.2,
+            pointerEvents: 'none',
+            zIndex: 1, // Stays above background but behind content
           }}
           animate={{
             x: cursorPosition.x - 80,
@@ -95,14 +104,16 @@ const HeroSection = () => {
             transition: { type: 'spring', stiffness: 100, damping: 20 },
           }}
         />
+
+        {/* Content Box */}
         <Box
           sx={{
-            textAlign: 'center', // text-center
-            paddingLeft: '1rem', // px-4 = 16px
+            textAlign: 'center',
+            paddingLeft: '1rem',
             paddingRight: '1rem',
-            zIndex: 10, // z-10
+            zIndex: 10, // Places text safely over everything
             padding: {
-              xs: '87px 5px', // p-8 = 32px
+              xs: '87px 5px',
             },
           }}
         >
@@ -143,10 +154,10 @@ const HeroSection = () => {
           <motion.div
             variants={childVariants}
             style={{
-              display: 'flex', // flex
-              justifyContent: 'center', // justify-center
-              gap: '1rem', // gap-4 = 16px
-              marginTop: '1.5rem', // mt-6 = 24px
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '1rem',
+              marginTop: '1.5rem',
             }}
           >
             {social.map((link: SocialLink, index: number) => (
@@ -170,15 +181,12 @@ const HeroSection = () => {
                 px: 4,
                 py: 1.5,
                 textTransform: 'none',
-                // bgcolor: portfolioConfig.theme.accent,
-                // background: `linear-gradient(45deg, ${portfolioConfig.theme.accent}, #357ABD)`,
                 '&:hover': {
                   transform: 'scale(1.2)',
                   boxShadow: '0 0 10px rgba(74,144,226,0.3)',
                 },
                 fontWeight: 600,
                 borderRadius: 8,
-                // boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
                 border: '3px solid rgba(255,255,255,0.1)',
                 boxShadow: '0 0 10px rgba(74,144,226,0.3)',
                 background: 'transparent',
@@ -206,15 +214,12 @@ const HeroSection = () => {
                 px: 4,
                 py: 1.5,
                 textTransform: 'none',
-                // bgcolor: portfolioConfig.theme.accent,
-                // background: `linear-gradient(45deg, ${portfolioConfig.theme.accent}, #357ABD)`,
                 '&:hover': {
                   transform: 'scale(1.2)',
                   boxShadow: '0 0 10px rgba(74,144,226,0.3)',
                 },
                 fontWeight: 600,
                 borderRadius: 8,
-                // boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
                 border: '3px solid rgba(255,255,255,0.1)',
                 boxShadow: '0 0 10px rgba(74,144,226,0.3)',
                 background: 'transparent',

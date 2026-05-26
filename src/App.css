@@ -1,0 +1,11 @@
+/* Default desktop setting */
+:root {
+  --hero-bg-position: auto;
+}
+
+/* Mobile specific setting (e.g., under 768px) */
+@media (max-width: 767px) {
+  :root {
+    --hero-bg-position: center; /* Change this to your preferred mobile position */
+  }
+}
