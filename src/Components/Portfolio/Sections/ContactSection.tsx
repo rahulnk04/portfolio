@@ -1,6 +1,7 @@
 import Email from '@mui/icons-material/Email';
 import LocationOn from '@mui/icons-material/LocationOnOutlined';
 import Phone from '@mui/icons-material/Phone';
+import LockOutlined from '@mui/icons-material/LockOutlined';
 import {
   Box,
   Typography,
@@ -62,10 +63,16 @@ const ContactSection = () => {
     message: '',
   });
 
-  // Passkey dialog state
-  const [openPasskeyDialog, setOpenPasskeyDialog] = useState(false);
-  const [passkeyInput, setPasskeyInput] = useState('');
-  const [passkeyError, setPasskeyError] = useState(false);
+  // Resume passkey dialog state
+  const [openResumePasskeyDialog, setOpenResumePasskeyDialog] = useState(false);
+  const [resumePasskeyInput, setResumePasskeyInput] = useState('');
+  const [resumePasskeyError, setResumePasskeyError] = useState(false);
+
+  // Phone passkey dialog state
+  const [openPhonePasskeyDialog, setOpenPhonePasskeyDialog] = useState(false);
+  const [phonePasskeyInput, setPhonePasskeyInput] = useState('');
+  const [phonePasskeyError, setPhonePasskeyError] = useState(false);
+  const [isPhoneVerified, setIsPhoneVerified] = useState(false);
 
   // Global Snackbar Notification State
   const [open, setOpen] = useState(false);
@@ -108,22 +115,40 @@ const ContactSection = () => {
     setSendMessage({ fullName: '', subject: '', message: '' });
   };
 
-  // Passkey Verification Logic
-  const handleVerifyPasskey = () => {
-    if (passkeyInput === '123456') {
-      setOpenPasskeyDialog(false);
-      setPasskeyInput('');
-      setPasskeyError(false);
+  // Resume Passkey Verification Logic
+  const handleVerifyResumePasskey = () => {
+    if (resumePasskeyInput === '123456') {
+      setOpenResumePasskeyDialog(false);
+      setResumePasskeyInput('');
+      setResumePasskeyError(false);
       navigate('/resume');
     } else {
-      setPasskeyError(true);
+      setResumePasskeyError(true);
     }
   };
 
-  const handleClosePasskeyDialog = () => {
-    setOpenPasskeyDialog(false);
-    setPasskeyInput('');
-    setPasskeyError(false);
+  const handleCloseResumePasskeyDialog = () => {
+    setOpenResumePasskeyDialog(false);
+    setResumePasskeyInput('');
+    setResumePasskeyError(false);
+  };
+
+  // Phone Passkey Verification Logic
+  const handleVerifyPhonePasskey = () => {
+    if (phonePasskeyInput === '123456') {
+      setOpenPhonePasskeyDialog(false);
+      setPhonePasskeyInput('');
+      setPhonePasskeyError(false);
+      setIsPhoneVerified(true);
+    } else {
+      setPhonePasskeyError(true);
+    }
+  };
+
+  const handleClosePhonePasskeyDialog = () => {
+    setOpenPhonePasskeyDialog(false);
+    setPhonePasskeyInput('');
+    setPhonePasskeyError(false);
   };
 
   return (
@@ -274,29 +299,73 @@ const ContactSection = () => {
                         </Typography>
                       </Box>
                     </Stack>
+
                     <Stack direction="row" spacing={3} alignItems="center" mb={3}>
                       <motion.div variants={hoverVariants} whileHover="hover">
                         <Avatar
+                          onClick={() => !isPhoneVerified && setOpenPhonePasskeyDialog(true)}
                           sx={{
                             background: 'transparent',
                             width: 56,
                             height: 56,
                             border: '3px solid rgba(255,255,255,0.1)',
                             boxShadow: '0 0 10px rgba(74,144,226,0.3)',
+                            cursor: !isPhoneVerified ? 'pointer' : 'default',
                           }}
                         >
-                          <Phone sx={{ color: 'white', fontSize: '2rem' }} />
+                          {isPhoneVerified ? (
+                            <Phone sx={{ color: 'white', fontSize: '2rem' }} />
+                          ) : (
+                            <LockOutlined sx={{ color: 'inherit', fontSize: '1.75rem' }} />
+                          )}
                         </Avatar>
                       </motion.div>
-                      <Box>
+                      <Box sx={{ width: '100%' }}>
                         <Typography variant="subtitle1" fontWeight={600} color="#fff">
                           Phone
                         </Typography>
-                        <Typography variant="body2" color="#B0B0D0">
-                          {phone}
-                        </Typography>
+                        {isPhoneVerified ? (
+                          <Typography variant="body2" color="#B0B0D0">
+                            {phone}
+                          </Typography>
+                        ) : (
+                          <Stack direction="row" spacing={2} alignItems="center">
+                            <Typography
+                              variant="body2"
+                              color="#B0B0D0"
+                              sx={{
+                                filter: 'blur(5px)',
+                                userSelect: 'none',
+                                letterSpacing: '2px',
+                              }}
+                            >
+                              +123 456 7890
+                            </Typography>
+                            <Button
+                              size="small"
+                              onClick={() => setOpenPhonePasskeyDialog(true)}
+                              sx={{
+                                textTransform: 'none',
+                                py: 0,
+                                minWidth: 'auto',
+                                color: '#fff',
+                                fontWeight: 600,
+                                fontSize: '0.8rem',
+                                border: `1px solid #ffffff3d`,
+                                px: 1,
+                                borderRadius: 1,
+                                '&:hover': {
+                                  borderColor: '#ffffffca',
+                                },
+                              }}
+                            >
+                              Unlock
+                            </Button>
+                          </Stack>
+                        )}
                       </Box>
                     </Stack>
+
                     <Stack direction="row" spacing={3} alignItems="center">
                       <motion.div variants={hoverVariants} whileHover="hover">
                         <Avatar
@@ -387,8 +456,7 @@ const ContactSection = () => {
                             transform: 'scale(1.1)',
                           },
                         }}
-                        // Enabled button to allow interaction with dialog modal hook
-                        onClick={() => setOpenPasskeyDialog(true)}
+                        onClick={() => setOpenResumePasskeyDialog(true)}
                       >
                         View Resume
                       </Button>
@@ -562,10 +630,10 @@ const ContactSection = () => {
         </Grid>
       </motion.div>
 
-      {/* MUI Passkey Popup Modal */}
+      {/* MUI Resume Passkey Popup Modal */}
       <Dialog
-        open={openPasskeyDialog}
-        onClose={handleClosePasskeyDialog}
+        open={openResumePasskeyDialog}
+        onClose={handleCloseResumePasskeyDialog}
         PaperProps={{
           sx: {
             bgcolor: 'rgba(20,20,40,0.95)',
@@ -593,15 +661,15 @@ const ContactSection = () => {
             label="Passkey"
             variant="outlined"
             size="small"
-            value={passkeyInput}
-            error={passkeyError}
-            helperText={passkeyError ? 'Incorrect passkey. Access Denied.' : ''}
+            value={resumePasskeyInput}
+            error={resumePasskeyError}
+            helperText={resumePasskeyError ? 'Incorrect passkey. Access Denied.' : ''}
             onChange={(e) => {
-              setPasskeyInput(e.target.value);
-              if (passkeyError) setPasskeyError(false);
+              setResumePasskeyInput(e.target.value);
+              if (resumePasskeyError) setResumePasskeyError(false);
             }}
             onKeyDown={(e) => {
-              if (e.key === 'Enter') handleVerifyPasskey();
+              if (e.key === 'Enter') handleVerifyResumePasskey();
             }}
             InputProps={{
               sx: {
@@ -609,13 +677,13 @@ const ContactSection = () => {
                 color: '#fff',
                 bgcolor: 'rgba(255,255,255,0.05)',
                 '& .MuiOutlinedInput-notchedOutline': {
-                  borderColor: passkeyError ? 'error.main' : 'rgba(255,255,255,0.1)',
+                  borderColor: resumePasskeyError ? 'error.main' : 'rgba(255,255,255,0.1)',
                 },
                 '&:hover .MuiOutlinedInput-notchedOutline': {
-                  borderColor: passkeyError ? 'error.main' : portfolioConfig.theme.accent,
+                  borderColor: resumePasskeyError ? 'error.main' : portfolioConfig.theme.accent,
                 },
                 '&:focus-within .MuiOutlinedInput-notchedOutline': {
-                  borderColor: passkeyError ? 'error.main' : portfolioConfig.theme.accent,
+                  borderColor: resumePasskeyError ? 'error.main' : portfolioConfig.theme.accent,
                   borderWidth: 2,
                 },
               },
@@ -627,7 +695,7 @@ const ContactSection = () => {
         </DialogContent>
         <DialogActions sx={{ px: 3, pb: 2, gap: 1 }}>
           <Button
-            onClick={handleClosePasskeyDialog}
+            onClick={handleCloseResumePasskeyDialog}
             sx={{
               color: '#B0B0D0',
               textTransform: 'none',
@@ -639,7 +707,103 @@ const ContactSection = () => {
           </Button>
           <Button
             variant="contained"
-            onClick={handleVerifyPasskey}
+            onClick={handleVerifyResumePasskey}
+            sx={{
+              bgcolor: portfolioConfig.theme.accent,
+              color: '#0f172a',
+              fontWeight: 700,
+              textTransform: 'none',
+              borderRadius: 1.5,
+              px: 3,
+              '&:hover': {
+                bgcolor: portfolioConfig.theme.accent,
+                opacity: 0.9,
+              },
+            }}
+          >
+            Verify
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* MUI Phone Passkey Popup Modal */}
+      <Dialog
+        open={openPhonePasskeyDialog}
+        onClose={handleClosePhonePasskeyDialog}
+        PaperProps={{
+          sx: {
+            bgcolor: 'rgba(20,20,40,0.95)',
+            backdropFilter: 'blur(16px)',
+            border: '1px solid rgba(74,144,226,0.3)',
+            color: '#E0E0FF',
+            borderRadius: 3,
+            p: 1,
+            maxWidth: '380px',
+            width: '100%',
+          },
+        }}
+      >
+        <DialogTitle sx={{ fontWeight: 700, fontSize: '1.25rem', color: '#fff' }}>
+          Unlock Phone Number
+        </DialogTitle>
+        <DialogContent>
+          <Typography variant="body2" sx={{ mb: 2, color: '#B0B0D0' }}>
+            Viewing this phone number requires a valid entry code. Please submit your verification
+            credential below.
+          </Typography>
+          <TextField
+            fullWidth
+            type="password"
+            label="Passkey"
+            variant="outlined"
+            size="small"
+            value={phonePasskeyInput}
+            error={phonePasskeyError}
+            helperText={phonePasskeyError ? 'Incorrect passkey. Access Denied.' : ''}
+            onChange={(e) => {
+              setPhonePasskeyInput(e.target.value);
+              if (phonePasskeyError) setPhonePasskeyError(false);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleVerifyPhonePasskey();
+            }}
+            InputProps={{
+              sx: {
+                borderRadius: 1.5,
+                color: '#fff',
+                bgcolor: 'rgba(255,255,255,0.05)',
+                '& .MuiOutlinedInput-notchedOutline': {
+                  borderColor: phonePasskeyError ? 'error.main' : 'rgba(255,255,255,0.1)',
+                },
+                '&:hover .MuiOutlinedInput-notchedOutline': {
+                  borderColor: phonePasskeyError ? 'error.main' : portfolioConfig.theme.accent,
+                },
+                '&:focus-within .MuiOutlinedInput-notchedOutline': {
+                  borderColor: phonePasskeyError ? 'error.main' : portfolioConfig.theme.accent,
+                  borderWidth: 2,
+                },
+              },
+            }}
+            InputLabelProps={{
+              sx: { color: '#B0B0D0' },
+            }}
+          />
+        </DialogContent>
+        <DialogActions sx={{ px: 3, pb: 2, gap: 1 }}>
+          <Button
+            onClick={handleClosePhonePasskeyDialog}
+            sx={{
+              color: '#B0B0D0',
+              textTransform: 'none',
+              fontWeight: 600,
+              '&:hover': { color: '#fff' },
+            }}
+          >
+            Cancel
+          </Button>
+          <Button
+            variant="contained"
+            onClick={handleVerifyPhonePasskey}
             sx={{
               bgcolor: portfolioConfig.theme.accent,
               color: '#0f172a',
