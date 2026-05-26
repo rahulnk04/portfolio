@@ -16,7 +16,7 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import React, { createElement, useEffect, useState } from 'react';
+import { createElement, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Data, { portfolioConfig, SocialLink } from 'src/data/Data';
 import HeaderSocial from './HeaderSocial';
