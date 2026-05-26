@@ -204,8 +204,9 @@ const SkillSection = () => {
                       <Box
                         sx={{
                           display: 'flex',
-                          gap: 3,
-                          flexGrow: 1,
+                          flexDirection: { xs: 'column', lg: 'row' },
+                          gap: { xs: 0, lg: 3 },
+                          flexGrow: { xs: 0, lg: 1 },
                           overflow: 'hidden',
                         }}
                       >
@@ -221,18 +222,6 @@ const SkillSection = () => {
                           ))}
                         </Box>
                       </Box>
-                      {skillList.length > 8 && (
-                        <Typography
-                          variant="caption"
-                          sx={{
-                            mt: 1,
-                            display: 'block',
-                            color: 'rgba(255,255,255,0.6)',
-                          }}
-                        >
-                          +{skillList.length - 8} more
-                        </Typography>
-                      )}
                     </SkillCard>
                   </motion.div>
                 </Grid>

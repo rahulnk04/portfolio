@@ -3,6 +3,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import dxcLogo from 'src/images/DXC-Full-Color.png';
 import CssIcon from 'src/images/icons/css.png';
 import HtmlIcon from 'src/images/icons/html.webp';
 import JavaScriptIcon from 'src/images/icons/javascript.png';
@@ -13,13 +14,12 @@ import ReactJsIcon from 'src/images/icons/reactjs.png';
 import tailwindIcon from 'src/images/icons/tailwind.png';
 import TypeScriptIcon from 'src/images/icons/typescript.png';
 import kiit from 'src/images/kiit.jpeg';
-import Me from 'src/images/Me.png';
 import MyFonts from 'src/images/MyFonts.svg';
 import Optum from 'src/images/Optum.svg';
+import Me from 'src/images/RahulNew.png';
 import sapient from 'src/images/sapientNew.png';
-import tcsLogo from 'src/images/tcs.png';
 import silicon from 'src/images/silicon.png';
-import dxcLogo from 'src/images/DXC-Full-Color.png';
+import tcsLogo from 'src/images/tcs.png';
 import Telenor from 'src/images/Telenor.png';
 // import champ from "../../pdfs/Champ.pdf";
 // import COLLABORATING from "../../pdfs/DXC_COL_AWARD.pdf";
@@ -64,6 +64,7 @@ export interface Skill {
   icon: any;
   color: string;
   rating: number;
+  hide?: boolean;
 }
 
 export interface Project {
@@ -72,6 +73,7 @@ export interface Project {
   link: string;
   name: string;
   role: string;
+  account: string;
   status: string;
   teamSize: number;
   startDate: Date;
@@ -81,6 +83,7 @@ export interface Project {
   tools: string[];
   database: string[];
   environment: string[];
+  currentOrg: string;
 }
 
 export interface Experience {
@@ -129,16 +132,58 @@ export interface ResumeData {
   languages: Language[];
 }
 
+const labels = {
+  rahul: 'Rahul Ranjan Nayak',
+
+  optum: 'United Health Group, Optum',
+  publicisSapient: 'Publicis Sapient',
+  tcs: 'Tata Consultancy Services (TCS)',
+  dxc: 'DXC Technology',
+  monotypeImaging: 'Monotype Imaging',
+  developer: 'Developer',
+  telenorGroup: 'Telenor Group',
+
+  seniorLeadEngineer: 'Senior Lead Engineer',
+  seniorExperienceEngineer: 'Senior Experience Engineer',
+  seniorLeadConsultant: 'Senior Lead Consultant',
+  associateTechnologyLevel2: 'Associate Technology Level 2',
+  associateProfessional: 'Associate Professional',
+  leadDeveloper: 'Lead Developer',
+
+  reactJs: 'React.js',
+  nextJs: 'Next.js (SSR/SSG)',
+  nodeJs: 'Node.js',
+  javaScript: 'JavaScript',
+  html5: 'HTML5',
+  css3: 'CSS3',
+  tailwindCss: 'Tailwind CSS',
+  mongoDb: 'MongoDB',
+  jest: 'Jest',
+  typescript: 'TypeScript',
+  javaSpringBoot: 'Java Spring Boot',
+  databricks: 'Databricks',
+  python: 'Python',
+  materialUI: 'Material UI',
+  azure: 'Azure',
+  githubActions: 'Github Actions',
+  github: 'GitHub',
+  vsCode: 'VS Code',
+  intelliJIDEA: 'IntelliJ IDEA',
+  postman: 'Postman',
+  gitLab: 'GitLab',
+  eclipse: 'Eclipse',
+};
+
 export const calculateCurrentExperienceInYears = (): number => {
   const start = new Date('2020-07-02');
   const today = new Date();
   return today.getFullYear() - start.getFullYear();
 };
 const Data: ResumeData = {
-  name: 'Rahul Ranjan Nayak',
-  jobTitle: 'Senior Experience Engineer | React.js & Next.js Specialist',
-  company: 'Tata Consultancy Services (TCS)',
-  specialCompany: 'United Health Group, Optum',
+  name: labels.rahul,
+  jobTitle: `${labels.seniorLeadConsultant} | React.js & Next.js Specialist`,
+  company: labels.tcs,
+  specialCompany: labels.optum,
   companyStartDate: new Date('2020-07-02'),
   address: 'Plot 606, Parbati Palace, Bhubaneswar, Odisha, India',
   dateOfBirth: new Date('1996-04-12'),
@@ -208,8 +253,25 @@ const Data: ResumeData = {
   interests: ['Cricket', 'Watching TV', 'Collecting Pens'],
   professionalJourney: [
     {
-      title: 'Senior Lead Consultant',
-      company: 'Tata Consultancy Services',
+      title: labels.seniorLeadEngineer,
+      company: labels.optum,
+      address: 'Hyderabad, India',
+      dates: 'Oct 2022 - Present',
+      responsibilities: [
+        'Architecting high-performance frontend solutions for enterprise-scale platforms, consistently optimizing Core Web Vitals and system scalability.',
+        'Automating multi-team delivery pipelines by implementing robust CI/CD workflows and standardizing Next.js development practices.',
+        'Bridging the gap between engineering and business by translating complex stakeholder requirements into actionable, long-term technical roadmaps.',
+        'Optimizing data orchestration layers through advanced state management and server-side rendering (SSR) to sustain high-concurrency traffic.',
+      ],
+      logo: Optum, // Updated placeholder for TCS
+      present: true,
+      upcoming: false,
+      jobDescription:
+        'Next.js, React.js, Node.js, TypeScript, JavaScript, Tailwind CSS, MongoDB, Jest, System Architecture.',
+    },
+    {
+      title: labels.seniorLeadConsultant,
+      company: labels.tcs,
       address: 'Bhubaneswar, India',
       dates: 'Nov 2025 - Present',
       responsibilities: [
@@ -225,8 +287,8 @@ const Data: ResumeData = {
         'Next.js, React.js, Node.js, TypeScript, JavaScript, Tailwind CSS, MongoDB, Jest, System Architecture.',
     },
     {
-      title: 'Senior Experience Engineer',
-      company: 'Publicis Sapient',
+      title: labels.seniorExperienceEngineer,
+      company: labels.publicisSapient,
       address: 'Hyderabad, India',
       dates: 'Apr 2024 - Oct 2025',
       responsibilities: [
@@ -241,8 +303,8 @@ const Data: ResumeData = {
         'Next.js, React.js, Node.js, JavaScript, HTML5, CSS3, Tailwind CSS, MongoDB, Jest.',
     },
     {
-      title: 'Associate Technology Level 2',
-      company: 'Publicis Sapient',
+      title: labels.associateTechnologyLevel2,
+      company: labels.publicisSapient,
       address: 'Bangalore, India',
       dates: 'Apr 2022 - Mar 2024',
       responsibilities: [
@@ -257,8 +319,8 @@ const Data: ResumeData = {
         'Next.js, React.js, Node.js, GraphQL, JavaScript, HTML5, CSS3, Tailwind CSS, MongoDB.',
     },
     {
-      title: 'Associate Professional',
-      company: 'DXC Technology',
+      title: labels.associateProfessional,
+      company: labels.dxc,
       address: 'Chennai, India',
       dates: 'Jul 2020 - Apr 2022',
       responsibilities: [
@@ -275,14 +337,46 @@ const Data: ResumeData = {
   keyProjects: [
     {
       id: 1,
-      img: Optum,
+      img: Optum, // Reusing the Optum logo constant
+      currentOrg: labels.tcs,
       link: 'https://www.optum.com/en/',
-      name: 'Underwriters Case Management System (Optum)',
-      role: 'Developer',
+      name: 'Rebate Projection Tool (RPT)',
+      account: labels.optum,
+      role: labels.seniorLeadConsultant,
       status: 'In Progress',
+      teamSize: 20,
+      startDate: new Date('2025-07-01'), // Adjust based on your actual start date
+      endDate: new Date(),
+      description:
+        'The Rebate Projection Tool (RPT) is a sophisticated automation engine developed for the Actuarial Hub within UnitedHealth Group (Optum). It streamlines the complex rebate calculation process for underwriters by integrating multi-dimensional variables including drug classifications, formulary tiers, specialty definitions, and BG (Benefit Group) definitions. The tool provides a comprehensive solution for weight-loss and diabetic medication projections, notably handling Wegovy adjustments and custom rate overrides. RPT generates mission-critical actuarial outputs such as RA (Risk Adjustment) output rates per quantity, ensuring precision in financial forecasting and competitive pricing strategies.',
+      technologies: [
+        'NextJs 14',
+        'TypeScript',
+        'NodeJS',
+        'ReactJS',
+        'Java Spring Boot',
+        'Databricks',
+        'Python',
+        'Material UI',
+        'Azure',
+        'Github Actions',
+      ],
+      tools: ['VS-Code', 'IntelliJ IDEA', 'Postman', 'GitLab'],
+      database: ['MongoDB'],
+      environment: ['MacOS'],
+    },
+    {
+      id: 2,
+      img: Optum,
+      currentOrg: labels.publicisSapient,
+      account: labels.optum,
+      link: 'https://www.optum.com/en/',
+      name: 'Underwriters Case Management System (UWCMS)',
+      role: labels.leadDeveloper,
+      status: 'Completed',
       teamSize: 12,
       startDate: new Date('2023-05-01'),
-      endDate: new Date(),
+      endDate: new Date(2025, 6, 30), // Adjust based on your actual end date
       description:
         'The Underwriters Case Management System (UWCMS) is an advanced platform designed to simplify and optimize the client onboarding and order fulfillment processes for underwriters. It brings together Workflow Coordinators, Business Segment Leaders, and Underwriters in a collaborative ecosystem. Coordinators kick-start the process by initiating new cases, segment leaders assign cases, and underwriters manage critical tasks such as client evaluations, generating quotes, and rate releases. Key features include tailored dashboards, role-based access controls, real-time task notifications, and advanced reporting capabilities. UWCMS ensures a seamless workflow, efficient resource allocation, and enhanced client service by centralizing operations and offering the right tools to each role.',
       technologies: [
@@ -292,18 +386,23 @@ const Data: ResumeData = {
         'Camunda',
         'Rest API',
         'MongoDB',
-        'Tailwind CSS',
+        'Kafka',
+        'Azure',
+        'Github Actions',
+        'Jenkins',
       ],
       tools: ['VS-Code', 'IntelliJ IDEA', 'Postman'],
       database: ['MongoDB'],
       environment: ['MacOS'],
     },
     {
-      id: 2,
+      id: 3,
       img: MyFonts,
+      currentOrg: labels.publicisSapient,
+      account: labels.monotypeImaging,
       link: 'https://www.myfonts.com/',
-      name: 'MyFonts.com E-commerce Web Application (Monotype Imaging)',
-      role: 'Developer',
+      name: 'MyFonts.com E-commerce (Monotype Imaging)',
+      role: labels.developer,
       status: 'Completed',
       teamSize: 10,
       startDate: new Date('2022-04-12'),
@@ -316,11 +415,13 @@ const Data: ResumeData = {
       environment: ['MacOS'],
     },
     {
-      id: 3,
+      id: 4,
       img: Telenor,
+      currentOrg: labels.dxc,
+      account: labels.telenorGroup,
       link: 'https://iot.telenor.com/',
       name: 'Storage Allocation & Reallocation APP (Telenor Group)',
-      role: 'Developer',
+      role: labels.developer,
       status: 'Completed',
       teamSize: 4,
       startDate: new Date('2020-11-01'),
@@ -348,6 +449,13 @@ const Data: ResumeData = {
         icon: NextJsIcon,
         color: '#61DBFB',
         rating: 4,
+      },
+      {
+        name: 'Micro Frontend Architecture',
+        percentage: '80%',
+        icon: MaterialUiIcon,
+        color: '#0081CB',
+        rating: 3,
       },
       {
         name: 'Redux.js',
@@ -408,6 +516,14 @@ const Data: ResumeData = {
         rating: 3,
       },
       {
+        name: 'Nest.js',
+        percentage: '90%',
+        icon: NodeJsIcon,
+        color: '#68A063',
+        rating: 3,
+        hide: true,
+      },
+      {
         name: 'Express.js',
         percentage: '80%',
         icon: NodeJsIcon,
@@ -434,6 +550,22 @@ const Data: ResumeData = {
         icon: NodeJsIcon,
         color: '#4DB33D',
         rating: 3,
+      },
+      {
+        name: 'Java Spring Boot',
+        percentage: '70%',
+        icon: NodeJsIcon,
+        color: '#4DB33D',
+        rating: 3,
+        hide: true,
+      },
+      {
+        name: 'Python 3 (Flask/Django)',
+        percentage: '70%',
+        icon: NodeJsIcon,
+        color: '#4DB33D',
+        rating: 3,
+        hide: true,
       },
     ],
     Tooling: [
@@ -472,6 +604,27 @@ const Data: ResumeData = {
         color: '#FF6C37',
         rating: 3,
       },
+      {
+        name: 'IntelliJ IDEA',
+        percentage: '75%',
+        icon: ReactJsIcon,
+        color: '#FF6C37',
+        rating: 3,
+      },
+      {
+        name: 'Sublime Text',
+        percentage: '75%',
+        icon: ReactJsIcon,
+        color: '#FF6C37',
+        rating: 3,
+      },
+      {
+        name: 'Jupyter Notebook',
+        percentage: '75%',
+        icon: ReactJsIcon,
+        color: '#FF6C37',
+        rating: 3,
+      },
     ],
     Methodologies: [
       {
@@ -490,6 +643,20 @@ const Data: ResumeData = {
       },
       {
         name: 'CI/CD',
+        percentage: '75%',
+        icon: ReactJsIcon,
+        color: '#000000',
+        rating: 3,
+      },
+      {
+        name: 'Rally',
+        percentage: '75%',
+        icon: ReactJsIcon,
+        color: '#000000',
+        rating: 3,
+      },
+      {
+        name: 'Jira',
         percentage: '75%',
         icon: ReactJsIcon,
         color: '#000000',

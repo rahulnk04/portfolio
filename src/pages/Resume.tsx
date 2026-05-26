@@ -2,7 +2,7 @@ import { Grid, Box, Typography, Card, Avatar, Link, Container, Button } from '@m
 import Chip from '@mui/material/Chip';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import { useRef } from 'react';
+import { Fragment, useRef } from 'react';
 import BrowserTitle from 'src/components/browserTitle/BrowserTitle';
 import FooterSection from 'src/components/portfolio/sections/FooterSection';
 import HeaderSection from 'src/components/portfolio/sections/HeaderSection';
@@ -298,14 +298,17 @@ const Resume = () => {
                     </Typography>
 
                     {skillList.map((skill, index) => (
-                      <Chip
-                        // avatar={<Avatar alt={skill.name} src={skill.icon} />}
-                        size="small"
-                        label={skill.name}
-                        key={index}
-                        variant="outlined"
-                        sx={{ m: 0.5 }}
-                      />
+                      <Fragment key={index}>
+                        {skill.hide ? null : (
+                          <Chip
+                            // avatar={<Avatar alt={skill.name} src={skill.icon} />}
+                            size="small"
+                            label={skill.name}
+                            variant="outlined"
+                            sx={{ m: 0.5 }}
+                          />
+                        )}
+                      </Fragment>
                     ))}
                   </Box>
                 ))}
@@ -469,6 +472,9 @@ const Resume = () => {
                   <Box key={index} sx={{ mb: 2 }}>
                     <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
                       {project.name}
+                    </Typography>
+                    <Typography variant="subtitle2" sx={{ fontWeight: 'bold' }}>
+                      {project.account} --- {`(${project.role})`} {project.currentOrg}
                     </Typography>
                     <Typography variant="body2">{project.description}</Typography>
                     <Typography variant="body2" sx={{ color: '#333333' }}>

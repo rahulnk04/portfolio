@@ -14,6 +14,10 @@ import {
   Link,
   Snackbar,
   Alert,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import React, { createElement, useState } from 'react';
@@ -49,18 +53,35 @@ const hoverVariants = {
 
 const ContactSection = () => {
   const { address, phone, email, social, name } = Data;
+  const navigate = useNavigate();
 
-  const navigate = useNavigate(); // Use useNavigate for programmatic navigation
-
+  // Contact form state
   const [sendMessage, setSendMessage] = useState({
     fullName: '',
     subject: '',
     message: '',
   });
+
+  // Passkey dialog state
+  const [openPasskeyDialog, setOpenPasskeyDialog] = useState(false);
+  const [passkeyInput, setPasskeyInput] = useState('');
+  const [passkeyError, setPasskeyError] = useState(false);
+
+  // Global Snackbar Notification State
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState<{
+    message: string;
+    severity: 'success' | 'error' | 'info' | 'warning';
+  }>({
+    message: "Message sent successfully! I'll get back to you soon.",
+    severity: 'success',
+  });
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setSendMessage((prev) => ({ ...prev, [name]: value }));
   };
+
   const handleSendMessageAsEmail = () => {
     const { fullName, subject, message } = sendMessage;
     if (!fullName || !subject || !message) {
@@ -79,19 +100,30 @@ const ContactSection = () => {
       message: "Message sent successfully! I'll get back to you soon.",
       severity: 'success',
     });
-    setOpen(true); // Reset form
+    setOpen(true);
   };
-  const [message, setMessage] = useState<{
-    message: string;
-    severity: 'success' | 'error' | 'info' | 'warning';
-  }>({
-    message: "Message sent successfully! I'll get back to you soon.",
-    severity: 'success',
-  });
-  const [open, setOpen] = useState(false);
+
   const handleClose = () => {
     setOpen(false);
     setSendMessage({ fullName: '', subject: '', message: '' });
+  };
+
+  // Passkey Verification Logic
+  const handleVerifyPasskey = () => {
+    if (passkeyInput === '123456') {
+      setOpenPasskeyDialog(false);
+      setPasskeyInput('');
+      setPasskeyError(false);
+      navigate('/resume');
+    } else {
+      setPasskeyError(true);
+    }
+  };
+
+  const handleClosePasskeyDialog = () => {
+    setOpenPasskeyDialog(false);
+    setPasskeyInput('');
+    setPasskeyError(false);
   };
 
   return (
@@ -102,12 +134,10 @@ const ContactSection = () => {
         position: 'relative',
         py: { xs: 8, md: 8 },
         px: { xs: 4, md: 14 },
-        mb: 8,
         background: 'linear-gradient(135deg, #0A0A2A 0%, #1A1A44 70%)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         color: '#E0E0FF',
-        // Removed overflow: "hidden" to allow interaction
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -117,7 +147,7 @@ const ContactSection = () => {
           bottom: 0,
           background: 'radial-gradient(circle, rgba(74,144,226,0.1) 0%, transparent 60%)',
           zIndex: 0,
-          pointerEvents: 'none', // Prevent blocking clicks
+          pointerEvents: 'none',
         },
         '&::after': {
           content: '""',
@@ -130,10 +160,9 @@ const ContactSection = () => {
             'repeating-linear-gradient(-45deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 2px, transparent 5px)',
           zIndex: 1,
           opacity: 0.5,
-          pointerEvents: 'none', // Prevent blocking clicks
+          pointerEvents: 'none',
         },
       }}
-      //  style={{ y: backgroundY }} // Uncommented and applied correctly
     >
       <motion.div
         variants={sectionVariants}
@@ -350,9 +379,8 @@ const ContactSection = () => {
                             transform: 'scale(1.1)',
                           },
                         }}
-                        onClick={() => {
-                          navigate('/resume');
-                        }}
+                        // Enabled button to allow interaction with dialog modal hook
+                        onClick={() => setOpenPasskeyDialog(true)}
                       >
                         View Resume
                       </Button>
@@ -408,6 +436,7 @@ const ContactSection = () => {
                       variant="outlined"
                       size="small"
                       placeholder={name}
+                      value={sendMessage.fullName}
                       InputProps={{
                         sx: {
                           borderRadius: 1.5,
@@ -439,6 +468,7 @@ const ContactSection = () => {
                       variant="outlined"
                       size="small"
                       placeholder="Project collaboration"
+                      value={sendMessage.subject}
                       InputProps={{
                         sx: {
                           borderRadius: 1.5,
@@ -471,6 +501,7 @@ const ContactSection = () => {
                       placeholder={`Hi ${name.split(' ')[0]}, let’s create something amazing...`}
                       multiline
                       rows={6}
+                      value={sendMessage.message}
                       InputProps={{
                         sx: {
                           borderRadius: 1.5,
@@ -522,6 +553,104 @@ const ContactSection = () => {
           </Grid>
         </Grid>
       </motion.div>
+
+      {/* MUI Passkey Popup Modal */}
+      <Dialog
+        open={openPasskeyDialog}
+        onClose={handleClosePasskeyDialog}
+        PaperProps={{
+          sx: {
+            bgcolor: 'rgba(20,20,40,0.95)',
+            backdropFilter: 'blur(16px)',
+            border: '1px solid rgba(74,144,226,0.3)',
+            color: '#E0E0FF',
+            borderRadius: 3,
+            p: 1,
+            maxWidth: '380px',
+            width: '100%',
+          },
+        }}
+      >
+        <DialogTitle sx={{ fontWeight: 700, fontSize: '1.25rem', color: '#fff' }}>
+          Enter Passkey
+        </DialogTitle>
+        <DialogContent>
+          <Typography variant="body2" sx={{ mb: 2, color: '#B0B0D0' }}>
+            Viewing this resume requires a valid entry code. Please submit your verification
+            credential below.
+          </Typography>
+          <TextField
+            fullWidth
+            type="password"
+            label="Passkey"
+            variant="outlined"
+            size="small"
+            value={passkeyInput}
+            error={passkeyError}
+            helperText={passkeyError ? 'Incorrect passkey. Access Denied.' : ''}
+            onChange={(e) => {
+              setPasskeyInput(e.target.value);
+              if (passkeyError) setPasskeyError(false);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleVerifyPasskey();
+            }}
+            InputProps={{
+              sx: {
+                borderRadius: 1.5,
+                color: '#fff',
+                bgcolor: 'rgba(255,255,255,0.05)',
+                '& .MuiOutlinedInput-notchedOutline': {
+                  borderColor: passkeyError ? 'error.main' : 'rgba(255,255,255,0.1)',
+                },
+                '&:hover .MuiOutlinedInput-notchedOutline': {
+                  borderColor: passkeyError ? 'error.main' : portfolioConfig.theme.accent,
+                },
+                '&:focus-within .MuiOutlinedInput-notchedOutline': {
+                  borderColor: passkeyError ? 'error.main' : portfolioConfig.theme.accent,
+                  borderWidth: 2,
+                },
+              },
+            }}
+            InputLabelProps={{
+              sx: { color: '#B0B0D0' },
+            }}
+          />
+        </DialogContent>
+        <DialogActions sx={{ px: 3, pb: 2, gap: 1 }}>
+          <Button
+            onClick={handleClosePasskeyDialog}
+            sx={{
+              color: '#B0B0D0',
+              textTransform: 'none',
+              fontWeight: 600,
+              '&:hover': { color: '#fff' },
+            }}
+          >
+            Cancel
+          </Button>
+          <Button
+            variant="contained"
+            onClick={handleVerifyPasskey}
+            sx={{
+              bgcolor: portfolioConfig.theme.accent,
+              color: '#0f172a',
+              fontWeight: 700,
+              textTransform: 'none',
+              borderRadius: 1.5,
+              px: 3,
+              '&:hover': {
+                bgcolor: portfolioConfig.theme.accent,
+                opacity: 0.9,
+              },
+            }}
+          >
+            Verify
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Form Feedback Notification */}
       <Snackbar
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         open={open}

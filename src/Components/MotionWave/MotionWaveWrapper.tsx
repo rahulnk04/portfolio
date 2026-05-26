@@ -1,11 +1,12 @@
-import { Box } from '@mui/material';
+import { Box, BoxProps } from '@mui/material';
+
 import React from 'react';
 
-type Props = {
+interface Props extends BoxProps {
   children?: React.ReactNode;
-};
+}
 const MotionWaveWrapper: React.FC<Props> = (props: Props) => {
-  const { children } = props;
+  const { children, sx } = props;
   return (
     <Box
       component="section"
@@ -19,6 +20,7 @@ const MotionWaveWrapper: React.FC<Props> = (props: Props) => {
         alignItems: 'center',
         bgcolor: '#4973ff',
         boxShadow: 'inset 0 0 50px rgba(0, 0, 0, 0.5)',
+        ...sx,
       }}
     >
       {/* Animated Waves */}

@@ -47,7 +47,7 @@ const AboutSection: React.FC = () => {
   };
 
   return (
-    <MotionWaveWrapper>
+    <MotionWaveWrapper sx={{ padding: { xs: '200px 0', lg: 0 } }} id="about-box">
       <motion.section
         id="about"
         initial="hidden"

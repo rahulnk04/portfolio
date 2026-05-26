@@ -6,7 +6,7 @@ const FooterSection = () => {
   return (
     <Box
       sx={{
-        position: 'fixed',
+        // position: { lg: 'fixed' },
         bottom: 0,
         width: '100%',
         paddingTop: '1.5rem', // py-6 = 24px
