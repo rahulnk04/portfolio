@@ -1,7 +1,7 @@
 import Email from '@mui/icons-material/Email';
 import LocationOn from '@mui/icons-material/LocationOnOutlined';
-import Phone from '@mui/icons-material/Phone';
 import LockOutlined from '@mui/icons-material/LockOutlined';
+import Phone from '@mui/icons-material/Phone';
 import {
   Box,
   Typography,
