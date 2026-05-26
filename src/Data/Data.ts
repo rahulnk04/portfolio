@@ -4,7 +4,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import SettingsPowerIcon from '@mui/icons-material/SettingsPower';
+
+import AddReactionIcon from '@mui/icons-material/AddReaction';
 import dxcLogo from 'src/images/DXC-Full-Color.png';
 import CssIcon from 'src/images/icons/css.png';
 import HtmlIcon from 'src/images/icons/html.webp';
@@ -231,7 +232,7 @@ const Data: ResumeData = {
     {
       name: 'Gravatar',
       url: 'https://gravatar.com/rahulnk04',
-      icon: SettingsPowerIcon,
+      icon: AddReactionIcon,
     },
   ],
   profilePicture: Me,
