@@ -375,8 +375,8 @@ interface PhotoCardProps {
 
 const PhotoCard: React.FC<PhotoCardProps> = ({ item, index, onSelect }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { title, location } = parseAltText(item.alt);
 
-  // Check if the current environment is a crawler or headless bot
   const isBot =
     typeof window !== 'undefined' &&
     /bot|google|crawler|spider|robot|crawling/i.test(navigator.userAgent);
@@ -405,7 +405,6 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ item, index, onSelect }) => {
         x.set(0);
         y.set(0);
       }}
-      // --- FORCE IMMEDIATE VISIBILITY FOR BOT CRAWLERS ---
       initial={isBot ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.85, y: 30 }}
       whileInView={{
         opacity: 1,
@@ -425,7 +424,9 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ item, index, onSelect }) => {
         backgroundColor: '#070c14',
         border: '1px solid rgba(0, 242, 254, 0.1)',
         cursor: 'pointer',
-        overflow: 'hidden',
+        // --- 1. CHANGE THIS: Using a standard isolate context instead of clipping layers ---
+        overflow: 'visible',
+        isolation: 'isolate',
         transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
         '&:hover': {
           borderColor: '#00f2fe',
@@ -433,19 +434,22 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ item, index, onSelect }) => {
         },
       }}
     >
-      {/* ... keeping your internal borders and overlays exact same ... */}
-
       <MotionBox
         animate={{
           scale: isHovered ? 1.06 : 1,
         }}
         transition={{ duration: 0.4 }}
-        sx={{ width: '100%', height: '100%', position: 'relative' }}
+        style={{ transformStyle: 'preserve-3d' }} // --- 2. Pass 3D context to child container ---
+        sx={{
+          width: '100%',
+          height: '100%',
+          position: 'relative',
+          overflow: 'hidden', // --- 3. Safely clip image scaling edges HERE instead ---
+        }}
       >
         <img
           src={item.img}
           alt={item.alt}
-          // Change to "eager" for bots so they pull network packets immediately without scroll verification
           loading={isBot ? 'eager' : 'lazy'}
           style={{
             width: '100%',
@@ -455,11 +459,60 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ item, index, onSelect }) => {
             display: 'block',
           }}
         />
-      </MotionBox>
 
-      {/* ... keeping metadata footer labels exact same ... */}
+        <Box sx={{ position: 'absolute', top: 16, left: 16, zIndex: 10 }}>
+          <Typography
+            variant="caption"
+            sx={{
+              fontFamily: 'monospace',
+              backgroundColor: 'rgba(2, 4, 8, 0.85)',
+              backdropFilter: 'blur(4px)',
+              px: 1.5,
+              py: 0.5,
+              border: '1px solid rgba(0, 242, 254, 0.2)',
+              color: '#00f2fe',
+              borderRadius: '2px',
+              fontSize: '10px',
+            }}
+          >
+            SYS_NODE // 0{index + 1}
+          </Typography>
+        </Box>
+
+        {/* --- Text elements now calculate depth accurately --- */}
+        <Box
+          sx={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            p: 3,
+            background:
+              'linear-gradient(to top, rgba(2,4,8,1) 0%, rgba(2,4,8,0.6) 70%, transparent 100%)',
+            zIndex: 10,
+            transform: 'translateZ(30px)', // --- Slightly boosted pop out effect ---
+          }}
+        >
+          <Typography
+            variant="body1"
+            sx={{ color: '#fff', fontWeight: 600, mb: 0.5, fontSize: '1rem', lineHeight: 1.3 }}
+          >
+            {title}
+          </Typography>
+          <Typography
+            variant="caption"
+            sx={{
+              fontFamily: 'monospace',
+              color: 'rgba(0, 242, 254, 0.6)',
+              textTransform: 'uppercase',
+              fontSize: '11px',
+            }}
+          >
+            LOC_SYS // {location}
+          </Typography>
+        </Box>
+      </MotionBox>
     </MotionBox>
   );
 };
-
 export default PortfolioGallery;
