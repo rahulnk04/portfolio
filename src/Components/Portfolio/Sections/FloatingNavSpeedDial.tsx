@@ -1,25 +1,19 @@
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-import { SpeedDial, SpeedDialAction, Box, useTheme, useMediaQuery } from '@mui/material';
+import { SpeedDial, SpeedDialAction, Box } from '@mui/material';
 import { useState } from 'react';
 import { NAV_SECTIONS } from './NavSection';
 
 const FloatingNavSpeedDial = () => {
   const [open, setOpen] = useState(false);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
-
-    const yOffset = -80; // Alignment balance offset for fixed headers
+    const yOffset = -80;
     const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
-
     window.scrollTo({ top: y, behavior: 'smooth' });
     setOpen(false);
   };
 
-  // .reverse() ensures 'Home' stays on top and 'Contact' stays at the bottom when expanding upward
   const renderActions = [...NAV_SECTIONS].reverse();
 
   return (
@@ -78,8 +72,8 @@ const FloatingNavSpeedDial = () => {
           <SpeedDialAction
             key={action.label}
             icon={action.icon}
-            tooltipTitle={action.label}
-            tooltipOpen={!isMobile}
+            // tooltipTitle={action.label}
+            // tooltipOpen={!isMobile}
             onClick={() => scrollToSection(action.target)}
             componentsProps={{
               tooltip: {
@@ -107,34 +101,20 @@ const FloatingNavSpeedDial = () => {
               borderRadius: 0,
               marginY: 0.5,
               transition: 'all 0.25s ease',
-
-              // 1. Force the border to be completely transparent when closed/hidden
               border: '1px solid transparent',
-
-              // 2. Only show the border when the item is explicitly flagged as visible by MUI
               '&.MuiSpeedDialAction-staticTooltipVisible': {
                 border: '1px solid rgba(255, 255, 255, 0.1)',
               },
-
               '&:hover': {
                 backgroundColor: 'rgba(0, 242, 254, 0.1)',
-                // borderColor: '#00f2fe !important', // Turns the card border cyan on hover
                 boxShadow: '0 0 12px rgba(0, 242, 254, 0.3)',
                 transform: 'scale(1.05)',
               },
-
               '& .MuiSpeedDialAction-fab': {
                 backgroundColor: 'transparent !important',
                 color: 'inherit',
                 boxShadow: 'none',
               },
-
-              // Synchronize the tooltip layout to turn cyan alongside the button hover state
-              //   '&:hover + .MuiSpeedDialAction-tooltipTitle, &:hover .MuiSpeedDialAction-tooltipTitle':
-              //     {
-              //       color: '#00f2fe',
-              //       borderColor: '#00f2fe',
-              //     },
             }}
           />
         ))}
