@@ -804,3 +804,64 @@ export const portfolioConfig: PortfolioConfig = {
     3: 'https://via.placeholder.com/400x200?text=SARA+Telenor', // Fallback for invalid SARA image
   },
 };
+export const portfolioImages: {
+  img: string;
+  alt: string;
+}[] = [
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-tcs-react-developer-optum-uhg.webp',
+    alt: 'Rahul Ranjan Nayak - Senior Lead Consultant and React.js Specialist at TCS Bhubaneswar & Optum UHG (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-software-engineer-optum-uhg.webp',
+    alt: 'Rahul Ranjan Nayak - Senior Lead Engineer working with Optum UHG out of Bhubaneswar, India (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-reactjs-developer-rahulnk04-publicis-sapient.webp',
+    alt: 'Rahul Ranjan Nayak - Senior Experience Engineer & ReactJS Developer based in Bhubaneswar (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-react-macbook-tcs-publicis-sapient.webp',
+    alt: 'Rahul Ranjan Nayak - React & Next.js Developer optimizing Core Web Vitals for TCS Bhubaneswar enterprise apps (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-react-developer-dxc-tcs.webp',
+    alt: 'Rahul Ranjan Nayak - React Developer and DXC Champ Award winner based in Bhubaneswar, Odisha (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-professional-headshot-tcs-optum.webp',
+    alt: 'Rahul Ranjan Nayak - Professional Headshot, Senior Lead Consultant at TCS Bhubaneswar (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-office-working-reactjs-tcs-publicis-sapient-dxc-technology.webp',
+    alt: 'Rahul Ranjan Nayak - Senior Frontend Architect designing Micro Frontend Architectures in Bhubaneswar, India (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-nextjs-reactjs-nodejs-bhubaneswar.webp',
+    alt: 'Rahul Ranjan Nayak - Full Stack Next.js, ReactJS, and Node.js Developer in Bhubaneswar, Odisha (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-nextjs-developer.webp',
+    alt: 'Rahul Ranjan Nayak - Next.js Specialist and Frontend Engineer located in Bhubaneswar, Odisha (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-frontend-architect.webp',
+    alt: 'Rahul Ranjan Nayak - Frontend Architect based in Bhubaneswar specializing in scalable React.js systems (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-dxc-technology-react-developer.webp',
+    alt: 'Rahul Ranjan Nayak - React Developer with Electrical & Electronics B.Tech from Silicon Institute Bhubaneswar (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-dxc-publicis-sapient-nextjs-developer.webp',
+    alt: 'Rahul Ranjan Nayak - NextJS Developer from Bhubaneswar building e-commerce solutions for MyFonts.com (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-cover-photo-standing-javascript.webp',
+    alt: 'Rahul Ranjan Nayak - Lead Software Engineer specialized in JavaScript ES6+ in Bhubaneswar, India (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-coding-publicis-sapient.webp',
+    alt: 'Rahul Ranjan Nayak - Senior Engineer coding workflows for Optum platforms from Bhubaneswar (Rahul Nayak)',
+  },
+];

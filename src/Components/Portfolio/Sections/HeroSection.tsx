@@ -156,10 +156,42 @@ const HeroSection = () => {
             </Typography>
           </motion.div>
           <motion.div variants={childVariants}>
-            <Typography variant="h5" color="white" gutterBottom sx={{ opacity: 0.9 }}>
+            <Typography
+              variant="h5"
+              color="white"
+              gutterBottom
+              sx={{
+                opacity: 0.9,
+                fontSize: { xs: '1.25rem', sm: '1.5rem' },
+                whiteSpace: 'pre-wrap',
+                wordBreak: 'break-word',
+                // --- ADD THESE RULES ---
+                maxWidth: '100%',
+                boxSizing: 'border-box',
+                px: { xs: 1, sm: 0 }, // Safe internal mobile padding fallback
+                mx: { xs: '36px' }, // Centers the text block on larger screens when maxWidth is in effect
+              }}
+            >
               {jobTitle}
             </Typography>
-            <Typography variant="h6" color="white" gutterBottom sx={{ opacity: 0.9 }}>
+
+            <Typography
+              variant="h6"
+              color="white"
+              gutterBottom
+              sx={{
+                mx: { xs: '42px' },
+                opacity: 0.9,
+                fontSize: { xs: '0.95rem', sm: '1.1rem' },
+                lineHeight: 1.4,
+                whiteSpace: 'pre-wrap',
+                wordBreak: 'break-word',
+                // --- ADD THESE RULES ---
+                maxWidth: '100%',
+                boxSizing: 'border-box',
+                px: { xs: 1, sm: 0 },
+              }}
+            >
               {specialCompany} <br />
               {Array.from(new Set(professionalJourney.map((d) => d.company))).join(' || ')}
             </Typography>
@@ -235,7 +267,7 @@ const HeroSection = () => {
                 },
               }}
             >
-              <HeaderSocial width={50} height={50} />
+              <HeaderSocial width={38} height={38} />
             </Box>{' '}
             <br />
             <Button

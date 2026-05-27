@@ -21,16 +21,7 @@ import { createElement, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Data, { portfolioConfig, SocialLink } from 'src/data/Data';
 import HeaderSocial from './HeaderSocial';
-
-const NAV_SECTIONS = [
-  { label: 'Home', target: 'hero' },
-  { label: 'About', target: 'about' },
-  { label: 'Projects', target: 'projects' },
-  { label: 'Skills', target: 'skills' },
-  { label: 'Experience', target: 'experience' },
-  //   { label: "Education", target: "education" },
-  { label: 'Contact', target: 'contact' },
-];
+import { NAV_SECTIONS } from './NavSection';
 
 const HeaderSection = () => {
   const location = useLocation(); // Use useNavigate for programmatic navigation
