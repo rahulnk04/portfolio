@@ -13,12 +13,13 @@ interface NavSection {
   target: string;
   icon: React.ReactNode;
 }
+
 export const NAV_SECTIONS: NavSection[] = [
   { label: 'Home', target: 'hero', icon: <HomeIcon /> },
   { label: 'About', target: 'about', icon: <PersonIcon /> },
+  { label: 'Experience', target: 'experience', icon: <WorkIcon /> },
   { label: 'Projects', target: 'projects', icon: <CodeIcon /> },
   { label: 'Skills', target: 'skills', icon: <BoltIcon /> },
-  { label: 'Experience', target: 'experience', icon: <WorkIcon /> },
   { label: 'Gallery', target: 'gallery', icon: <CollectionsIcon /> },
   { label: 'Contact', target: 'contact', icon: <MailIcon /> },
   //   { label: "Education", target: "education" },
