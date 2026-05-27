@@ -450,7 +450,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ item, index, onSelect }) => {
         <img
           src={item.img}
           alt={item.alt}
-          loading={isBot ? 'eager' : 'lazy'}
+          loading={'eager'}
           style={{
             width: '100%',
             height: '100%',
