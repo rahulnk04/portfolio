@@ -3,9 +3,8 @@ import Lenis from '@studio-freight/lenis';
 import { motion, useTransform, useScroll } from 'motion/react';
 import React, { useEffect, useState } from 'react';
 import Data, { SocialLink } from 'src/data/Data';
-import Me from 'src/images/Rahul_Ranjan_Nayak_cover.png';
-import HeaderSocial from './HeaderSocial';
 
+import HeaderSocial from './HeaderSocial';
 const HeroSection = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const { scrollY } = useScroll();
@@ -41,6 +40,7 @@ const HeroSection = () => {
     professionalJourney,
     specialCompany,
     gitHub: githubLink,
+    coverPicture,
   } = Data;
 
   const childVariants = {
@@ -88,7 +88,7 @@ const HeroSection = () => {
             bottom: 0,
             left: 0,
             //  backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1920&q=80')",
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${Me})`,
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${coverPicture})`,
             backgroundSize: 'cover',
             // backgroundPosition: 'auto',
             backgroundPosition: 'var(--hero-bg-position, center)',
@@ -133,7 +133,7 @@ const HeroSection = () => {
           <motion.div variants={childVariants}>
             <Avatar
               src={profilePicture}
-              alt={name}
+              alt={`${name} - Profile Picture - ${jobTitle} at ${specialCompany} - ${professionalJourney.map((d) => d.company).join(' || ')} `}
               sx={{
                 width: 180,
                 height: 180,

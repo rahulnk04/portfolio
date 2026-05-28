@@ -14,10 +14,9 @@ import {
 import { motion } from 'motion/react';
 import TextHeader from 'src/components/TextHeader';
 import Data, { portfolioConfig, Project } from 'src/data/Data';
-import Me from 'src/images/Rahul_Ranjan_Nayak_cover.png';
 
 const ProjectSection = () => {
-  const { keyProjects } = Data;
+  const { keyProjects, coverPicture } = Data;
   const enhancedProjects = keyProjects;
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -72,7 +71,8 @@ const ProjectSection = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${Me})`,
+            // backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${Me})`,
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${coverPicture})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',

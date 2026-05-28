@@ -19,7 +19,6 @@ import TypeScriptIcon from 'src/images/icons/typescript.png';
 import kiit from 'src/images/kiit.jpeg';
 import MyFonts from 'src/images/MyFonts.svg';
 import Optum from 'src/images/Optum.svg';
-import Me from 'src/images/Rahul Ranjan Nayak.png';
 import sapient from 'src/images/sapientNew.png';
 import silicon from 'src/images/silicon.png';
 import tcsLogo from 'src/images/tcs.png';
@@ -114,6 +113,7 @@ export interface ResumeData {
   website: { name: string; link: string };
   social: SocialLink[];
   profilePicture: string;
+  coverPicture: string;
   noticePeriod: string;
   servingNotice: boolean;
   lastWorkingDay: Date;
@@ -135,6 +135,68 @@ export interface ResumeData {
   certificates: Certificate[];
   languages: Language[];
 }
+export const portfolioImages: {
+  img: string;
+  alt: string;
+}[] = [
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-reactjs-developer-rahulnk04-publicis-sapient.webp',
+    alt: 'Rahul Ranjan Nayak - Senior Experience Engineer & ReactJS Developer based in Bhubaneswar (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-tcs-react-developer-optum-uhg.webp',
+    alt: 'Rahul Ranjan Nayak - Senior Lead Consultant and React.js Specialist at TCS Bhubaneswar & Optum UHG (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-software-engineer-optum-uhg.webp',
+    alt: 'Rahul Ranjan Nayak - Senior Lead Engineer working with Optum UHG out of Bhubaneswar, India (Rahul Nayak)',
+  },
+
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-react-macbook-tcs-publicis-sapient.webp',
+    alt: 'Rahul Ranjan Nayak - React & Next.js Developer optimizing Core Web Vitals for TCS Bhubaneswar enterprise apps (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-react-developer-dxc-tcs.webp',
+    alt: 'Rahul Ranjan Nayak - React Developer and DXC Champ Award winner based in Bhubaneswar, Odisha (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-professional-headshot-tcs-optum.webp',
+    alt: 'Rahul Ranjan Nayak - Professional Headshot, Senior Lead Consultant at TCS Bhubaneswar (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-office-working-reactjs-tcs-publicis-sapient-dxc-technology.webp',
+    alt: 'Rahul Ranjan Nayak - Senior Frontend Architect designing Micro Frontend Architectures in Bhubaneswar, India (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-nextjs-reactjs-nodejs-bhubaneswar.webp',
+    alt: 'Rahul Ranjan Nayak - Full Stack Next.js, ReactJS, and Node.js Developer in Bhubaneswar, Odisha (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-nextjs-developer.webp',
+    alt: 'Rahul Ranjan Nayak - Next.js Specialist and Frontend Engineer located in Bhubaneswar, Odisha (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-frontend-architect.webp',
+    alt: 'Rahul Ranjan Nayak - Frontend Architect based in Bhubaneswar specializing in scalable React.js systems (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-dxc-technology-react-developer.webp',
+    alt: 'Rahul Ranjan Nayak - React Developer with Electrical & Electronics B.Tech from Silicon Institute Bhubaneswar (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-dxc-publicis-sapient-nextjs-developer.webp',
+    alt: 'Rahul Ranjan Nayak - NextJS Developer from Bhubaneswar building e-commerce solutions for MyFonts.com (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-coding-publicis-sapient.webp',
+    alt: 'Rahul Ranjan Nayak - Senior Engineer coding workflows for Optum platforms from Bhubaneswar (Rahul Nayak)',
+  },
+  {
+    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-cover-photo-standing-javascript.webp',
+    alt: 'Rahul Ranjan Nayak - Lead Software Engineer specialized in JavaScript ES6+ in Bhubaneswar, India (Rahul Nayak)',
+  },
+];
 
 const labels = {
   rahul: 'Rahul Ranjan Nayak',
@@ -209,15 +271,21 @@ const Data: ResumeData = {
       url: 'https://github.com/rahulnk04',
       icon: GitHubIcon,
     },
+
     {
-      name: 'Facebook',
-      url: 'https://www.facebook.com/rahulnk04',
+      name: 'Facebook Page',
+      url: 'https://www.facebook.com/therahulnayak',
       icon: FacebookIcon,
     },
     {
       name: 'Twitter',
       url: 'https://x.com/rahulnk04',
       icon: TwitterIcon,
+    },
+    {
+      name: 'Facebook',
+      url: 'https://www.facebook.com/rahulnk04',
+      icon: FacebookIcon,
     },
     {
       name: 'Instagram',
@@ -235,7 +303,8 @@ const Data: ResumeData = {
       icon: AddReactionIcon,
     },
   ],
-  profilePicture: Me,
+  profilePicture: portfolioImages[0].img, // Updated to use the first image from portfolioImages
+  coverPicture: portfolioImages[portfolioImages.length - 1].img, // last image from portfolioImages
   noticePeriod: '09 Days',
   servingNotice: false,
   lastWorkingDay: new Date('2022-04-30'), // Note: Outdated; confirm if needed
@@ -804,64 +873,3 @@ export const portfolioConfig: PortfolioConfig = {
     3: 'https://via.placeholder.com/400x200?text=SARA+Telenor', // Fallback for invalid SARA image
   },
 };
-export const portfolioImages: {
-  img: string;
-  alt: string;
-}[] = [
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-tcs-react-developer-optum-uhg.webp',
-    alt: 'Rahul Ranjan Nayak - Senior Lead Consultant and React.js Specialist at TCS Bhubaneswar & Optum UHG (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-software-engineer-optum-uhg.webp',
-    alt: 'Rahul Ranjan Nayak - Senior Lead Engineer working with Optum UHG out of Bhubaneswar, India (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-reactjs-developer-rahulnk04-publicis-sapient.webp',
-    alt: 'Rahul Ranjan Nayak - Senior Experience Engineer & ReactJS Developer based in Bhubaneswar (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-react-macbook-tcs-publicis-sapient.webp',
-    alt: 'Rahul Ranjan Nayak - React & Next.js Developer optimizing Core Web Vitals for TCS Bhubaneswar enterprise apps (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-react-developer-dxc-tcs.webp',
-    alt: 'Rahul Ranjan Nayak - React Developer and DXC Champ Award winner based in Bhubaneswar, Odisha (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-professional-headshot-tcs-optum.webp',
-    alt: 'Rahul Ranjan Nayak - Professional Headshot, Senior Lead Consultant at TCS Bhubaneswar (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-office-working-reactjs-tcs-publicis-sapient-dxc-technology.webp',
-    alt: 'Rahul Ranjan Nayak - Senior Frontend Architect designing Micro Frontend Architectures in Bhubaneswar, India (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-nextjs-reactjs-nodejs-bhubaneswar.webp',
-    alt: 'Rahul Ranjan Nayak - Full Stack Next.js, ReactJS, and Node.js Developer in Bhubaneswar, Odisha (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-nextjs-developer.webp',
-    alt: 'Rahul Ranjan Nayak - Next.js Specialist and Frontend Engineer located in Bhubaneswar, Odisha (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-frontend-architect.webp',
-    alt: 'Rahul Ranjan Nayak - Frontend Architect based in Bhubaneswar specializing in scalable React.js systems (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-dxc-technology-react-developer.webp',
-    alt: 'Rahul Ranjan Nayak - React Developer with Electrical & Electronics B.Tech from Silicon Institute Bhubaneswar (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-dxc-publicis-sapient-nextjs-developer.webp',
-    alt: 'Rahul Ranjan Nayak - NextJS Developer from Bhubaneswar building e-commerce solutions for MyFonts.com (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-cover-photo-standing-javascript.webp',
-    alt: 'Rahul Ranjan Nayak - Lead Software Engineer specialized in JavaScript ES6+ in Bhubaneswar, India (Rahul Nayak)',
-  },
-  {
-    img: 'https://raw.githubusercontent.com/rahulnk04/rahulnk04/main/rahul-ranjan-nayak-coding-publicis-sapient.webp',
-    alt: 'Rahul Ranjan Nayak - Senior Engineer coding workflows for Optum platforms from Bhubaneswar (Rahul Nayak)',
-  },
-];

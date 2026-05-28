@@ -22,7 +22,6 @@ const PortfolioWrapper = () => {
       <PortfolioGallery />
       <ContactSection />
       <FooterSection />
-
       <FloatingNavSpeedDial />
     </Fragment>
   );
